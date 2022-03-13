@@ -1,0 +1,67 @@
+<h3>Liczenie znaków</h3>
+<div data-kinetyczna="12" data-wiersz="12" data-hint="Nauczysz się obliczać długość teksów oraz zliczać znaki. Dzięki temu policzysz ile znaków ma jeden z najdłuższych polskich wyrazów.">
+
+    <p>
+        Do zliczania znaków w tekście służy funkcja <strong>len()</strong>. W odróżnieniu od funkcji .find(), tekst musisz
+        przekazać jako argument funkcji (w nawiasie).
+    </p>
+
+    <code>
+  len("Python jest prosty")<br/>
+<span class="fa fa-hand-o-right">  </span>
+18
+</code>
+    <p>
+        Tekst „Python jest prosty” zawiera więc 18 znaków. </p>
+    <p>
+        Inną pożyteczną funkcją jest funkcja zliczająca wystąpienia jakiegoś znaku (lub grupy znaków) w podanym tekście. Funkcja
+        ta nosi nazwę<strong>.count()</strong> i wywoływana jest na obiekcie tekstu.</p>
+    <p> Policzmy ile jest znaków „y” w naszym tekście „Phyton jest prosty”:
+    </p>
+    <code>
+    "Python jest prosty".count("y")<br/>
+<span class="fa fa-hand-o-right">  </span>
+2
+</code>
+    <code>
+    "Python jest prosty".count("prosty")<br/>
+<span class="fa fa-hand-o-right">  </span>
+1
+</code>
+    <p><strong><span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info: </strong> Podobnie jak w przypadku funkcji <strong>find()</strong>, jeżeli szukane znaki nie zostaną znalezione,
+        zwrócona zostanie liczba <strong>-1</strong>.
+    </p>
+    <p>
+        Dzięki funkcji <strong> count()</strong> możemy też zliczać znaki we fragmencie tekstu, podając pozycję początkową
+        i końcową fragmentu, który chcemy sprawdzić:
+    </p>
+    <code>
+    "Python jest prosty".count("y",10,18)</br>
+<span class="fa fa-hand-o-right">  </span>
+1
+</code>
+
+
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+                Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <div id="Task" class="collapse">Jednym z najdłuższych polskich wyrazów jest „Konstantynopolitańczykówna”. Policz ile ma liter, ale bez litery ‘a’.
+    </div>
+    <a class="helper"> <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Wykorzystaj funkcję len() przekazując „Konstantynopolitańczykówna” jako jej argument i odejmij o tego „Konstantynopolitańczykówna”
+        z doklejoną funkcją .count("a").
+    </p>
+
+    <code class="podpowiedz_kod">
+len("Konstantynopolitańczykówna")-"Konstantynopolitańczykówna".count("a")
+</code>
+</div>

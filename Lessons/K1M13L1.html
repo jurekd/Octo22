@@ -1,0 +1,105 @@
+<h3>Moduł time</h3>
+<div data-kinetyczna="13" data-wiersz="13" data-hint="Poznasz w jaki sposób można zapisywać czas i datę w języku Python. Dzięki dowiesz się jak wyświetlić aktualną datę i czas.">
+    <p>
+        Zmienne zawierające Datę i czas w języku Python można używać na kilka sposobów. Najpopularniejszym z nich jest zastosowanie modułu <strong>time</strong>.
+    </p>
+    <p>
+        Czas w module <strong>time</strong> liczony jest jako liczba sekund, która upłynęła od 1 stycznia 1970 roku Python zapisuje datę i czas w specjalnej strukturze.
+    </p>
+    <p>
+        Różnicę w sekundach od 1.01.1970 r. można uzyskać przez wywołanie funkcji <strong>time()</strong>:
+    </p>
+    <code>
+        import time<br />
+        sekundy = time.time()<br />
+        print(sekundy)            
+        <span class="fa fa-hand-o-right"></span>
+        1501404121.15
+    </code>
+    <p>
+        Aby wyświetlić bieżącą datę i czas lokalny (tj. zgodny ze strefą czasową, w której się znajdujesz), możesz użyć funkcji ctime():
+    </p>
+    <code>
+        import time<br />
+        data = time.ctime()<br />
+        print(data)            
+        <span class="fa fa-hand-o-right"></span>
+        Fri May 12 10:34:55 2017
+    </code>
+    <p>
+        Jeśli chcesz wyświetlić czas w innym formacie, użyj funkcji <strong>strftime()</strong>, podając jako argument formatowanie (%Y – oznacza rok, %m – oznacza dzień, %d – oznacza dzień, %H – oznacza godzinę, %M – oznacza minuty) oraz strukturę czasu (możesz ją pominąć, wówczas zostanie podstawiony bieżąca data i czas).
+    </p>
+    <code>
+        import time<br />
+        data = time.strftime('%Y-%m-%d')<br />
+        czas = time.strftime('%H:%M',(2017,10,10,12,15,1,1,1,1))<br />
+        print(data,czas)
+        <span class="fa fa-hand-o-right"></span>
+        2017-05-12 10:35       
+    </code>
+    <p>
+        Dzięki funkcji <strong>localtime()</strong> możesz zobaczyć datę i czas (sekundy, które upłynęły od 1.01.1970) w postaci specjalnej struktury, z której będziesz mógł wydobyć poszczególne składowe:
+    </p>
+    <code>
+        import time<br />
+        data = time.localtime()<br />
+        print(data)
+        <span class="fa fa-hand-o-right"></span>
+        time.struct_time(tm_year=2017, tm_mon=5, tm_mday=12, tm_hour=10, tm_min=56, tm_sec=13, tm_wday=4, tm_yday=132, tm_isdst=1)   
+    </code>
+    <p>
+        Mając strukturę czasu można z łatwością wydobyć z niej np. rok, miesiąc czy dzień.
+    </p>
+    <code>
+        import time<br />
+        data = time.localtime()<br />
+        print(data.tm_year,data.tm_mon,data.tm_mday)
+        <span class="fa fa-hand-o-right"></span>
+        2017 5 12
+    </code>
+    <p>
+        Funkcja <strong>strptime()</strong> przyjmująca datę zapisaną jako tekst oraz jej format, pozwala na ustawienie daty na podaną wartość, np. 1 stycznia 2017 r.
+    </p>
+    <code>
+        import time<br />
+        mojadata = time.strptime('2017-12-01','%Y-%m-%d')<br />
+        print(mojadata)
+        <span class="fa fa-hand-o-right"></span>
+        time.struct_time(tm_year=2017, tm_mon=12, tm_mday=1, tm_hour=0, tm_min=0, tm_sec=0, tm_wday=4, tm_yday=335, tm_isdst=0)
+    </code>
+    <p>
+        Strukturę możesz zamienić na sekundy, które upłynęły od 1.01.1970 r. korzystając z funkcji <strong>maketime()</strong>.
+    </p>
+    <code>
+        import time<br />
+        mojadata = time.strptime('2017-12-01','%Y-%m-%d')<br />
+        print(time.mktime(mojadata))
+        <span class="fa fa-hand-o-right"></span>
+        1514674800.07    
+    </code>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+            Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">
+        Wypisz bieżąco datę 2017-12-24 w postaci ‘Dzisiaj jest 24.12 roku 2017’.
+    </p>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Utwórz datę 2017-12-24 wykorzystując funkcję <strong>strptime()</strong>. Następnie użyj funkcji strftime, żeby sformatować datę w formacie 'Dzisiaj jest %m.%d roku %Y'.
+    </p>
+    <code class="podpowiedz_kod">
+        import time<br />
+        mojadata = time.strptime('2017-12-24','%Y-%m-%d')<br />
+        data = time.strftime('Dzisiaj jest %m.%d roku %Y',mojadata)<br />
+        print(data)                   
+    </code>
+</div>
+

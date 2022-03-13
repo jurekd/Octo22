@@ -1,0 +1,81 @@
+<h3><h3>Rozszerzanie i zmiana list</h3>
+<div data-kinetyczna="13" data-wiersz="13" data-hint="Dowiesz się jak użyteczną strukturą jest lista. Dzięki temu bardzo łatwo wykonasz podstawowe operacje na danych.">
+    <p>
+        Przechowywanie danych w liście przynosi sporo korzyści. Wiesz już, że dzięki temu możesz przechowywać dane pod wspólną zmienną, w łatwy powiększać je oraz usuwać z nich elementy. Python dostarcza też spory zestaw użytecznych funkcji, dzięki którym wykonanie wielu zadań na zbiorze danych będzie bardzo proste.
+    </p>
+    <p>
+        Pamiętasz funkcję len() dla tekstów? Funkcja ta liczyła liczbę znaków w tekście. Analogiczna funkcja dla listy zwraca liczbę elementów w niej zawartych.
+    </p>
+    <code>
+        liczby = [11,8,3,17,8]<br />
+        dlugosc = len(liczby)<br />
+        print(dlugosc)<br />
+        <span class="fa fa-hand-o-right"></span>
+        5
+    </code>
+    <p>
+        A co jeżeli chcesz znaleźć ile elementów o zadanej wartości jest na liście? Możesz wykorzystać funkcję count(), analogicznie jak dla tekstów.
+    </p>
+    <code>
+        liczby = [11,8,3,17,8]<br />
+        ile8 = liczby.count(8)<br />
+        print(ile8)<br />
+        <span class="fa fa-hand-o-right"></span>
+        2
+    </code>
+    <p>
+        Jeżeli elementu nie ma na liście, zwracana jest wartość 0.
+    </p>
+    <p>
+        <strong>
+            <span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info: 
+        </strong> 
+        Pamiętaj, że w języku Python podstawowe funkcje takie jak np. len() wywoływane są przez przekazanie wartości (lub zmiennej reprezentującej wartość) do funkcji. Większość funkcji określona jest jednak dla obiektu danych (w naszym przypadku listy) i takie funkcje wywoływane są bezpośrednio na zmiennej lub wartości. Funkcje tego typu wywołujemy umieszczając ich nazwę po kropce, doklejonej zaraz po nazwie zmiennej.
+    </p>
+    <p>
+        Inną pożyteczną funkcją dla list jest funkcja min(), zwracająca najmniejszy element listy:
+    </p>
+    <code>
+        liczby = [11,8,3,17,8]<br />
+        najmniejsza = min(lista1)<br />
+        print(najmniejsza)<br />
+        <span class="fa fa-hand-o-right"></span>
+        3
+    </code>
+    <p>
+        Analogicznie funkcja max() zwraca największy element z listy:
+    </p>
+    <code>
+        liczby = [11,8,3,17,8]<br />
+        najwieksza = max(liczby)<br />
+        print(najwieksza)<br />
+        <span class="fa fa-hand-o-right"></span>
+        11
+    </code>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+            Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">
+        Przesuń największy element z listy [1,4,5,3,2] na jej koniec.
+    </p>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Utwórz listę liczby i wpisz do niej elementy 1, 4, 5, 3 i 2. Następnie znajdź element największy, zapamiętaj go pod zmienną największy. W kolejnym kroku usuń go z listy, a na koniec zmienioną listę powiększ o zapamiętany element i wypisz ją.
+    </p>
+    <code class="podpowiedz_kod">
+        liczby=[1,4,5,3,2]<br />
+        najwiekszy=max(liczby)<br />
+        liczby.remove(najwiekszy)<br />
+        liczby.append(najwiekszy)<br />
+        print(liczby)          
+    </code>
+</div>

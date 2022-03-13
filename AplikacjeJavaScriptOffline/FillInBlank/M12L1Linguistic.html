@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Word remover (fill-in-the-blank game)</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src='/JavaScript/Libraries/jquery.min.js'></script>
+  <script src='/AplikacjeJavaScriptOffline/FillInBlank/js/index.js'></script>
+
+</head>
+
+<body>
+  <h3>Uzupełnij luki</h3>
+  <div id="sentence"></div>
+  <h3>Brakujące słowa</h3>
+  <div id="words"></div>
+  <div id="task" style="display:none;"><h3>Treść Zadania</h3>Ze słownika telefony={'S7':'Samsung','S8':'Samsung','Z5':'Sony','XZ':'Sony', 'iPhone6':'Apple'}, zawierającego modele i marki telefonów wypisz tylko niepowtarzające się nazwy marek.</div>
+  <script src="js/index.js"></script>
+  <script type="text/javascript">
+    var text = '1. Zbiór zapisywany jest w nawiasach klamrowych <br>2. Do zbioru możesz dodać nowy element, korzystając z funkcji add() <br>3. Pojedyncze elementy zbioru możesz pobrać funkcją discard() lub funkcją remove()';
+    fillInTheBlankGameInit(text,[6,17,25]);
+  </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<h3>Łączenie warunków</h3>
+<div data-kinetyczna="20" data-wiersz="20" data-hint="Nauczysz się łączyć warunki, żeby tworzyć bardziej skomplikowane pytania. Na koniec sprawdzisz dzielniki liczby.">
+
+    <p>Warunki możesz łączyć operatorem <strong>and</strong>. Dopiero spełnienie wszystkich sprawdzanych warunków zwraca True.
+        Jeżeli któryś z warunków nie zostanie spełniony, dla całości wyrażenia zwrócone zostanie False.
+    </p>
+    <code>
+2<3 and 4>5 <br>
+<span class="fa fa-hand-o-right">  </span>
+False
+</code>
+    <p>W tym  przypadku zwrócone zostanie False, bo warunek 4
+        <5 jest nieprawdziwy. </p>
+            <p>Możesz także sprawdzić czy dowolny z kilku warunków jest prawdziwy. Łączysz je wówczas operatorem <strong>or</strong>:
+            </p>
+            <code>
+2<3 or 4>5 or 3==3 <br>
+<span class="fa fa-hand-o-right">  </span>
+True
+</code>
+            <p>Zwrócone zostanie True, bo dwa warunki są prawdziwe: 4>5 i 3==3.
+            </p>
+            <p>Warunki <strong>or</strong> i <strong>and</strong> możesz łączyć. Uważaj: warunek <strong>and</strong> ma priorytet
+                przed <strong>or</strong>:
+                <code>
+2+3 and 4>5 or 3==3 <br>
+<span class="fa fa-hand-o-right">  </span>
+True
+</code>
+                <p>Powyższy zapis jest więc równoważny z:
+                </p>
+                <code>
+(2+3 and 4>5) or (3==3) <br>
+<span class="fa fa-hand-o-right">  </span>
+True
+</code>
+                <p>Oznacza to, że pierwsza część wyrażenia zwróci False (4>5 jest nieprawdziwe), ale druga część jest prawdziwa,
+                    więc operator <strong>or</strong> ostatecznie zwróci True.
+                </p>
+                <p>Możesz również zaprzeczać warunki operatorem <strong>not</strong>:
+                </p>
+                <code>
+not 2>3 <br>
+<span class="fa fa-hand-o-right">  </span>
+True
+</code>
+
+                <p>
+                    <span class="fa fa-cogs" aria-hidden="true"></span>
+                    <strong>
+                        <a id="test" href="#Task" data-toggle="collapse">
+                            Sprawdź czy potrafisz
+                        </a>
+                    </strong>
+                </p>
+                <p id="Task" class="collapse">Sprawdź czy liczba 86 jest podzielna zarówno przez 2 i przez 3.</p>
+                <a class="helper"> <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+                <p class="helper_code">
+                    Sprawdź jednocześnie dwa warunki 86%2==0 oraz 86%3==0.
+                </p>
+                <code class="podpowiedz_kod">
+86%2==0 and 86%3==0
+</code>
+</div>

@@ -1,0 +1,96 @@
+﻿#loaderBody{
+    background-color: #000;
+    z-index: 900995;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+}
+
+#loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 900995;
+    width: 64px;
+    height: 64px;
+    margin: -32px 0 0 -32px;
+    border: 12px solid #AEB1C0;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-top: 12px solid #0F489E;
+    border-bottom: 12px solid #0F489E;
+    -webkit-animation: spin 1.5s ease-in-out infinite;
+    animation: spin 1.5s ease-in-out infinite;
+}
+
+#Content {
+    display: none;
+    text-align: center;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+    from {
+        bottom: -100px;
+        opacity: 0
+    }
+
+    to {
+        bottom: 0px;
+        opacity: 1
+    }
+}
+
+@keyframes animatebottom {
+    from {
+        bottom: -100px;
+        opacity: 0
+    }
+
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatebottom {
+    from {
+        bottom: -100px;
+        opacity: 0
+    }
+
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}

@@ -1,0 +1,77 @@
+<h3>Zmienne liczbowe</h3>
+<div data-kinetyczna="16" data-wiersz="16" data-hint="W tej lekcji dowiesz się jak wykorzystywać zmienne liczbowe. Dzięki temu policzysz ile razy Słońce jest większe od Ziemi, a Ziemia większa od Księżyca.">
+    <p>
+        Podobnie jak zmienne tekstowe, możesz tworzyć zmienne liczbowe. Zmiennym liczbowym zamiast tekstów przypisujesz wartość liczbową
+        (całkowitą lub rzeczywistą):
+    </p>
+    <code>
+ liczba1 = 1<br/>
+ liczba1 + 2<br/>
+ <span class="fa fa-hand-o-right">  </span>
+3
+</code>
+    <p>
+        lub wynik działania, albo rezultat funkcji:
+    </p>
+    <code>
+    wynik = 2*3<br/>
+    wynik<br/>
+           <span class="fa fa-hand-o-right">  </span>
+6
+</code>
+    <code>
+    import math<br/>
+inny_wynik = math.sqrt(9)<br/>
+inny_wynik<br/>
+           <span class="fa fa-hand-o-right">  </span>
+3.0
+</code>
+    <p>
+        Zmienne można wykorzystać wielokrotnie i łączyć je z innymi zmiennymi:
+    </p>
+    <code>
+    nowy_wynik = wynik + 5<br/>
+nowy_wynik * 2<br/>
+           <span class="fa fa-hand-o-right">  </span>
+16.0
+</code>
+    <p>
+        Do zapamiętywania wyniku możesz także wykorzystywać starą zmienną, w tym przypadku stara wartość zmiennej<strong> wynik</strong>        zostanie zastąpiona nową.
+    </p>
+    <code>
+    wynik = 3 <br/>
+    wynik = wynik + 5<br/>
+wynik<br/>
+           <span class="fa fa-hand-o-right">  </span>
+8.0
+
+</code>
+
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+                Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">
+        Policz ile razy Ziemia jest większa od Księżyca i ile razy Słońce jest większe od Ziemi, przyjmując, że średnica Ziemi wyrażona
+        w km wynosi: 12742, średnica Księżyca: 1737, a średnica Słońca: 1391960.
+    </p>
+    <a class="helper"> <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Pod zmienną ziemia przypisz 12742. Pod zmienną ksiezyc przypisz 1737, a pod zmienną slonce przypisz 1391960. Podziel zmienną
+        ziemia przez ksiezyc. Następnie podziel zmienną słońce przez ziemia.
+    </p>
+    <code class="podpowiedz_kod">
+ziemia=12742<br>
+ksiezyc=1737<br>
+slonce=1391960<br>
+ziemia/ksiezyc<br>
+slonce/ziemia
+</code>
+
+</div>

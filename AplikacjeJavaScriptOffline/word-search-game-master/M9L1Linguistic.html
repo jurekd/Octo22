@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Word search game</title>
+    <link rel="stylesheet" href="css/wordsearch.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        
+        .wrap{
+            width: 100%;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <section id="ws-area"></section>
+        <ul class="ws-words">
+
+        </ul>
+    </div>
+    <script src="js/utility.min.js"></script>
+    <script src="js/wordsearch.js"></script>
+    <script type="text/javascript">
+         var Settings = {
+        'directions': ['W', 'N','WN', 'EN'],
+        'gridSize': 6,
+        'words': ['count', 'len','min','max'],
+        'wordsList' : [],
+        'debug': false
+        }
+        var taskContent ='Przesuń największy element z listy [1,4,5,3,2] na jej koniec.';
+        WordSearchGameInit (Settings,taskContent);
+        var gameAreaEl = document.getElementById('ws-area');
+        var gameobj = gameAreaEl.wordSearch();
+
+        // Put words into `.ws-words`
+        var words = gameobj.settings.wordsList,
+            wordsWrap = document.querySelector('.ws-words');
+        for (i in words) {
+            var liEl = document.createElement('li');
+            liEl.setAttribute('class', 'ws-word');
+            liEl.innerText = words[i];
+            wordsWrap.appendChild(liEl);
+        }
+
+    </script>
+</body>
+
+</html>

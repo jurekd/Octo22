@@ -1,0 +1,82 @@
+<h3>Zapis i łączenie tekstów</h3>
+<div data-wiersz="9" data-kinetyczna="9" data-hint="Nauczysz się zapisywać teksty w języku Python oraz je dodawać. W ten sposób będziesz potrafić ładnie sformatować wyniki.">
+    <p>
+        W języku programowania Python możesz przetwarzać dane nie tylko liczbowe. W prosty sposób możesz działać również na tekstach.
+    </p>
+    <p>
+        <strong>
+            <span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info:
+        </strong>
+        Żeby odróżnić teksty od liczb wykorzystywany jest cudzysłów (") lub apostrof (').
+    </p>
+    <p>
+        Wprowadźmy teksty:
+    </p>
+    <code>
+        "Python jest prosty"<br/>
+        <span class="fa fa-hand-o-right"></span>
+        'Python jest prosty'
+    </code>
+    <code>
+        'Python jest prosty'<br/>
+        <span class="fa fa-hand-o-right">  </span>
+        'Python jest prosty'
+    </code>
+    <p>
+        Oba sposoby są dobre, ale Python wyniki tekstowe będzie wypisywał zawsze w apostrofach.
+    </p>
+    <p>
+        Na tekstach możesz wykonywać operację dodawania – wynikiem będzie złączenie tekstów:
+    </p>
+    <code>
+        'Python jest prosty ' + 'i szybko go poznam.'<br/>
+        <span class="fa fa-hand-o-right">  </span>
+        'Python jest prosty i szybko go poznam.'
+    </code>
+    <p>
+        Nie możesz dodawać tekstów do liczb. Poniższe działanie spowoduje błąd:
+    </p>
+    <code>
+        'Ala'+5<br/>
+        <span class="fa fa-hand-o-right">  </span>
+        TypeError: cannot concatenate 'str' and 'int' objects
+    </code>
+    <p>
+        <strong>
+            <span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info:
+        </strong>
+        Powyższy błąd oznacza, że Python nie może złączyć tekstu i liczby (Dosłownie: "BłądTypu: nie mogę
+        złączyć obiektów 'łańcuch znakowy' i 'liczba całkowita'").
+    </p>
+    <p>
+        Zamiany liczby na tekst możesz dokonać wykorzystując funkcję o nazwie str(). Ta funkcja nie wymaga importowania żadnego modułu!
+    </p>
+    <code>
+        'Ala'+ str(5)<br/>
+        <span class="fa fa-hand-o-right">  </span>
+        'Ala5'
+    </code>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+                Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <div id="Task" class="collapse">
+        Wypisz wynik działania 2+3 w postaci: 2 dodać 3 to 5.
+    </div>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Wypisz tekst "2 dodać 3 to " i dodaj do niego funkcję str(2+3)
+    </p>
+    <code class="podpowiedz_kod">
+    '2 dodać 3 to '+str(2+3)
+    </code>
+</div>

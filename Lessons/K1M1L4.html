@@ -1,0 +1,76 @@
+<h3>Działania związane z dzieleniem</h3>
+<div data-kinetyczna="4" data-wiersz="4" data-hint="Nauczysz się odczytywać część całkowitą oraz resztę z dzielenia dwóch liczb. Dzięki temu sprawdzisz czy podany rok jest rokiem przestępnym">
+    <p>
+        Bardzo pomocnymi w różnych zastosowaniach są operatory dzielenia całkowitego (//) oraz reszty z dzielenia (%).
+    </p>
+    <p>
+        Pierwszy z nich (//) daje część całkowitą z dzielenia dwóch liczb całkowitych:
+    </p>
+    <code>
+    5//2<br/>
+    <span class="fa fa-hand-o-right"></span>
+    2
+    </code>
+    <p>Dzielenie całkowite
+        <strong>5//2</strong>
+        daje wynik
+        <strong>2</strong>
+        ponieważ dzielenie
+        <strong>5/2 = 2.5</strong>,
+        a liczba całkowita z wyniku tego dzielenia wynosi
+        <strong>2</strong>
+    </p>
+    <p>
+        Drugi operator określany w programowaniu słowem "modulo" i oznaczany zwykle jako (%), daje resztę z dzielenia dwóch liczb.
+        Innymi słowy podaje ile zostało jeszcze do podzielenia po odrzuceniu części całkowitej (u nas wynosi ona <strong>5-2*2</strong>,
+        czyli <strong>1</strong>).
+    </p>
+    <code>
+    5%2<br/>
+    <span class="fa fa-hand-o-right"></span>
+    1
+    </code>
+    <p>
+        <strong>
+            <span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info:
+        </strong>
+        Operator modulo ma duże zastosowanie w programowaniu. Pozwala np. w łatwy sposób sprawdzić czy
+        dana liczba dzieli się bez reszty przez inną liczbę.
+    </p>
+    <p>Przykładowo sprawdźmy czy 7 jest dzielnikiem liczby 121?</p>
+    <code>
+    121%7<br/>
+    <span class="fa fa-hand-o-right"></span>
+    2
+    </code>
+    <p>W wyniku otrzymaliśmy 2, a więc 121 nie dzieli się bez reszty przez 7.</p>
+    <p>Natomiast 121 dzieli się bez reszty przez 11, bo operator modulo zwraca 0:</p>
+    <code>
+    121%11<br/>
+    <span class="fa fa-hand-o-right"></span>
+    0
+    </code>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+                Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <div id="Task" class="collapse">
+        Rok przestępny wypada co 4 lata (choć z pewnymi wyjątkami raz na 100 lat). Wykorzystując operator reszty z dzielenia
+        (modulo), sprawdź czy rok 2018 będzie rokiem przestępnym?
+    </div>
+    <a class="helper"> <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Sprawdź resztę z dzielenia 2018 przez 4. Jeżeli wynosi 0, to podany rok jest rokiem przestępnym, jeżeli liczbę większą od
+        zera, to dany rok nie jest rokiem przestępnym i ma 365 dni.
+    </p>
+    <code class="podpowiedz_kod">
+    2018%4
+    </code>
+</div>

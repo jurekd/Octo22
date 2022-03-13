@@ -1,0 +1,64 @@
+<h3>Zmienne tekstowe</h3>
+<div data-kinetyczna="15" data-wiersz="15" data-hint="W tej lekcji dowiesz się jak wykorzystywać zmienne tekstowe. Dzięki temu nauczysz komputer jak się witać.">
+    <p>
+        W celu przeprowadzenia jakiegoś działania na tekście „Python jest prosty” musieliśmy wielokrotnie go wpisywać. Aby zapamiętać
+        zawartość jakiegoś tekstu, w celu jego wielokrotnego użycia, możemy przypisać ten tekst do zmiennej np. o nazwie
+        <strong>tekst1</strong>:
+    </p>
+
+    <code>
+  tekst1 = "Python jest prosty"<br/>
+tekst1[7:11]<br/>
+<span class="fa fa-hand-o-right">  </span>
+'jest'
+</code>
+    <p><strong><span class="fa fa-info-circle" aria-hidden="true"></span>
+Info: </strong> Zmienne możesz nazywać w dowolny sposób, ale pierwszym znakiem w ich nazwie musi być litera (bez polskich
+        znaków!) lub znak pokreślenia (_).
+    </p>
+    <p>
+        Raz zapisaną zmienną możesz wykorzystywać wielokrotnie:
+    </p>
+    <code>
+  tekst1[:2]<br/>
+<span class="fa fa-hand-o-right">  </span>
+'Py'
+</code>
+    <p>
+        Możesz zmienić wartość zmiennej (stąd nazwa zmienna), przypisując jej nową wartość:
+    </p>
+    <code>
+    tekst1 = 'Nowy tekst!'<br/>
+tekst1[7:11]<br/>
+<span class="fa fa-hand-o-right">  </span>
+'kst!'
+  </code>
+    <p>Jeśli użyjesz nazwy zmiennej, której wcześniej nie przypisałeś żadnej wartości, wystąpi błąd:</p>
+    <code>
+    tekst2<br/>
+<span class="fa fa-hand-o-right">  </span>
+NameError: name 'tekst2' is not defined
+  </code>
+    <p>Błąd wskazuje na brak definicji zmiennej (dosłownie: "BłądNazwy: nazwa 'tekst2' nie jest zdefiniowana").</p>
+
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+                Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <div id="Task" class="collapse">Podstaw pod zmienną imie wartość "Kuba" i dodaj do niego tekst „ uczy się języka Python”, tak żeby uzyskać tekst „Kuba
+        uczy się języka Python”.
+    </div>
+    <a class="helper"> <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Przypisz do zmiennej imie = "Kuba". Do zmiennej doklej tekst " uczy się języka Python". </p>
+    <code class="podpowiedz_kod">
+imie="Kuba"<br>
+imie+" uczy się języka Python"
+</code>
+</div>

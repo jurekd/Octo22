@@ -1,0 +1,123 @@
+<h3>Funkcje w klasach</h3>
+<div data-kinetyczna="13" data-wiersz="13" data-hint="Nauczysz się, że obiekty oprócz swoich danych i konstruktorów udostępniają też różne funkcje, które na tych danych operują. Dzięki temu tworzymy kompletne rozwiązania: dane wraz z funkcjami.">
+    <p>
+        W poprzedniej lekcji zawartość obiektów wypisywaliśmy podając każdą ich daną z osobna:
+    </p>
+    <code>
+        osoba1 = Osoba("Kamil","Bilski",15)<br />
+        print(osoba1.imie,osoba1.nazwisko,osoba1.klasa)<br />            
+        <span class="fa fa-hand-o-right"></span>
+        Kamil Bilski 15
+    </code>
+    <p>
+        Jest to stosunkowo niewygodne, bo co jeśli tych danych będzie naprawdę dużo? Na szczęście oprócz danych i konstruktorów w klasie można definiować także funkcje, które operują na danych. Utwórzmy zatem funkcję wypisz(), która wypisze wszystkie potrzebne dane:
+    </p>
+    <code>
+        class Osoba:<br />
+        imie = "imie"<br />
+        nazwisko = "nazwisko"<br />
+        wiek = 0<br />
+        def __init__(self, imie, nazwisko, wiek):<br />
+            self.imie = imie<br />
+            self.nazwisko = nazwisko<br />
+            self.wiek = wiek<br />
+        def wypisz(self):<br />
+            print(self.imie,self.nazwisko,self.wiek)<br />
+        osoba1 = Osoba("Kamil","Bilski",15)<br />
+        osoba1.wypisz()<br />          
+        <span class="fa fa-hand-o-right"></span>
+        Kamil Bilski 15
+    </code>
+    <p>
+        Jeszcze wygodniej byłoby napisać print(osoba1). Jeżeli tego nie zmienisz, zostanie wypisana referencja (adres w pamięci) obiektu:
+    </p>
+    <code>
+        print(osoba1)<br />
+        <span class="fa fa-hand-o-right"></span>
+        <Osoba object at 0x7fbef13deb70>
+    </code>
+    <p>
+        Aby zmienić to domyśle zachowanie, możesz w klasie zdefiniować funkcję __str__(self), której zadaniem jest automatyczna zamiana obiektu na tekst:
+    </p>
+    <code>
+        class Osoba:<br />
+        # tutaj kod klasy jak poprzednio<br />
+        def __str__(self):<br />
+            return self.imie+' '+self.nazwisko+' '+str(self.wiek)<br />
+        osoba1 = Osoba("Kamil","Bilski",15)<br />
+        print(osoba1)<br />
+        <span class="fa fa-hand-o-right"></span>
+        Kamil Bilski 15
+    </code>
+    <p>
+        Funkcje klasy, oprócz wypisywania zawartych w nich danych, mogą realizować różne zadania. Dopiszmy funkcję inicjały, która wyświetla pierwszą literę imienia i nazwiska:
+    </p>
+    <code>
+        class Osoba:<br />
+        # tutaj kod klasy jak poprzednio<br />
+        def inicjaly(self):<br />
+            return self.imie[0]+self.nazwisko[0]<br />
+        print(osoba1.inicjaly())<br />
+        <span class="fa fa-hand-o-right"></span>
+        KB         
+    </code>
+    <p>
+        Tym razem stworzyliśmy funkcję, która zwraca ciąg znaków, zatem żeby go wyświetlić, musimy użyć funkcji print().
+    </p>
+    <p>
+        Na koniec tej lekcji jeszcze jedna funkcja skonczone(), która sprawdza czy dana osoba skończyła podaną liczbę lat.
+    </p>
+    <code>
+        class Osoba:<br />
+        # tutaj kod klasy jak poprzednio<br />
+        def skonczone(self, ile):<br />
+        if self.wiek>=ile:<br />
+            return True<br />
+        else:<br />
+            return False<br />
+        osoba1 = Osoba("Kamil","Bilski",15)<br />
+        if osoba1.skonczone(16):<br />
+        print("Masz dostęp")<br />
+        else:<br />
+        print("Nie masz dostępu")<br />
+        <span class="fa fa-hand-o-right"></span>
+        Nie masz dostępu
+    </code>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+            Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">
+        Do klasy komórka z poprzedniej lekcji, dopisz funkcję __str__(self), która opisze komórkę w postaci np. Samsung S7 2016 600200300 oraz funkcję wiek, która na podstawie roku produkcji i bieżącego roku liczy ile lat ma dana komórka.
+    </p>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        W class Komorka dopisz funkcję __str__(self), która zwraca ciąg składający się z producenta, modelu, roku produkcji i numeru. Pamiętaj o zamianie tych dwóch ostatnich danych na tekst funkcją str(). Następnie dopisz funkcję wiek(self), w której odczytaj bieżący rok z modułu datetime: rok = datetime.date.today().year. Odejmij od niego rok produkcji i zwróć w return. Wypisz dane komórki oraz jej wiek funkcją print.
+    </p>
+    <code class="podpowiedz_kod">
+        import datetime<br />
+        class Komorka:<br />
+            producent=""<br />
+            model=""<br />
+            rok_produkcji=0<br />
+            def __init__( self, producent, model, rok_produkcji):<br />
+            self.producent = producent<br />
+            self.model = model<br />
+            self.rok_produkcji = rok_produkcji<br />
+            def __str__(self):<br />
+            return self.producent+' '+self.model+' '+str(self.rok_produkcji);<br />
+            def wiek(self):<br />
+            rok = datetime.date.today().year<br /> 
+            return rok-self.rok_produkcji<br />
+        tel1 = Komorka("Samsung", "S7", 2016)<br />
+        print(tel1,tel1.wiek())<br />                  
+    </code>
+</div>
+

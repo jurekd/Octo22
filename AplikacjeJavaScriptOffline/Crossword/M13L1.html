@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+       
+        
+<div class="game">
+    
+<div id="crossword"></div>
+
+<br>
+
+<div>
+    1.	Dzięki tej funkcji możesz zobaczyć datę i czas jaki upłynął od 1.01.1970 roku<br>
+    2.	Aby wyświetlić datę i czas lokalny, używamy funkcji ... <br>
+    3.	Jeśli chcesz wyświetlić czas w innym formacie, użyj funkcji ... <br>
+</div>
+
+<div id="crosswordTask">
+    <h3>Gratulacje twoje zadanie do wykonania to:</h3>
+ Wypisz bieżącą datę 2017-12-24 w postaci ‘Dzisiaj jest 24.12 roku 2017’
+</div>
+</div>
+       
+    <script type="text/javascript" src="js/index.js"></script>
+    <script>
+        
+        crosswordInit(['localtime','ctime','strftime'],[0,2,0],4);
+       
+    </script>
+    </body>
+</html>

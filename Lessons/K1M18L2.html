@@ -1,0 +1,105 @@
+<h3>Finally i wywoływanie wyjątków</h3>
+<div data-kinetyczna="13" data-wiersz="13" data-hint="Nauczysz się jak wykonywać kod niezależnie od tego czy wystąpił wyjątek czy nie oraz jak samemu wywoływać wyjątki.">
+    <p>
+        Czasami trzeba wykonać pewne instrukcje, niezależnie od tego, czy wystąpił wyjątek, czy wszystko potoczyło się zgodnie z planem. Do takich sytuacji należy zamknięcie otwartego połączenia czy pliku, zamknięcie okna, czy zapisanie informacji do dziennika systemowego.
+    </p>
+    <p>
+        Rozważmy przykład, wykonujący wyszukiwanie w książce, po czym książka jest usuwana (uwaga: w naszym interpreterze języka Python finally jest ignorowane – kod możesz sprawdzić np. tutaj: https://repl.it/KFbg/2).
+    </p>
+    <code>
+        ksiazka = {'Ala':111222, 'Ela':505666, 'Tomek':788333}<br />
+        szukaj = input('Podaj imię do wyszukania')<br />
+        try:<br />
+            telefon = ksiazka[szukaj]<br />
+        except KeyError:<br />
+            print('Nie ma takiej osoby w książce')<br />
+        else:<br />
+            print(telefon)<br />
+        finally:<br />
+            print('Zakończono wyszukiwanie')<br />
+            ksiazka={}<br />            
+        <span class="fa fa-hand-o-right"></span>
+        Podaj imię do wyszukania Ala<br />
+        111222<br />
+        Zakończono wyszukiwanie      
+    </code>
+    <p>
+        Finally wykona się niezależnie od tego czy przechwycisz wyjątek, czy nie (https://repl.it/KFbg/3):
+    </p>
+    <code>
+        try:<br />
+        a=10/0<br />
+        finally:<br />
+        print("Zakończono obliczenia")<br />          
+        <span class="fa fa-hand-o-right"></span>
+        Zakończono obliczenia<br />
+        ZeroDivisionError: division by zero      
+    </code>
+    <p>
+        Możesz także samemu wyrzucać wyjątki – służy do tego instrukcja <strong>raise</strong>. Np. załóżmy, że użytkownik musi wprowadzić liczbę większą od 0:
+    </p>
+    <code>
+        try:<br />
+        dodatnia = int(input('Podaj liczbę >0'))<br />
+        if dodatnia <=0:<br />
+            raise ValueError<br />
+        except ValueError:<br />
+        print("Zła liczba!")<br />
+        else:<br />
+        print(dodatnia)<br />
+        <span class="fa fa-hand-o-right"></span>
+        Podaj liczbę >0 0<br />
+        Zła liczba!             
+    </code>
+    <p>
+        Możesz też wywołać wyjątek z dowolnym komunikatem, jako parametr obiektu Exception:
+    </p>
+    <code>
+        dodatnia = int(input('Podaj liczbę >0'))<br />
+        if dodatnia <=0:<br />
+            raise Exception("Liczba nie jest dodatnia")<br />
+        print(dodatnia)<br />
+        <span class="fa fa-hand-o-right"></span>
+        Podaj liczbę >0 0<br />
+        Exception: Liczba nie jest dodatnia
+    </code>
+    <p>
+        <strong>
+            <span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info: 
+        </strong> 
+        Więcej o wyjątkach dowiesz się w modułach dotyczących programowania obiektowego.
+    </p>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+            Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">
+        Napisz program, który w pętli for pobiera od użytkownika 5 liczb nieujemnych, dodaje je do listy i liczy ich sumę.  Jeżeli użytkownik wpisze tekst inny niż liczba lub poda liczbę, która jest ujemna, wyrzucany jest wyjątek ValueError, który przechwytywany jest w except, wypisywany jest komunikat ‘Zła liczba!’, a program jest kontynuowany. Jeśli wszystko jest ok, po else liczba dodawana jest do listy. Przetestuj program następujące liczby: 1,-1,5,3,2
+    </p>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Zdefiniuj pustą listę. W pętli range od 0 do 5 (lub 1 do 6) umieść try, a po nim pobieranie tekstu funkcją input(), konwersję na liczbę całkowitą funkcją int() i sprawdzanie czy liczba nie jest mniejsza od zera, jeśli jest wyrzuć wyjątek ValueError. Złap wyjątek ValuError i wypisz komunikat ‘Zła liczba!’, a po else dopisz liczbę funkcją append() do listy. Na końcu poza blokiem try, wypisz sumę elementów z listy, najlepiej wykorzystując funkcję reduce().
+    </p>
+    <code class="podpowiedz_kod">
+        lista = []<br />
+        for indeks in range(0,5):<br />
+            try:<br />
+            liczba = int(input('Podaj liczbę'))<br />
+            if liczba<0:<br />
+                raise ValueError<br />
+            except ValueError:<br />
+            print('Zła liczba!')<br />
+            else:<br />
+            lista.append(liczba)<br /> 
+        print(reduce(lambda x,y:x+y , lista))<br />                  
+    </code>
+</div>
+

@@ -1,0 +1,95 @@
+<h3>Różnica pomiędzy datami</h3>
+<div data-kinetyczna="13" data-wiersz="13" data-hint="Poznasz w jaki sposób można porównywać daty w języku Python. Dzięki temu będziesz mógł policzyć ile dni zostało do kolejnych wakacji.">
+    <p>
+        Dzięki temu, że data i czas w języku Python pamiętane są jako liczba sekund, która upłynęła od 1 stycznia 1970 roku z łatwością można policzyć różnicę między datami – wystarczy je odjąć.
+    </p>
+    <p>
+        Policzmy np. różnice między datą 2017-09-01 a 2017-11-11.
+    </p>
+    <code>
+        import time<br />
+        data1 = time.strptime('2017-09-01','%Y-%m-%d')<br />
+        data2 = time.strptime('2017-11-11','%Y-%m-%d')<br />
+        roznica = time.mktime(data2)-time.mktime(data1)<br />
+        print(roznica)            
+        <span class="fa fa-hand-o-right"></span>
+        6138000.0
+    </code>
+    <p>
+        Różnica wychodzi oczywiście w sekundach. W jaki sposób przekształcić ją na dni? Dzieląc wynik przez 3600 (60 sekund * 60 minut), a następnie przez 24:
+    </p>
+    <code>
+        roznica = time.mktime(data2)-time.mktime(data1)<br />
+        dni=roznica/60/60//24<br />
+        print(dni)            
+        <span class="fa fa-hand-o-right"></span>
+        71.0
+    </code>
+    <p>
+        <strong>
+            <span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info: 
+        </strong> 
+        Ostatnie dzielenie \\ bierze tylko część całkowitą z dzielenia, żeby nie wyświetlać części dni.
+    </p>
+    <p>
+        Takie przeliczenie nie jest jednak wygodne. Język Python ma do tego celu inny moduł o nazwie <strong>datetime</strong>. Moduł ten ma wiele funkcji wspólnych z modułem <strong>time</strong>, a także kilka dodatkowych, umożliwiających np. łatwe liczenie różnic pomiędzy datami.
+    </p>
+    <code>
+        import datetime<br />
+        data1 = datetime.datetime.strptime('2017-09-01','%Y-%m-%d')<br />
+        data2 = datetime.datetime.strptime('2017-11-11','%Y-%m-%d')<br />
+        roznica = data2-data1<br />
+        print(roznica)            
+        <span class="fa fa-hand-o-right"></span>
+        71 days, 0:00:00
+    </code>
+    <p>
+        Powyższy kod niestety nie zadziała w naszym interpreterze z uwagi na brak implementacji funkcji <strong>strptime()</strong>, ale daty w module <strong>datetime</strong> możesz tworzyć jeszcze prościej:
+    </p>
+    <code>
+        import datetime<br />
+        data1 = datetime.datetime(2017,9,1)<br />
+        data2 = datetime.datetime(2017,11,11)<br />
+        roznica = data2-data1<br />
+        print(roznica)
+        <span class="fa fa-hand-o-right"></span>
+        71 days, 0:00:00     
+    </code>
+    <p>
+        Jeżeli chcesz odczytać różnicę jako liczbę, możesz po różnicy podać składową .days:
+    </p>
+    <code>
+        print(roznica.days)
+        <span class="fa fa-hand-o-right"></span>
+        71
+    </code>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+            Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">
+        Oblicz ile tygodni od rozpoczęcia roku szkolnego (2017-09-01) upłynie do następnych wakacji (przyjmując rozpoczęcie wakacji jako 2018-07-01).
+    </p>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Najłatwiej będzie wykorzystać moduł datetime. Zaimportuj go, a następnie utwórz dwie daty i odejmij je od siebie. Wyodrębnij z tej różnicy składową days, a następnie podziel całkowicie wynik przez 7.
+    </p>
+    <code class="podpowiedz_kod">
+        import datetime<br />
+        data1 = datetime.datetime(2017,9,1)<br />
+        data2 = datetime.datetime(2018,7,1)<br />
+        roznica = data2-data1<br />
+        dni = roznica.days<br />
+        tygodnie = dni//7<br />
+        print(tygodnie)<br />                 
+    </code>
+</div>
+

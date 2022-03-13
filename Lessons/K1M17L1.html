@@ -1,0 +1,106 @@
+<h3>Używanie wyrażeń listowych</h3>
+<div data-kinetyczna="13" data-wiersz="13" data-hint="Dowiesz się w jaki sposób przekształcać listy z wykorzystaniem wyrażeń listowych, które łączą w sobie filtrowanie i mapowanie.">
+    <p>
+        Wyrażenia listowe pozwalają na skrócony zapis przeglądania elementów listy w pętli for i wykonywania na nich filtrowania (odpowiednik instrukcji if) oraz przekształcania elementów zgodnie z podaną funkcją. 
+    </p>
+    <p>
+        Rozważmy jeszcze raz przykład tworzący listę kwadratów dla podanej listy liczb:
+    </p>
+    <code>
+        liczby = [1,2,3,4,5] # krócej: range(1, 6)<br />
+        kwadraty = []<br />
+        for x in liczby:<br />
+            kwadraty.append(x*x)<br />
+        print(kwadraty)<br />            
+        <span class="fa fa-hand-o-right"></span>
+        [1, 4, 9, 16, 25]
+    </code>
+    <p>
+        Wykorzystując wyrażenia listowe możesz powyższy kod może zapisać w następujący sposób:
+    </p>
+    <code>
+        liczby = [1,2,3,4,5]<br />
+        kwadraty = [x*x for x in liczby]<br />
+        print(kwadraty)<br />            
+        <span class="fa fa-hand-o-right"></span>
+        [1, 4, 9, 16, 25]
+    </code>
+    <p>
+        Zwróć uwagę, że działa to tak samo jak mapowanie z wykorzystaniem wyrażeń lambda:
+    </p>
+    <code>
+        kwadraty = map(lambda x: x*x, liczby)
+    </code>
+    <p>
+        Odfiltrujmy teraz liczby parzyste. Najpierw klasycznie, przy użyciu pętli for:
+    </p>
+    <code>
+        liczby = [1,2,3,4,5]<br />
+        parzyste = []<br />
+        for x in liczby:<br />
+            if x%2 == 0:<br />
+            parzyste.append(x)<br />
+        print(parzyste)<br />
+        <span class="fa fa-hand-o-right"></span>
+        [2, 4]           
+    </code>
+    <p>
+        To samo możesz zapisać w jednej linijce jako wyrażenie listowe:
+    </p>
+    <code>
+        liczby = [1,2,3,4,5]<br />
+        parzyste= [x for x in liczby if x%2==0]<br />
+        print(parzyste)<br /> 
+        <span class="fa fa-hand-o-right"></span>
+        [2, 4]
+    </code>
+    <p>
+        Działa to analogicznie jak funkcja filtrowania z wyrażaniem lambda:
+    </p>
+    <code>
+        parzyste = filter(lambda x: x%2 == 0, liczby)
+    </code>
+    <p>
+        Ja powiedziano na wstępie stosując wyrażenia listowe możesz w łatwy sposób połączyć filtrowanie i mapowanie. Policzmy kwadraty, ale tylko liczb parzystych:
+    </p>
+    <code>
+        liczby = [1,2,3,4,5]<br />
+        kwadraty_parzystych = [x*x for x in liczby if x%2==0]<br />
+        print(parzyste)<br />  
+        <span class="fa fa-hand-o-right"></span>
+        [4, 16]          
+    </code>
+    <p>
+        Gdybyśmy chcieli użyć lambda wyrażeń, musielibyśmy połączyć funkcje map i filter:
+    </p>
+    <code>
+        kwadraty_parzystych = map(lambda x: x*x, filter(lambda x: x%2 == 0, liczby))
+    </code>
+    <p>
+        Powyższy zapis jest mniej czytelny niż wyrażenie listowe, poza tym wykorzystasz go tylko w najnowszej, trzeciej wersji języka Python.
+    </p>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+            Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">
+        Wykorzystując wyrażenia listowe przekształć listę telefony=['200123', '404111', '222333a', 'b500707', '120120'] do listy liczb, ale tylko dla tych numerów, dla których zapisany tekst da się przekształcić na liczbę.
+    </p>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Zdefiniuj listę telefonów. Jako wyrażenie mapujące użyj przekształcenia testu do liczby całkowitej int(x), a w filtrze, po if, wykorzystaj funkcję x.isdigit(). Wypisz utworzoną listę.
+    </p>
+    <code class="podpowiedz_kod">
+        lista = ['200123', '404111', '222333a', 'b500707', '120120']<br />
+        telefony = [int(x) for x in lista if x.isdigit()]<br />
+        print(telefony)<br />                  
+    </code>
+</div>
+

@@ -1,0 +1,63 @@
+html, body {
+  /* height: 100%; */
+  /* width: 100%; */
+  /* margin: 0px; */
+}
+
+*:focus {
+  outline: none;
+}
+
+body {
+  /* background: #ffffff; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+table {
+  /* background: white; */
+  border-collapse: collapse;
+  /*border: 1px solid black;*/
+  box-sizing: border-box;
+}
+
+tr {
+  /*border: 1px solid black;*/
+}
+.activeInput{
+    border: 1px solid black;
+}
+.passwordTd{
+    border: 2px solid black;
+}
+td {
+  /*border: 1px solid black;*/
+}
+
+input {
+  font-size: 25px;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: none;
+}
+
+.disabledInput {
+    visibility:hidden;
+}
+
+
+.correctLetter{
+    background-color: yellow;
+}
+#crosswordTask{
+    display: none;
+}

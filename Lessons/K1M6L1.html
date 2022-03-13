@@ -1,0 +1,62 @@
+<h3>Porównywanie liczb</h3>
+<div data-kinetyczna="19
+" data-wiersz="19" data-hint="Nauczysz się wykorzystywać język Python do odpowiadania na pytania dotyczące liczb. Na koniec sprawdzisz co jest lżejsze ołówek czy kartka papieru?">
+    <p>Język Python umożliwia porównanie liczb lub wyrażeń liczbowych, w tym wyników działania funkcji. Aby porównać czy dwie
+        wartości są takie same, użyj operatora podwójnego znaku „==”.</p>
+    <code>
+           2+3==5<br>
+<span class="fa fa-hand-o-right">  </span>
+True
+        </code>
+    <p>Rezultatem porównań jest odpowiedź „True” (prawda), jeśli podany warunek został spełniony lub „False” (fałsz), w przeciwnym
+        wypadku.
+    </p>
+    <p><strong><span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info: </strong>Pamiętaj, że pojedynczy znak „=” służy do przypisywania wartości do zmiennych!</p>
+    <p>Jeśli użyjesz operatora "=" do porównania, wystąpi błąd:</p>
+    <code>
+           2+3=5<br>
+<span class="fa fa-hand-o-right">  </span>
+SyntaxError: keyword can't be an expression
+        </code>
+    <p>Jest to błąd składni (dosłownie: "BłądSkładni: słowo kluczowe nie może być wyrażeniem").
+    </p>
+    <p>Podobnie możemy sprawdzić czy dana liczba jest mniejsza (
+        <), albo większa (>) od innej liczby:
+    </p>
+    <code>
+3<2 <br>
+<span class="fa fa-hand-o-right">  </span>
+False
+</code>
+
+    <p>Jeżeli chcemy sprawdzić czy liczba jest mniejsza lub równa od innej używamy operatora „
+        <=” (dwa znaki: najpierw mniejszości,
+            później równa się). Analogicznie większy lub równy zapisujemy jako „>=”.
+    </p>
+    <code>
+2**3>=8<br>
+<span class="fa fa-hand-o-right">  </span>
+True
+</code>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+                Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <div id="Task" class="collapse">Kartka standardowego formatu A4 ma powierzchnię 0,062 m<sup>2</sup>, a jej waga to 80 g/m<sup>2</sup>. Z kolei zwykły
+        ołówek waży zwykle około 5 g. Sprawdź co jest cięższe?</div>
+    <a class="helper"> <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Pomnóż 0.062 razy 80 i porównaj (&lt;) z 5. Jeżeli otrzymasz True, to oznacza, że papier jest lżejszy, jeżeli False, to ołówek
+        jest lżejszy bądź waży tyle samo co papier.
+    </p>
+    <code class="podpowiedz_kod">
+0.062*80<5
+</code>
+</div>

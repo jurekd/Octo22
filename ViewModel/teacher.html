@@ -1,0 +1,54 @@
+<div id="home_menu" class="container bg_black">
+    <nav>
+        <img src="Theme/Images/logo_octo.png" class="img-responsive pull-left" alt="" />
+        <ul class="nav nav-pills pull-right">
+
+            <!--tylko przed zalogowaniem-->
+            <!--            <li role="presentation"><a class="btn_menu" href="?page=login">Zaloguj</a></li>
+            <li role="presentation"><a class="btn_menu" href="#">Zarejestruj</a></li>-->
+            <!--Po zalogowaniu-->
+            <a href="?page=login" onclick="VM.logout();">Wyloguj</a>
+            <li role="presentation">
+                <a class="user_hov" href="#"> <img src="Theme/Images/icon_people/{{userAvatar}}.png" alt="" />{{userName}} {{userSurname}}</a>
+            </li>
+        </ul>
+
+    </nav>
+
+</div>
+<div>
+
+
+    <div class="container">
+
+        <div class="row">
+            <div class=" col-xs-12 text-center">
+                <div class="seperator-20"></div>
+                <h2>Tabela twoich uczniów</h2>
+                <div class="seperator-20"></div>
+            </div>
+        </div>
+          <div class="table-responsive">
+			<table class="table">
+                    <thead>
+                        <th>Imie</th>
+                        <th>Nazwisko</th>
+                        <th>Data rozpoczęcia</th>
+                        <th>Pozostało lekcji</th>
+						<th>Rozpoczęte lekcje</th>
+						<th>Ukończone lekcje</th>
+                    </thead>
+                    <tbody>
+                        <tr vm-repeat="student in students">
+                            <td>{{student.name}}</td>
+                            <td>{{student.surname}}</td>
+                            <td>{{student.start}}</td>
+                            <td>{{student.new}}&nbsp;&nbsp;<progress style="width:80px" max="45" value={{student.new}}></progress> </td>
+							<td>{{student.in_progress}}&nbsp;&nbsp;<progress style="width:80px" max="45" value={{student.in_progress}}></progress> </td>
+							<td>{{student.closed}}&nbsp;&nbsp;<progress style="width:80px" max="45" value={{student.closed}}></progress> </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

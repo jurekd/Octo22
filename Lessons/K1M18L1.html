@@ -1,0 +1,117 @@
+<h3>Obsługa błędówt</h3>
+<div data-kinetyczna="13" data-wiersz="13" data-hint="Nauczysz się jak przechwytywać błędy, żeby decydować jaki kod ma zostać wykonany po ich wystąpieniu.">
+    <p>
+        Standardowo wiele sytuacji może prowadzić do wystąpienia błędu w języku Python: próba dzielenia przez zero, podanie indeksu wykraczającego poza rozmiar listy, zbioru czy krotki, brak możliwości konwersji tekstu np. na liczbę całkowitą i wiele innych.
+    </p>
+    <code>
+        a = 10/0<br />
+        <span class="fa fa-hand-o-right"></span>
+        ZeroDivisionError: integer division or modulo by zero<br />
+        lista = [1,2]<br />
+        b = lista[3]<br />        
+        <span class="fa fa-hand-o-right"></span>
+        IndexError: list index out of range<br />
+        tekst = '111a'<br />
+        liczba = int(tekst)<br />        
+        <span class="fa fa-hand-o-right"></span>
+        ValueError: invalid literal for int() with base 10: '111a'<br />
+    </code>
+    <p>
+        W swoim programie możesz przewidzieć wystąpienie błędów i odpowiednio na nie zareagować, np. wypisując odpowiedni komunikat. W tym celu fragment kodu, który może spowodować błąd umieszczasz w po słownie try, a błąd przechwytujesz po słownie <strong>except</strong>:
+    </p>
+    <code>
+        try:<br />
+        a=10/0<br />
+        except:<br />
+        print("Błąd!")<br />          
+        <span class="fa fa-hand-o-right"></span>
+        Błąd!
+    </code>
+    <p>
+        Kod który będzie wykonywany, jeżeli błąd nie wystąpi możemy umieścić po słowie <strong>else</strong>:
+    </p>
+    <code>
+        try:<br />
+        lista = [1,2]<br />
+        x = lista[1]<br />
+        except:<br />
+        print("Błąd!")<br />
+        else:<br />
+        print(x)<br />   
+        <span class="fa fa-hand-o-right"></span>
+        2      
+    </code>
+    <p>
+        Jeżeli po słowie <strong>except</strong> nie określimy nazwy wyjątku, który jest przechwytywany, łapane są wszystkie wyjątki. Możesz tylko łapać określone wyjątki i reagować wiedząc jaka jest przyczyna błędu:
+    </p>
+    <code>
+        try:<br />
+        tekst = '111a'<br />
+        liczba = int(tekst)<br />
+        except ValueError:<br />
+        print('To nie jest liczba!')<br />
+        <span class="fa fa-hand-o-right"></span>
+        To nie jest liczba!   
+    </code>
+    <p>
+        W powyższym kodzie nie zostanie złapany inny wyjątek niż związany ze złą wartością poddaną konwersji. Jeżeli chcielibyśmy obsłużyć inny wyjątek, trzeba dodać kolejny blok <strong>except</strong>:
+    </p>
+    <code>
+        try:<br />
+        tekst = '222'<br />
+        liczba = int(tekst)<br />
+        wynik = liczba/0<br />
+        except ValueError:<br />
+        print('To nie jest liczba!')<br />
+        except ZeroDivisionError:<br />
+        print('Nie można dzielić przez 0!')<br />
+        <span class="fa fa-hand-o-right"></span>
+        Nie można dzielić przez 0!        
+    </code>
+    <p>
+        Możesz też łączyć obsługę kilku błędów w jednym wyrażeniu except, umieszczając je po przecinku w nawiasie okrągłym:
+    </p>
+    <code>
+        try:<br />
+        tekst = '222'<br />
+        liczba = int(tekst)<br />
+        wynik = liczba/0<br />
+        except(ValueError, ZeroDivisionError):<br />
+        print('Wystąpił problem z obliczeniami!')<br />
+        <span class="fa fa-hand-o-right"></span>
+        'Wystąpił problem z obliczeniami!'      
+    </code>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+            Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">
+        Napisz program, który pobiera od użytkownika dwie liczby: dzielną i dzielnik, zamienia je na liczby całkowite i wypisuje wynik dzielenia. Jeżeli użytkownik poda złe liczby, wypisywany jest komunikat: "Podałeś złe liczby!", jeżeli druga będzie zerem, to wypisywany jest komunikat: "Druga liczba nie może być 0!". Zasymuluj działanie programu podając złą liczbę.
+    </p>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Za pomocą funkcji input() pobierz dzielną i dzielnik pod dwie zmienne, np. tekst_a i tekst_b. Następnie po try spróbuj zamienić je na liczby całkowite funkcją int(). Oblicz wynik dzieląc jedną liczbę przez drugą. W except złap wyjątek ValueError i wypisz komunikat "Podałeś złe liczby!", a w następnym except złap ZeroDivisionError i wypisz komunikat "Druga liczba nie może być 0!". Po else wypisz wynik.
+    </p>
+    <code class="podpowiedz_kod">
+        tekst_a = input('Podaj dzielną')<br />
+        tekst_b = input('Podaj dzielnik')<br />
+        try:<br />
+            liczba_a = int(tekst_a)<br />
+            liczba_b = int(tekst_b<br />
+            wynik = liczba_a/liczba_b<br />
+        except ValueError:<br />
+            print("Podałeś złe liczby!")<br />
+        except ZeroDivisionError:<br />
+            print("Druga liczba nie może być 0!")<br />
+        else:<br />
+            print(wynik)<br />                  
+    </code>
+</div>
+

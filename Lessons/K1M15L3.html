@@ -1,0 +1,99 @@
+<h3>Więcej o parametrach funkcjit</h3>
+<div data-kinetyczna="13" data-wiersz="13" data-hint="W tej lekcji dowiesz się, że argumenty funkcji można podawać w dowolnej kolejności, a w dodatku ich liczba może być wcześniej nieokreślona.">
+    <p>
+        Rozważmy funkcję iloraz dzielącą podane dwie liczby podane jako parametry: dzielna (liczba która będzie dzielona) i dzielnik (liczba przez którą nastąpi dzielenie):
+    </p>
+    <code>
+        def iloraz(dzielna, dzielnik):<br />
+        rezultat = dzielna/dzielnik<br />
+        return rezultat<br />
+        <br />
+        wynik = iloraz(1,2)<br />
+        print(wynik)<br />       
+        <span class="fa fa-hand-o-right"></span>
+        0.5
+    </code>
+    <p>
+        Jeśli argumenty przekażemy w odwrotnej kolejności, wynik będzie już inny:
+    </p>
+    <code>
+        wynik = iloraz(2,1)<br />
+        print(wynik)<br />            
+        <span class="fa fa-hand-o-right"></span>
+        2
+    </code>
+    <p>
+        A co jeśli chcielibyśmy podawać argumenty funkcji w dowolnej kolejności? W języku Python jest to możliwe, tylko musisz nazwać argumenty:
+    </p>
+    <code>
+        wynik = iloraz(dzielnik=2,dzielna=1)<br />
+        print(wynik)<br />
+        <span class="fa fa-hand-o-right"></span>
+        0.5       
+    </code>
+    <p>
+        Niektóre parametry funkcji mogą być opcjonalne. Rozważmy funkcję suma, która liczy sumę dwóch lub opcjonalnie 3 liczb:
+    </p>
+    <code>
+        def suma(a, b, c=None):<br />
+        wynik = a+b<br />
+        if c != None:<br />
+            wynik = wynik +c<br />
+        return wynik<br />
+        <br />
+        print(suma(2,3))<br />
+        <span class="fa fa-hand-o-right"></span>
+        5<br />
+        print(suma(2,3,5))<br />
+        <span class="fa fa-hand-o-right"></span>
+        10
+    </code>
+    <p>
+        Co więcej Python umożliwia określenie dowolnej liczby argumentów. Przekazywane są one w krotce, której nazwę umieszczamy po znaku ‘*’:
+    </p>
+    <code>
+        def suma(*liczby):<br />
+        suma = 0<br />
+        for liczba in liczby:<br />
+            suma = suma + liczba<br />
+        return suma<br />
+        <br />
+        print(suma(1,2,3,4,5))<br />
+        <span class="fa fa-hand-o-right"></span>
+        15      
+    </code>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+            Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">
+        Rozwiń funkcję zliczającą znaki z poprzedniej lekcji o możliwość określenia czy spacje mają być zliczane czy nie. Ten drugi argument o nazwie spacje jest opcjonalny i jeśli nie zostanie podany, to zliczane są znaki bez spacji. Jeśli natomiast spacje przyjmą wartość ‘Tak’, wówczas są także zliczane. Przetestuj działanie funkcji ponownie na tekście „Ala ma kota”, określając, że spacje mają być zliczane. Postaraj się podać argumenty funkcji odnosząc się do ich nazw tj. znaki(spacje="Tak", tekst="Ala ma kota")
+    </p>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Zdefiniuj funkcję znaki z argumentami tekst='' oraz spacje=None. Sprawdź czy tekst jest pusty. Jeśli jest, zwróć 0. Jeśli nie, to sprawdź czy spacje==’Tak’. Jeśli tak, to zwróć długość tekstu – funkcja len(), jeśli nie, to ustaw licznik znaków na 0, a następnie w pętli for zwiększaj licznik znaków i na końcu zwróć wyliczoną wartość. 
+    </p>
+    <code class="podpowiedz_kod">
+        def znaki(tekst='',spacje=None):<br />
+        if tekst == '':<br />
+            return 0<br />
+        if spacje == 'Tak':<br />
+            return len(tekst)<br />
+        licznik = 0<br />
+        for znak in tekst:<br />
+            if znak!=' ':<br />
+            licznik = licznik +1<br />
+        return licznik<br />
+        <br />
+        ile = znaki(spacje="Tak", tekst="Ala ma kota")<br />
+        print(ile)<br />                 
+    </code>
+</div>
+

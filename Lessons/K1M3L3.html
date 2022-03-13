@@ -1,0 +1,87 @@
+<h3>Funkcje dla tekstów</h3>
+<div data-kinetyczna="11" data-wiersz="11" data-hint="Nauczysz się stosować różne funkcje dla teksów. Dzięki zmienisz wygląd węża.">
+    <p>
+        Język Python oprócz funkcji <strong> str()</strong> oferuje dla tekstów wiele innych użytecznych funkcji. </p>
+    <p>
+        I tak, korzystając z funkcji<strong> upper()</strong>, możesz zamienić wszystkie litery na wielkie:
+    </p>
+    <code>
+        "Język Python".upper()<br/>
+        <span class="fa fa-hand-o-right">  </span>
+        JĘZYK PYTHON
+    </code>
+    <p>
+        <strong>
+            <span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info:
+        </strong>
+        Część funkcji w języku Python, jak np.
+        <strong>
+            upper()
+        </strong>
+        jest związana bezpośrednio z
+        obiektem danych, który przetwarza, w tym przypadku tekstem. Takich funkcji używamy przez doklejenie ich nazwy po
+        kropce do obiektu.
+    </p>
+    <p>
+        Analogicznie do <strong>upper()</strong>, funkcja <strong>lower()</strong> zamienia wszystkie litery na małe:
+    </p>
+    <code>
+        "Język Python".lower()<br/>
+        <span class="fa fa-hand-o-right">  </span>
+        język python
+    </code>
+    <p>
+        Funkcją, która bardzo często się przydaje jest funkcja <strong>replace()</strong> - funkcja ta zamienia podany ciąg
+        znaków na inny. Funkcja <strong>replace()</strong> pobiera dwa argumenty:
+    </p>
+    <code>"Python jest prosty".replace("prosty", "łatwy")<br/>
+        <span class="fa fa-hand-o-right">  </span>
+        'Python jest łatwy'
+    </code>
+    <p>
+        Funkcja
+        <strong>
+            replace()
+        </strong>
+        posiada jeszcze jeden opcjonalny argument mówiący ile maksymalnie zamian ma być
+        wykonane:
+    </p>
+    <code>"Python jest prosty".replace("t", "T",2)<br/>
+        <span class="fa fa-hand-o-right">  </span>
+        'PyThon jesT prosty'
+    </code>
+    <p>
+        W powyższym przykładzie mogą zostać zamienione maksymalnie 2 litery "t", zatem litera "t" w wyrazie "prosty" nie zostanie
+        zamieniona, bo występuje w tekście jako trzecia.
+    </p>
+    <p>
+        <strong>
+            <span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info:
+        </strong>
+        Argumenty opcjonalne funkcji to takie, które możesz pominąć. W tym przypadku pominięcie trzeciego
+        argumentu oznacza, że zastąpione zostaną wszystkie pasujące teksty.
+    </p>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+                Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <div id="Task" class="collapse">
+        Zbuduj węża z 20 znaków „#”, a następnie zamień deseń węża ze znaku „#” na „=”.
+    </div>
+    <a class="helper"> <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Pomnóż 20*’#’ i zaraz za tym wyrażeniem dopisz .replace('#','=')
+    </p>
+
+    <code class="podpowiedz_kod">
+        20*'#'.replace('#','=')
+    </code>
+</div>

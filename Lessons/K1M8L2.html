@@ -1,0 +1,64 @@
+<h3>Rozszerzanie i zmiana list</h3>
+<div data-kinetyczna="13" data-wiersz="13" data-hint="Dowiesz się jak powiększać listę o nowe elementy oraz jak łączyć listy.">
+    <p>
+        Listę można powiększyć na kilka sposobów. Po pierwsze przez dodanie do niej nowych elementów:
+    </p>
+    <code>
+        lista1 = [1,2,5,7,8]<br />
+        lista1 = lista1 + [3,4]<br />
+        print(lista1)<br />
+        <span class="fa fa-hand-o-right"></span>
+        [1, 2, 5, 7, 8, 3, 4]
+    </code>
+    <p>
+        Innym sposobem powiększania listy jest wywołanie na niej funkcji append(). Jako argument możesz przekazać element do dodania: 
+    </p>
+    <code>
+        imiona = ['Ola', 'Tomek', 'Iza']<br />
+        imiona.append('Kamil')<br />
+        print(imiona)<br />
+        <span class="fa fa-hand-o-right"></span>
+        ['Ola', 'Tomek', 'Iza', 'Kamil']
+    </code>
+    <p>
+        <strong>
+            <span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info: 
+        </strong> 
+        Funkcja append() jest wykonywana szybciej niż dodawanie. Append() rozszerza istniejącą listę, a dodawanie skleja dwie listy do siebie i tworzy nową listę, będącą wynikiem tego sklejenia. Do dużej ilości rozszerzeń listy staraj się korzystać z funkcji append().
+    </p>
+    <p>
+        Jeżeli chcesz wstawić element do środka listy na określoną pozycję, możesz użyć funkcji insert(). Przyjmuje ona dwa argumenty: pozycję elementu, na którą wstawiany będzie element oraz wstawiany element:
+    </p>
+    <code>
+        imiona = ['Ola', 'Tomek', 'Iza']<br />
+        imiona.insert(1,'Kamil')<br />
+        print(imiona)<br />
+        <span class="fa fa-hand-o-right"></span>
+        ['Ola', 'Tomek', 'Iza', 'Kamil', 'Ania']
+    </code>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+            Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">
+        Lista o nazwie sasiedzi zawiera kraje sąsiadujące z Polską: Niemcy, Czechy, Słowacja, Ukraina, Białoruś. Utwórz listę, a następnie dopisz do niej dwóch brakujących sąsiadów Polski: Litwa, Rosja i wypisz całą listę sąsiadów.
+    </p>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Utwórz listę sasziedzi i wpisz do niej elementy 'Niemcy', 'Czechy', 'Słowacja', 'Ukraina', 'Białoruś'. Następnie użyj funkcji extend (lub operatora dodawania – mniej efektywne), aby rozszerzyć listę o elementy 'Litwa' i 'Rosja'.
+    </p>
+    <code class="podpowiedz_kod">
+        sasiedzi =['Niemcy', 'Czechy', 'Słowacja', 'Ukraina', 'Białoruś']<br />
+        sasiedzi.extend(['Litwa', 'Rosja'])<br />
+        print(sasiedzi)<br />       
+    </code>
+</div>
+

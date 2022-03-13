@@ -1,0 +1,100 @@
+<h3>Definiowanie klas</h3>
+<div data-kinetyczna="13" data-wiersz="13" data-hint="Nauczysz się podstaw programowania obiektowego. Poznasz w jaki sposób definiuje się wzorce obiektów (klasy) oraz jak na ich podstawie tworzy się obiekty. Dzięki temu będziesz mógł tworzyć rozbudowane aplikacje.">
+    <p>
+        Załóżmy, że w naszej aplikacje chcemy przechowywać dane o osobach. Musimy więc zdefiniować wzorzec takich danych. W nowoczesnych językach programowania taki wzorzec określa się mianem klasy. Zdefiniujmy zatem pierwszą prostą klasę w języku Python:
+    </p>
+    <code>
+        class Osoba:<br />
+        imie = "imie"<br />
+        nazwisko = "nazwisko"<br />
+        wiek = 0<br />
+        print(Osoba)<br />          
+        <span class="fa fa-hand-o-right"></span>
+        <class 'Osoba'>
+    </code>
+    <p>
+        Klasa jest wzorcem obiektu, zatem nie można wypisać bezpośrednio jej zawartości – wypisywana jest nazwa klasy (typ). Nasza klasa ma trzy zmienne (atrybuty): imie, nazwisko oraz wiek.
+    </p>
+    <p>
+        Natomiast możemy wypisać jej składowe:
+    </p>
+    <code>
+        print(Osoba.imie,Osoba.nazwisko,Osoba.wiek)<br />
+        <span class="fa fa-hand-o-right"></span>
+        imie nazwisko 0
+    </code>
+    <p>
+        Utwórzmy teraz dwa konkretne egzemplarze tej klasy (realne byty), zwane obiektami:
+    </p>
+    <code>
+        osoba1= Osoba()<br />
+        osoba1.imie = "Kamil"<br />
+        osoba1.nazwisko = "Bilski"<br />
+        osoba1.klasa = 15<br />
+        osoba2= Osoba()<br />
+        osoba2.imie = "Ala"<br />
+        osoba2.nazwisko = "Nowak"<br />
+        osoba2.klasa = 16<br />
+        print(osoba1.imie,osoba1.nazwisko,osoba1.klasa)<br />
+        print(osoba2.imie,osoba2.nazwisko,osoba2.klasa)<br /> 
+        <span class="fa fa-hand-o-right"></span>
+        Kamil Bilski 15<br />
+        Ala Nowak 16              
+    </code>
+    <p>
+        Takie tworzenie obiektów jest stosunkowo niewygodne, bowiem każdą daną w klasie, trzeba wprowadzać osobno. Zamiast tego możemy wykorzystać funkcję, która ustawi nam wszystkie konieczne dane w momencie tworzenia obiektu. Ta funkcja zwana jest konstruktorem i w języku Python ma nazwę __init__() (przed i po słowie init są 2 podkreśliniki):
+    </p>
+    <code>
+        class Osoba:<br />
+        imie = "imie"<br />
+        nazwisko = "nazwisko"<br />
+        wiek = 0<br />
+        def __init__(self, imie, nazwisko, wiek):<br />
+            self.imie = imie<br />
+            self.nazwisko = nazwisko<br />
+            self.wiek = wiek<br />
+    </code>
+    <p>
+        Mając zdefiniowany konstruktor możemy dużo łatwiej utworzyć obiekty. 
+    </p>
+    <code>
+        osoba1 = Osoba("Kamil","Bilski",15)<br />
+        osoba2 = Osoba("Anna", "Nowak", 16)<br />
+        print(osoba1.imie,osoba1.nazwisko,osoba1.klasa)<br />
+        print(osoba2.imie,osoba2.nazwisko,osoba2.klasa)<br />
+        <span class="fa fa-hand-o-right"></span>
+        Kamil Bilski 15<br />
+        Ala Nowak 16             
+    </code>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+            Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">
+        Zdefiniuj klasę Komorka, w której będą przechowywane następujące dane: producent, model, i rok_produkcji. W klasie zdefiniuj konstruktor w celu łatwiejszego tworzenia obiektów. Na koniec utwórz przynajmniej jeden obiekt z danymi: Samsung, S7, 2016 i wypisz jego zawartość.
+    </p>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        W class Komorka utwórz zmienne producent="", model="", rok_produkcji=0. Zdefiniuj też funkcję __init__(self, producent, model, rok_produkcji). Następnie utwórz obiekt z podanymi danymi i wypisz wszystkie dane z obiektu.
+    </p>
+    <code class="podpowiedz_kod">
+        class Komorka:<br />
+        producent=""<br />
+        model=""<br />
+        rok_produkcji=0<br />
+        def __init__( self, producent, model, rok_produkcji):<br />
+            self.producent = producent<br />
+            self.model = model<br />
+            self.rok_produkcji = rok_produkcji<br />
+        tel1 = Komorka("Samsung", "S7", 2016)<br />
+        print(tel1.producent, tel1.model, tel1.rok_produkcji)<br />                 
+    </code>
+</div>
+

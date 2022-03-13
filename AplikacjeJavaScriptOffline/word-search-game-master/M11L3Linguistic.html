@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Word search game</title>
+    <link rel="stylesheet" href="css/wordsearch.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        
+        .wrap{
+            width: 100%;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <section id="ws-area"></section>
+        <ul class="ws-words">
+
+        </ul>
+    </div>
+    <script src="js/utility.min.js"></script>
+    <script src="js/wordsearch.js"></script>
+    <script type="text/javascript">
+         var Settings = {
+        'directions': ['EN', 'N','WN', 'EN','W'],
+        'gridSize': 8,
+        'words': ['values', 'items','clear','len','in'],
+        'wordsList' : [],
+        'debug': false
+        }
+        var taskContent =' Utwórz książkę telefoniczną, pozwalającą na wyszukiwanie numerów do znajomych: Adam – 800232, Kamil – 333585, Seba – 222111. Napisz program, który pobierze nazwę abonenta od użytkownika (okienko), np. Tomek i jeśli jest, wypisze numer telefonu do niego. Przetestuj działanie programu podając imię ‘Adam’.';
+        WordSearchGameInit (Settings,taskContent);
+        var gameAreaEl = document.getElementById('ws-area');
+        var gameobj = gameAreaEl.wordSearch();
+
+        // Put words into `.ws-words`
+        var words = gameobj.settings.wordsList,
+            wordsWrap = document.querySelector('.ws-words');
+        for (i in words) {
+            var liEl = document.createElement('li');
+            liEl.setAttribute('class', 'ws-word');
+            liEl.innerText = words[i];
+            wordsWrap.appendChild(liEl);
+        }
+
+    </script>
+</body>
+
+</html>

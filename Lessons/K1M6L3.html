@@ -1,0 +1,58 @@
+<h3>Porównywanie tekstów</h3>
+<div data-kinetyczna="21" data-wiersz="21" data-hint="Nauczysz się sprawdzać kolejność alfabetyczną wyrażeń tekstowych oraz ich zwartość. Na koniec sprawdzisz jaką markę Python umieści wcześniej na liście iPhone czy Samsung?">
+
+    <p>W przypadku tekstów operatory „
+        <” i „>” sprawdzają, który jest pierwszy z uwagi na kolejność alfabetyczną porównywanych tekstów.
+    </p>
+    <code>
+'Tomek'<'Ala' <br>
+<span class="fa fa-hand-o-right">  </span>
+False
+</code>
+    <p>Imię „Tomek” zapiszemy po „Ala”, a więc „Tomek” jest większy od „Ala”, a nie odwrotnie.
+    </p>
+    <p><strong><span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info: </strong>Wielkie litery występują w programowaniu przed małymi!
+    </p>
+    <code>
+'A'<'a' <br>
+<span class="fa fa-hand-o-right">  </span>
+True
+</code>
+    <p>Dla tekstów można wykorzystywać także operator <strong>in</strong>, sprawdzający czy dana litera lub grupa liter znajduje
+        się w tekście. Działa on nieco podobnie do funkcji .find(), która zwraca pozycję znaku. Z tym, że operator <strong>in</strong>        zwraca tylko odpowiedź True bądź False.
+    </p>
+    <code>
+'a' in 'Ala' <br>
+<span class="fa fa-hand-o-right">  </span>
+True
+</code>
+    <p>Analogicznie zapisując <strong>not in</strong> możemy sprawdzić czy dana litera bądź ciąg znaków nie występuje w tekście:
+    </p>
+    <code>
+'ba' not in 'Ala' <br>
+<span class="fa fa-hand-o-right">  </span>
+True
+</code>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+                Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">Sprawdź który telefon będzie pierwszy na liście (jest wcześniej w kolejności alfabetycznej) „iPhone” czy „Samsung”? Następnie
+        porównaj teksty zapisane wielkimi literami.</p>
+    <a class="helper"> <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Sprawdź czy tekst „iPhone” jest mniejszy od „Samsung”. Jeśli wynikiem będzie True, to „iPhone” pojawi się wcześniej. Porównaj
+        następnie "iPhone".upper() i "Samsung".upper().
+    </p>
+    <code class="podpowiedz_kod">
+"iPhone"<"Samsung"<br>
+"iPhone".upper()<"Samsung".upper()
+</code>
+</div>

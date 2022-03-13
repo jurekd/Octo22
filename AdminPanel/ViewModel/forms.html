@@ -1,0 +1,26 @@
+<div id="cmsPanel">
+    <div id="cmsLogo">
+        <!--<img src="/Theme/Images/cmsLogo.svg">-->
+    </div>
+    <a href="?page=panel">Wróć do panelu</a>
+    <div vm-if="never" id="cmsBreadcrumps">
+        <ul class="breadcrumps">
+            <li></li>
+        </ul>
+    </div>
+    <div id="cmsPanelMenu">
+        <a style="float:right;" vm-if="logged" href="#" onclick="logout();">Logout</a>
+    </div>
+</div>
+<div class="center-content">
+    <div vm-if="list">
+        <div vm-repeat="instance in instances" onclick="editInstance({{instance.id}});">
+            {{instance.name}} --- <a onclick="deleteItem({{instance.id}})">Usuń</a>
+        </div>
+    </div>
+    <div vm-if="edit">
+        <p>{{formMessage}}</p>
+        <div id="formWrapper">
+        </div>
+    </div>
+</div>

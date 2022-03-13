@@ -1,0 +1,95 @@
+<h3>Pętla while</h3>
+<div data-kinetyczna="13" data-wiersz="13" data-hint="Nauczysz się jak sterować pętlą podając warunek jej wykonywania. W ten sposób będziesz mógł tworzyć pętle w przypadkach, kiedy nie wiesz ile dokładnie razy ma się wykonać.">
+    <p>
+        Pętla <strong>while</strong> wykonywana jest pod warunkiem, że podany po niej warunek jest prawdziwy. Jeśli stanie się fałszywy, pętla zostanie przerwana. W poniższym przykładzie wypiszemy liczby, aż do napotkania liczby ujemnej:
+    </p>
+    <code>
+        liczby = [3,5,1,2,-1,8,4]<br />
+        i=0<br />
+        while liczby[i]>0:<br />
+            print(liczby[i])<br />
+            i=i+1            
+        <span class="fa fa-hand-o-right"></span>
+        3<br />
+        5<br />
+        1<br />
+        2
+    </code>
+    <p>
+        <strong>
+            <span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info: 
+        </strong> 
+        Pętlę <strong>while</strong> należy stosować z rozwagą, bo przez przeoczenie można stworzyć pętlę bez końca, tzn. taką, w której warunek po <strong>while</strong> zawsze będzie prawdziwy.
+    </p>
+    <p>
+        To samo można wykonać przy wykorzystaniu pętli for, jednak wymagane jest użycie instrukcji <strong>break</strong>, co należy stosować tylko w ostateczności.
+    </p>
+    <code>
+        liczby = [3,5,1,2,-1,8,4]<br />
+        for liczba in liczby:<br />
+            if liczba<0:<br />
+            break<br />
+            print(liczba)            
+        <span class="fa fa-hand-o-right"></span>
+        3<br />
+        5<br />
+        1<br />
+        2      
+    </code>
+    <p>
+        Pętle <strong>while</strong> również można przerywać instrukcją break. Należy jednak tego unikać:
+    </p>
+    <code>
+        i=1<br />
+        while(True):<br />
+            print(i)<br />
+            if i==4:<br />
+            break<br />
+            i=i+1            
+    </code>
+    <p>
+        W powyższym przykładzie zastosowaliśmy pętle <strong>while</strong>, w której warunek zawsze jest prawdziwy. Zadbaliśmy jednak o wyjście z pętli instrukcją <strong>break</strong>, w przeciwnym wypadku program by się zawiesił.
+    </p>
+    <p>
+        Podobnie jak dla pętli <strong>for</strong>, także dla pętli <strong>while</strong> możemy wykorzystać blok <strong>else</strong>:
+    </p>
+    <code>
+        tekst = 'Ala ma kota'<br />
+        i=0<br />
+        while tekst[i]!=' ':<br />
+            i=i+1<br />
+        else:<br />
+            print('Pierwszy wyraz ma długość',i)
+        <span class="fa fa-hand-o-right"></span>         
+        Pierwszy wyraz ma długość 3
+    </code>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+            Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">
+        Twój bagaż może ważyć maksymalnie 10 kg. Wybrałeś przedmioty do zabrania i zapisałeś ich wagę w liście przedmioty = [3,2,1,4,2,3,2]. Policz ile przedmiotów jesteś w stanie zamieścić w plecaku, aby nie przekroczyć jego wagi. Wynik wypisz w postaci ‘Liczba przedmiotów do zabrania: X’.
+    </p>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Zapisz listę przedmioty. Ustaw sumę wag oraz licznik przedmiotów na 0. W pętli while działającej pod warunkiem, że suma wag tych przedmiotów jest mniejsza od 10 doliczaj do sumy wagę kolejnych przedmiotów oraz zwiększaj ich licznik o 1.
+    </p>
+    <code class="podpowiedz_kod">
+        przedmioty=[3,2,1,4,2,3,2]<br />
+        suma=0<br />
+        i=0<br />
+        while suma<10:<br />
+            suma = suma + przedmioty[i]<br />
+            i=i+1<br />
+        print('Liczba przedmiotów do zabrania:',i)                   
+    </code>
+</div>
+

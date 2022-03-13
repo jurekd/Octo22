@@ -1,0 +1,121 @@
+<h3>Pętla for</h3>
+<div data-kinetyczna="13" data-wiersz="13" data-hint="Nauczysz się jak powtarzać te same operacje dla różnych danych, które znajdują się w listach, krotkach czy zbiorach, a także w tekstach, które są zbiorami liter.">
+    <p>
+        Pętla <strong>for</strong> wykonywana jest tyle razy ile elementów znajduje się w danym zbiorze, liście, krotce lub tekście. W poniższym przykładzie wypiszmy wszystkie znaki w tekście jako osobne litery:
+    </p>
+    <code>
+        tekst = "Ala ma kota"<br />
+        for litera in tekst:<br />
+            print(litera)
+        <span class="fa fa-hand-o-right"></span>
+        A<br />
+        l<br />
+        a<br />
+       <br />
+        m<br />
+        a<br />
+       <br />
+        k<br />
+        o<br />
+        t<br />
+        a      
+    </code>
+    <p>
+        <strong>
+            <span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info: 
+        </strong> 
+        W pętli powtarzane są tylko te instrukcje, które mają wcięcie. Musi być co najmniej jedna taka instrukcja z wcięciem, inaczej zostanie wygenerowany błąd!
+    </p>
+    <p>
+        Pętle dają ogromne możliwości przetwarzania danych. Z łatwością możemy obliczyć np. sumę liczb znajdujących się w liście:
+    </p>
+    <code>
+        suma = 0<br />
+        liczby = [1, 2, 3, 4, 5]<br />
+        for x in liczby:<br />
+            suma = suma + x<br />
+        print(suma)<br />            
+        <span class="fa fa-hand-o-right"></span>
+        15
+    </code>
+    <p>
+        Zbiór jak powyżej, czyli kolejne liczby od 1 do 5 możesz wygenerować za pomocą funkcji <strong>range()</strong> określającej zakres liczb do wygenerowania:
+    </p>
+    <code>
+        suma = 0<br />
+        for x in range(1,6):<br />
+            suma = suma + x<br />
+        print(suma)
+        <span class="fa fa-hand-o-right"></span>
+        15
+    </code>
+    <p>
+        <strong>
+            <span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info: 
+        </strong> 
+        Górny zakres przedziału liczb musi być o 1 większy od ostatniej generowanej liczby. Np. dla liczb [1,2,3] musisz podać <strong>range(1,4)</strong>.
+    </p>
+    <p>
+        Łącząc pętle z instrukcją warunkową możemy wykonywać instrukcję tylko dla wybranych elementów – policzmy np. ile mamy liczb parzystych w liście:
+    </p>
+    <code>
+        ile = 0<br />
+        liczby = [1, 2, 3, 4, 5]<br />
+        for x in liczby:<br />
+            if x%2 == 0:<br />
+            ile = ile + 1<br />
+        print(ile)
+        <span class="fa fa-hand-o-right"></span>
+        2    
+    </code>
+    <p>
+        <strong>
+            <span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info: 
+        </strong> 
+        Pamiętaj, że zarówno dla <strong>for</strong> jak i dla <strong>if</strong> musisz zastosować wcięcia dla następujących po nich instrukcji. Wcięcia te muszą być na różnych poziomie, tzn. zawierać odpowiednio więcej spacji.
+    </p>
+    <p>
+        Prześledźmy teraz inny przykład – z podanego zbioru, wypisz tylko te imiona, które zaczynają się na literę ‘A’:
+    </p>
+    <code>
+        imiona = {'Ala', 'Tomek', 'Kamil', 'Adam'}<br />
+        for imie in imiona:<br />
+            if 'A' in imie:<br />
+            print imie
+        <span class="fa fa-hand-o-right"></span>
+        'Ala'<br />
+        'Adam'      
+    </code>
+    <p>
+        Zwróć uwagę, że słowo <strong>in</strong> może służyć zarówno do wybierania kolejnego elementu ze zbioru, jak i, w innym kontekście, do sprawdzenia czy w danym zbiorze występuję określony element (w naszym przypadku sprawdzamy literę w zbiorze liter, czyli tekście).
+    </p>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+            Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">
+        Silnia jest definiowana jako iloczyn liczb n! = 1*2*3*,…,n. Napisz program który wylicza silnię dla podanej liczby. Przetestuj program dla n=6.
+    </p>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Przypisz do n wartość 6. Zdefiniuj zmienną silnia =1. W pętli <strong>for</strong> wykonaj mnożenie kolejnych liczb od 1 do n (analogicznie jak w przykładzie z sumą). Zbiór liczb wygeneruj funkcją <strong>range(1,n+1)</strong>. Na końcu wypisz wartość zmiennej silnia.
+    </p>
+    <code class="podpowiedz_kod">
+        n = 6<br />
+        silnia = 1<br />
+        for i in range(1,n+1):<br />
+            silnia = silnia * i<br />
+        print(silnia)         
+    </code>
+</div>
+

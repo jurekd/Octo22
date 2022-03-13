@@ -1,0 +1,83 @@
+<h3>Operacje na zbiorach</h3>
+<div data-kinetyczna="13" data-wiersz="13" data-hint="Na zbiorach w języku Python, podobnie jak w matematyce możesz wykonać takie operacje jak wyznaczenie części wspólnej czy różnicy pomiędzy zbiorami.">
+    <p>
+        Podstawową operacją jest suma, czyli złączenie zbiorów:
+    </p>
+    <p>
+        Sumę zbiorów możesz policzyć funkcją <strong>union()</strong> lub operatorem | (w naszym systemie ten operator nie zadziała).
+    </p>
+    <code>
+        A = {'lody', 'sok', 'banany', 'pomarańcze'}<br />
+        B = {'banany', 'jabłka'}<br />
+        C = A.union(B)<br />
+        print(C)            
+        <span class="fa fa-hand-o-right"></span>
+        {'lody', 'sok', 'banany', 'pomarańcze', 'jabłka'}
+    </code>
+    <p>
+        Kolejną operacją jest przecięcie zbiorów, czyli znalezienie ich części wspólnej:
+    </p>
+    <p>
+        Przecięcie zbiorów możesz policzyć funkcją <strong>intersection()</strong> lub operatorem <strong>&</strong> (w naszym systemie ten operator nie zadziała).
+    </p>
+    <code>
+        A = {'lody', 'sok', 'banany', 'pomarańcze'}<br />
+        B = {'banany', 'jabłka'}<br />
+        C = A.intersection(B)<br />
+        print(C)            
+        <span class="fa fa-hand-o-right"></span>
+        {'banany'}
+    </code>
+    <p>
+        Następna operacja to różnica zbiorów, czyli odjęcie elementów jednego zbioru od drugiego:
+    </p>
+    <p>
+        Różnicę zbiorów możesz policzyć funkcją difference() lub operatorem - (w naszym systemie ten operator nie zadziała).
+    </p>
+    <code>
+        A = {'lody', 'sok', 'banany', 'pomarańcze'}<br />
+        B = {'banany', 'jabłka'}<br />
+        C = A.difference(B)<br />
+        print(C)
+        <span class="fa fa-hand-o-right"></span>
+        {'lody', 'sok', 'pomarańcze'}
+    </code>
+    <p>
+        W języku Python możesz także policzyć różnicę symetryczną, czyli sumę zbiorów bez ich części wspólnej. Służy do tego funkcja <strong>symmetric_difference()</strong> lub operator ^:
+    </p>
+    <code>
+        A = {'lody', 'sok', 'banany', 'pomarańcze'}<br />
+        B = {'banany', 'jabłka'}<br />
+        C = A.symmetric_difference(B)<br />
+        print(C)
+        <span class="fa fa-hand-o-right"></span>
+        { 'lody', 'sok', 'pomarańcze', 'jabłka'}
+    </code>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+            Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">
+        Dwie osoby przygotowało listę gości na przyjęcie, które wspólnie organizują. Zbiór o nazwie spis1 zawiera imiona {‘Ala’,’Tomek’,’Iza’,’Piotrek’}, a zbiór spis2 zawiera imiona {‘Tomek’,’Beata’,’Kamil’}. Iza i Piotrek powiadomili, że  nie mogą uczestniczyć w przyjęciu. Utwórz zbiór gości, w którym żadne imiona się nie powtarzają i nie zawiera Izy oraz Piotrka.
+    </p>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Utwórz zbiór spis1 oraz spis2 z podanymi imionami. Utwórz również zbiór nieobecni, zawierający elementy {'Iza’,’Piotrek’}. Następnie utwórz połączenie zbiorów i odejmij od niego zbiór nieobecni.
+    </p>
+    <code class="podpowiedz_kod">
+        spis1 = {'Ala','Tomek','Iza','Piotrek'}<br />
+        spis2 = {'Tomek','Beata','Kamil'}<br />
+        nieobecni = {'Iza','Piotrek'}<br />
+        goscie =  spis1.union(spis2)<br />
+        goscie = goscie.difference(nieobecni)<br />
+        print(goscie)              
+    </code>
+</div>
+

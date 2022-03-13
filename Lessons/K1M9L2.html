@@ -1,0 +1,111 @@
+<h3>Funkcje porządkujące listę</h3>
+<div data-kinetyczna="13" data-wiersz="13" data-hint="Dowiesz się jak ustawić elementy na liście w określonej kolejności..">
+    <p>
+        Bardzo często będziesz chciał uporządkować listę w określonej kolejności, np. ułożyć listę gości na jakimś przyjęciu w kolejności alfabetycznej, albo wyświetlić uzyskane wyniki w grze w kolejności malejącej (największa liczba uzyskanych punktów na samej górze).
+    </p>
+    <p>
+        Dzięki umieszczeniu danych na liście, operację układania elementów zgodnie z ich kolejnością możesz wykonać funkcją działającą na obiekcie listy o nazwie sort():
+    </p>
+    <code>
+        lista1 = [1,4,5,3,2]<br />
+        lista1.sort()<br />
+        print(lista1)<br />      
+        <span class="fa fa-hand-o-right"></span>
+        [1, 2, 3, 4, 5]
+    </code>
+    <p>
+        <strong>
+            <span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info: 
+        </strong> 
+        W programowaniu układanie elementów w zadanej kolejności nazywane jest sortowaniem.
+    </p>
+    <p>
+        Liczby domyślnie sortowane są od najmniejszej do największej, natomiast testy układane są w kolejności alfabetycznej:
+    </p>
+    <code>
+        lista2 = ['Bartek', 'Tomek', 'Iza', 'Ania']<br />
+        lista2.sort()<br />
+        print(lista2)<br />      
+        <span class="fa fa-hand-o-right"></span>
+        ['Ania', 'Bartek', 'Iza', 'Tomek']
+    </code>
+    <p>
+        A co jeśli chcesz zmienić kolejność sortowania, np. posortować liczby w kolejności malejącej? Do tego celu możesz wykorzystać tę samą funkcję sort(). Musisz ją tylko wywołać z argumentem reverse=True:
+    </p>
+    <code>
+        lista1 = [1,4,5,3,2]<br />
+        lista1.sort(reverse=True)<br />
+        print(lista1)<br />
+        <span class="fa fa-hand-o-right"></span>
+        [5, 4, 3, 2, 1]
+    </code>
+    <p>
+        Do sortowania w języku Python możesz wykorzystać jeszcze jedną funkcję – sorted(). Tym razem funkcja ta przyjmuje listę jako parametr, a zwraca nową posortowaną listę, nie zmieniając listy oryginalnej:
+    </p>
+    <code>
+        lista1 = [1,4,5,3,2]<br />
+        lista_nowa = sorted(lista1)<br />
+        print(lista1)<br />
+        print(lista_nowa)<br />
+        <span class="fa fa-hand-o-right"></span>
+        [5, 4, 3, 2, 1]<br />
+        [1, 2, 3, 4, 5]            
+    </code>
+    <p>
+        <strong>
+            <span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info: 
+        </strong> 
+        Funkcja .sort() jest szybsza, ponieważ nie tworzy nowej listy, a jedynie zmienia kolejność elementów w oryginalnej liście. W wyniku jej działania tracimy jednak pierwotne ułożenie elementów.
+    </p>
+    <p>
+        Funkcja sorted() również może przyjmować parametr reverse=True:
+    </p>
+    <code>
+        lista2 = ['Bartek', 'Tomek', 'Iza', 'Ania']<br /> 
+        lista2 = sorted(lista2, reverse=True)<br />
+        print(lista2)<br />            
+        <span class="fa fa-hand-o-right"></span>
+        ['Tomek', 'Iza', 'Bartek', 'Ania']
+    </code>
+    <p>
+        Co ciekawe, do odwracania kolejności elementów (niekoniecznie posortowanych) na liście możesz też wykorzystać funkcję reverse() lub reversed(). Analogicznie do sort() i sorted() ta pierwsza działa na obiekcie listy, druga listę przyjmuje jako parametr.
+    </p>
+    <code>
+        liczby = [11,8,3,17,8]<br /> 
+        liczby.reverse()<br />
+        print(liczby)<br />
+        <span class="fa fa-hand-o-right"></span>
+        [8, 17, 3, 8, 11]    
+    </code>
+    <p>
+        Zwróć uwagę, że liczby w liście nie zostały posortowane, jedynie ich pozycje zostały odwrócone. 
+    </p>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+            Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">
+        Wypisz w kolejności liczby ludności (podaną w milionach) w  następujących miastach Europy: Berlin – 3.5, Rzym – 2.9, Londyn – 8.3, Warszawa – 1.7, Paryż – 2.2. Następnie odwróć kolejność – od najmniejszego do największego miasta i ponownie wypisz wynik.
+    </p>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Utwórz listę miasta i przypisz do niej liczbę mieszkańców [3.5, 2.9, 8.3, 1.7, 2.2]. Następnie wywołaj na liście funkcję sorted() z argumentem Reverse=true i zapisz wynik do innej listy np. posortowane. Następnie użyj funkcji reverse() lub reversed() dla oryginalnej wyspy
+    </p>
+    <code class="podpowiedz_kod">
+        miasta=[3.5, 2.9, 8.3, 1.7, 2.2]<br />
+        posortowane=sorted(miasta, reverse=True)<br />
+        print(posortowane)<br />
+        miasta.reverse()<br />
+        print(miasta)<br />                 
+    </code>
+</div>
+

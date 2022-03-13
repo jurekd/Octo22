@@ -1,0 +1,91 @@
+<h3>Funkcje dla krotek</h3>
+<div data-kinetyczna="13" data-wiersz="13" data-hint="Dowiesz się jak można zliczyć elementy krotki czy znaleźć największy element w krotce.">
+    <p>
+        Dla krotek możemy stosować funkcje, które stosowane są także dla list, ale tylko te, które przyjmują krotkę jako parametr. Nie można stosować funkcji zapisywanych po kropce.
+    </p>
+    <p>
+        Podstawową funkcją jest funkcja len(), zliczająca długość krotki:
+    </p>
+    <code>
+        krotka = ('A','B','C')<br />
+        print(len(krotka))            
+        <span class="fa fa-hand-o-right"></span>
+        3
+    </code>
+    <p>
+        Dzięki wykorzystaniu funkcji len() możesz np. odczytać przedostatni element krotki:
+    </p>
+    <code>
+        krotka = ('A','B','C')<br />
+        print(krotka[len(krotka)-1])            
+        <span class="fa fa-hand-o-right"></span>
+        C
+    </code>
+    <p>
+        Pamiętaj jednak, że w języku Python można to zapisać prościej, wykorzystując ujemny indeks:
+    </p>
+    <code>
+        krotka = ('A','B','C')<br />
+        print(krotka[-1])
+        <span class="fa fa-hand-o-right"></span>
+        C         
+    </code>
+    <p>
+        Kolejną funkcjami, wspólnymi dla krotek i list, są funkcje <strong>min()</strong>  oraz <strong>maks()</strong>, umożliwiające znalezienie najmniejszego lub największego elementu:
+    </p>
+    <code>
+        krotka1 = (4,1,3,6,5)<br />
+        print(min(krotka1)
+        <span class="fa fa-hand-o-right"></span>
+        1
+        <span class="fa fa-hand-o-right"></span>
+        6
+    </code>
+    <p>
+        Dla krotek składających się z tekstów funkcje te zwracają elementy w zależności od ich kolejności alfabetycznej:
+    </p>
+    <code>
+        krotka2 = ('Iza','Ala','Ela')<br />
+        print('pierwsza: '+min(krotka2)+' ostatnia: '+max(krotka2))
+        <span class="fa fa-hand-o-right"></span>
+        pierwsza: Ala ostatnia: Iza 
+    </code>
+    <p>
+        <strong>
+            <span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info: 
+        </strong> 
+        W przypadku krotek lub tablic zawierających zarówno liczby jak i teksty, pierwszeństwo mają liczby:
+    </p>
+    <code>
+        krotka3 = ('Iza',10,'Ela')<br />
+        print(min(krotka3))            
+        <span class="fa fa-hand-o-right"></span>
+        10
+    </code>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+            Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">
+        Mając dane liczbowe zawarte w dwóch krotkach: (5, 12, 8) i (7, 10, 3) policz różnicę między element najmniejszym i największym.
+    </p>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Utwórz krotkę krotka1 i przypisz do niej wartości (5, 12, 8), utwórz krotkę krotka2 i przypisz do niej wartości (7, 10, 3). Następnie złącz obie krotki w nową krotkę o nazwie np. suma i zastosuj dla niej funkcję max i odejmij od niej wartość funkcji min().
+    </p>
+    <code class="podpowiedz_kod">
+        krotka1=(5,12,8)<br />
+        krotka2=(7,10,3)<br />
+        suma=krotka1+krotka2<br />
+        print(max(suma)-min(suma))             
+    </code>
+</div>
+

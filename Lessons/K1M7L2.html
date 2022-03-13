@@ -1,0 +1,52 @@
+<h3>Złożona składnia</h3>
+<div data-kinetyczna="23" data-wiersz="23" data-hint="Nauczysz się zapisywać bardziej złożone instrukcje warunkowe. Dzięki temu rozbudujesz program witający o większą inteligencję.">
+
+    <p>W instrukcji warunkowej można zapisać wiele warunków <strong>if</strong>, które będą po kolei sprawdzane, jeśli poprzedni
+        warunek okaże się być nieprawdziwy. Dopiero jeżeli żaden z podanych warunków nie będzie prawdziwy, wykonywane będą
+        działania zapisane po <strong>else</strong>. </p>
+    <p>Kolejne warunki <strong>if</strong> zapisujemy po słowie <strong>elif</strong>:
+    </p>
+    <code>
+tekst1 = "Python jest prosty" <br>
+if "x" in tekst1: <br>
+  print("Tekst zawiera literę x") <br>
+elif "y" in tekst1: <br>
+  print("Tekst zawiera literę y") <br>
+elif "z" in tekst1: <br>
+  print("Tekst zawiera literę z") <br>
+else: <br>
+  print("Tekst nie zawiera żadnej z liter x, y, z") <br>
+<span class="fa fa-hand-o-right">  </span>
+Tekst zawiera literę y
+</code>
+    <p>Warunki w <strong>if</strong> oraz <strong>elif</strong> mogą być też bardziej skomplikowane i zawierać operatory <strong>and</strong>        oraz <strong>or</strong>.</p>
+    <p>Powyższy przykład możemy więc zapisać nieco prościej:</p>
+    <code>
+tekst1 = "Python jest prosty" <br>
+if "x" in tekst1 or "y" in tekst1 or "z" in tekst: <br>
+  print("Tekst zawiera literę ze zbioru x, y, z") <br>
+else: <br>
+  print("Tekst nie zawiera żadnej z liter x, y, z") <br>
+<span class="fa fa-hand-o-right">  </span>
+Tekst zawiera literę ze zbioru x, y, z
+</code>
+    <p><span class="fa fa-cogs" aria-hidden="true"></span><strong> <a id="test" href="#Task" data-toggle="collapse">
+                Sprawdź czy potrafisz
+            </a></strong></p>
+    <div id="Task" class="collapse">Pobierz imię od użytkownika oraz wiek od użytkownika. Sprawdź czy ostatnia litera podanego imienia jest równa „a” oraz
+        wiek jest mniejszy od 30 lat. Jeżeli tak wypisz „Hi girl!”, jeżeli litera jest równa "a", a wiek jest większy bądź
+        równy od 30 lat, wypisz "Hi lady!". Podobnie, jeżeli ostatnia litera nie jest równa "a", w zależności od wieku wypisz
+        "Hi boy!" lub "Hi man!". </div>
+    <a class="helper"> <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Podstaw pod zmienną godzina liczbę, np. 12. Podstaw pod zmienną dzien_tygodnia nazwę dnia tygodnia, np. "sobota".
+
+        <br/> Instrukcją if sprawdź warunek imię[-1:]==”a” and wiek
+        <30. Jeżeli jest prawdziwy wypisz „Hi girl!”,  w przeciwnym
+            wypadku instrukcją elif sprawdź warunek imię[-1:]==”a” and wiek>=30 i jeżeli jest prawdziwy wypisz „Hi lady!”. W kolejnych instrukcjach elif sprawdź warunek imię[-1:]!=”a” and wiek
+            <30
+                i warunek imię[-1:]!=”a” and wiek>=30, wypisując odpowiednio „Hi boy!” i „Hi man!”.
+    </p>
+</div>

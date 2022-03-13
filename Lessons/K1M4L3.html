@@ -1,0 +1,74 @@
+<h3>Indeksy tekstów</h3>
+<div data-kinetyczna="14" data-wiersz="14" data-hint="Nauczysz się przetwarzać teksty za pomocą indeksów. Od możesz precyzyjnie wybierać fragmenty tekstów.">
+
+    <p>
+        Dzięki indeksom możesz precyzyjnie wybierać fragmenty tekstów. Jeżeli chcesz pobrać pojedynczy znak z tekstu, podaj jego
+        pozycję, pamiętając, że znaki numerowane są od 0:
+    </p>
+
+    <code>
+   'Python jest prosty'[2]<br/>
+           <span class="fa fa-hand-o-right">  </span>
+'t'
+</code>
+
+    <p>
+        Możesz pobierać także fragmenty tekstu, podając numer znaku początkowego oraz stojącego bezpośrednio za końcem pobieranego
+        tekstu (o jedną pozycję większą niż pozycja ostatniego znaku). Przykładowo, aby wydobyć tekst „prosty”, znajdujący
+        się na pozycjach 12-17 musisz podać:
+    </p>
+    <code>
+    "Python jest prosty"[12:18]<br>
+           <span class="fa fa-hand-o-right">  </span>
+'prosty'
+</code>
+    <p>
+        Ponieważ fragment tekstu, który jest pobierany znajduje się na końcu, możesz podać jedynie jego początkową pozycję, pomijając
+        pozycję końcową:
+    </p>
+    <code>
+    'Python jest prosty'[12:]<br/>
+           <span class="fa fa-hand-o-right">  </span>
+'prosty’
+ </code>
+    <p>
+        W analogiczny sposób, możesz także pobrać sam początek tekstu, określając jedynie pozycję znaku stojącego bezpośrednio za
+        pobieranym fragmentem:
+    </p>
+    <code>
+    "Python jest prosty"[:6]<br/>
+           <span class="fa fa-hand-o-right">  </span>
+'Python'
+</code>
+    <p>
+        Natomiast, aby pobrać dwie litery od końca, jako początek tekstu podaj liczbę ujemną -2:</p>
+    <code>
+"Python jest prosty"[-2:]<br/>
+           <span class="fa fa-hand-o-right">  </span>
+'ty'
+</code>
+
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+                Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">Zwróć pierwsze zdanie (bez kropki) z powiedzenia Paulo Coelho „Jest tylko jeden sposób nauki. Poprzez działanie.”
+    </p>
+    <a class="helper"> <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Sprawdź pozycję znaku „.” w tekście za pomocą funkcji find(). Bezpośrednio po tekście użyj indeksu, podając po dwukropku
+        znalezioną pozycję kropki. Pozycję przed dwukropkiem możesz zostawić pustą lub wpisz 0.
+    </p>
+
+    <code class="podpowiedz_kod">
+"Jest tylko jeden sposób nauki. Poprzez działanie".find(".")<br/>
+"Jest tylko jeden sposób nauki. Poprzez działanie"[:29]
+
+</code>
+</div>

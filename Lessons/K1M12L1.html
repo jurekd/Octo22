@@ -1,0 +1,101 @@
+<h3>Definiowanie zbiorów</h3>
+<div data-kinetyczna="13" data-wiersz="13" data-hint="Zbiory pozwalają na przechowywanie niepowtarzających się elementów – dzięki nim będziesz mógł łatwo usunąć duplikaty pojawiające się w liście czy krotce.">
+    <p>
+        Zbiór (ang. set) zapisywany jest w nawiasach klamrowych {}.
+    </p>
+    <code>
+        koszyk = {'lody', 'sok', 'banany', 'pomarańcze'}<br />
+        print(koszyk)            
+        <span class="fa fa-hand-o-right"></span>
+        {'lody', 'sok', 'banany', 'pomarańcze'}
+    </code>
+    <p>
+        Elementy w zbiorze nie są indeksowane, tak jak to ma miejsce w przypadku listy czy krotki. Poniższe odwołanie wygeneruje więc błąd:
+    </p>
+    <code>
+        koszyk = {'lody', 'sok', 'banany', 'pomarańcze'}<br />
+        print(koszyk[1])            
+        <span class="fa fa-hand-o-right"></span>
+        TypeError: 'set' does not support indexing
+    </code>
+    <p>
+        Błąd oznacza dosłownie, że zbiór nie wspiera indeksowania.
+    </p>
+    <p>
+        Zbiory przechowują wartości unikalne, powtarzające się elementy zostaną zignorowane:
+    </p>
+    <code>
+        koszyk = {'lody', 'lody', 'sok', 'banany', 'pomarańcze'}<br />
+        print(koszyk)
+        <span class="fa fa-hand-o-right"></span>
+        {'lody', 'sok', 'banany', 'pomarańcze'}  
+    </code>
+    <p>
+        Do zbioru możesz dodać nowy element, korzystając z funkcji <strong>add()</strong>:
+    </p>
+    <code>
+        koszyk = {'lody', 'sok', 'banany', 'pomarańcze'}<br />
+        koszyk.add('woda')<br />
+        print(koszyk)
+        <span class="fa fa-hand-o-right"></span>
+        {'lody', 'sok', 'banany', 'pomarańcze', 'woda'}
+    </code>
+    <p>
+        Oczywiście elementy powtarzające się nie będą dodane.
+    </p>
+    <p>
+        Pojedyncze elementy zbioru możesz pobrać funkcją <strong>discard()</strong> lub funkcją <strong>remove()</strong>. 
+    </p>
+    <code>
+        koszyk = {'lody', 'sok', 'banany', 'pomarańcze'}<br />
+        koszyk.discard('sok')<br />
+        print(koszyk)
+        <span class="fa fa-hand-o-right"></span>
+        {'lody', 'banany', 'pomarańcze'}   
+    </code>
+    <p>
+        Dla funkcji <strong>remove()</strong>, jeżeli element zbioru nie zostanie znaleziony, zwrócony zostanie błąd:
+    </p>
+    <code>
+        koszyk = {'lody', 'sok', 'banany', 'pomarańcze'}<br />
+        koszyk.remove('jabłka')
+        <span class="fa fa-hand-o-right"></span>
+        KeyError: jabłka
+    </code>
+    <p>
+        Zbiór możesz wykorzystać także do usunięcia z listy (lub krotki) powtarzających się elementów. Funkcją <strong>set()</strong> zamieniasz najpierw listę na zbiór, a później wykorzystujesz funkcję <strong>list()</strong>, żeby z powrotem utworzyć listę:
+    </p>
+    <code>
+        lista = [1,2,3,4,2,1,3]<br />
+        zbior = set(lista)<br />
+        lista = list(zbior)<br />
+        print(lista)
+        <span class="fa fa-hand-o-right"></span>
+        [1, 2, 3, 4]
+    </code>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+            Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">
+        Ze słownika telefony={'S7':'Samsung','S8':'Samsung','Z5':'Sony','XZ':'Sony', 'iPhone6':'Apple'}, zawierającego modele i marki telefonów wypisz tylko niepowtarzające się nazwy marek.
+    </p>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Pobierz ze słownika listę wartości wykorzystując funkcję <strong>values()</strong>. Zamień listę na zbiór i wypisz jego zawartość.
+    </p>
+    <code class="podpowiedz_kod">
+        telefony ={ 'S7':'Samsung','S8':'Samsung','Z5':'Sony','XZ':'Sony', 'iPhone6':'Apple'}<br />
+        lista = telefony.values()<br />
+        marki = set(lista)<br />
+        print(marki)                    
+    </code>
+</div>
+

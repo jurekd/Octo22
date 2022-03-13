@@ -1,0 +1,105 @@
+<h3>Używanie lambda wyrażeń w listach</h3>
+<div data-kinetyczna="13" data-wiersz="13" data-hint="Dowiesz się jak stosować wyrażenia lambda do filtrowania list, a także ich redukcji. Dzięki temu będziesz mógł jeszcze szybciej przetwarzać listy.">
+    <p>
+        Lambda wyrażenia są bardzo pomocne w szybkim filtrowaniu list. Przykładowo jeżeli z podanej listy chcemy zostawić tylko te elementy, które są dodatnie możemy użyć pętli
+    </p>
+    <code>
+        lista = [ 1, 2 ,-1, 3, -3]<br />
+        nowa = []<br />
+        for element in lista:<br />
+            if element>0:<br />
+            nowa.append(element)<br />
+        print(nowa)<br />            
+        <span class="fa fa-hand-o-right"></span>
+        [1, 2, 3]
+    </code>
+    <p>
+        Ale możemy także wykorzystać funkcję <strong>filtr()</strong> z lambda wyrażeniem, co jest znacznie krótsze.
+    </p>
+    <code>
+        lista = [ 1, 2 ,-1, 3, -3]<br />
+        nowa = filter(lambda x: x>0, lista)<br />
+        print(nowa)<br />           
+        <span class="fa fa-hand-o-right"></span>
+        [1, 2, 3]
+    </code>
+    <p>
+        Filtry możemy też wykorzystać do zwrotu części wspólnej dwóch list (analogicznie jak funkcja <strong>intersection</strong>):
+    </p>
+    <code>
+        lista1 = [1,2,3,5]<br />
+        lista2 = [2,3,4,6]<br />
+        print(filter(lambda x: x in lista1, lista2))<br />
+        <span class="fa fa-hand-o-right"></span> 
+        [2, 3]       
+    </code>
+    <p>
+        Oprócz filtrowania, wyrażenia lambda możesz wykorzystać do zamiany elementów listy na elementy, które zostaną przekształcone, zgodnie z wyrażeniem lambda. Przykładowo dla listy liczb utworzymy listę kwadratów tych liczb:
+    </p>
+    <code>
+        liczby = range(1,6) # tworzymy [1, 2, 3, 4, 5]<br />
+        kwadraty = map(lambda x: x*x, liczby)<br />
+        print(kwadraty)<br />
+        <span class="fa fa-hand-o-right"></span>
+        [1, 4, 9, 16, 25]       
+    </code>
+    <p>
+        Powyższy kod za pomocą zwykłej pętli zapisalibyśmy tak:
+    </p>
+    <code>
+        liczby = range(1, 6)<br />
+        kwadraty = []<br />
+        for x in liczby:<br />
+            kwadraty.append(x*x)<br />
+        print(kwadraty)<br />
+        <span class="fa fa-hand-o-right"></span>
+        [1, 4, 9, 16, 25]          
+    </code>
+    <p>
+        Inny przykład – dla listy liczb utworzymy mapę zawierającą True, jeśli liczba jest parzysta i False, jeśli liczba nie jest parzysta.
+    </p>
+    <code>
+        liczby = [1, 3, 4, 5, 8]<br />
+        parzyste = map(lambda x: x%2==0, liczby)<br />
+        print(parzyste)<br />
+        <span class="fa fa-hand-o-right"></span>
+        [False, False, True, False, True]           
+    </code>
+    <p>
+        Ostatnią ważną funkcją, która umożliwia szybkie przetwarzanie list jest funkcja reduce(). Jej zadaniem jest wykonanie podanej funkcji na wszystkich elementach listy i zwróceniu jej wyniku:
+    </p>
+    <code>
+        lista = [1,3,5,7]<br />
+        redukcja=reduce(lambda x, y: x + y, lista)<br />
+        print(redukcja)<br />
+        <span class="fa fa-hand-o-right"></span>
+        16          
+    </code>
+    <p>
+        Wyrażenie lambda dla <strong>reduce()</strong> musi przyjmować dwa parametry. Redukcja działa w ten sposób, że najpierw brane są 2 pierwsze elementy i dla nich obliczany jest wynik. Następnie brany jest wynik i kolejny element, i tak dalej.
+    </p>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+            Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">
+        Z listy telefony=['200123', '404111', '222333a', 'b500707', '120120'] wybierz tylko te, które zawierają wyłącznie cyfry. Do sprawdzenia możesz wykorzystać funkcję isdigit().
+    </p>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Zdefiniuj listę. Następnie określ filtr, który przekazuje lambda wyrażenie x : x.isdigit() oraz listę telefonów. Wypisz listę utworzoną w wyniku działania filtru.
+    </p>
+    <code class="podpowiedz_kod">
+        lista = ['200123', '404111', '222333a', 'b500707', '120120']<br />
+        telefony = filter(lambda x: x.isdigit(), lista)<br />
+        print(telefony)<br />                   
+    </code>
+</div>
+

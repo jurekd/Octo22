@@ -1,0 +1,94 @@
+<h3>Definiowanie funkcji</h3>
+<div data-kinetyczna="13" data-wiersz="13" data-hint="Dotychczas korzystałeś z wbudowanych funkcji. W tej lekcji nauczysz się definiować własne funkcje, po to by można było je wielokrotnie wykorzystywać. Napiszesz też swoją pierwszą funkcję w języku Python.">
+    <p>
+        Zdefiniujmy prostą funkcję, która wypisuje coś na ekranie ‘Witaj!’ i nazwijmy ją <strong>witaj()</strong>. Funkcję definiujemy słowem kluczowym <strong>def</strong>:
+    </p>
+    <code>
+        def witaj():<br />
+        print("Witaj!")<br />
+        <br />
+        witaj()          
+        <span class="fa fa-hand-o-right"></span>
+        Witaj!
+    </code>
+    <p>
+        Zdefiniowaną wcześniej funkcję wywołujesz wpisując jej nazwę. Jeśli funkcja nie posiada parametrów, to po jej nazwie umieszczamy puste nawiasy.
+    </p>
+    <p>
+        Określmy teraz funkcję, która przyjmuje parametr. Niech to będzie funkcja wypisz(lista), która wypisuje podaną listę, rozdzieloną przecinkami:
+    </p>
+    <code>
+        def wypisz(lista):<br />
+        for element in lista:<br />
+            print(element,end=',')<br />
+        <br />
+        liczby = [3,5,1,2]<br />
+        wypisz(liczby)          
+        <span class="fa fa-hand-o-right"></span>
+        Witaj!
+    </code>
+    <p>
+        Jeśli wywołując funkcję nie podamy oczekiwanego argumentu, wówczas wystąpi błąd:
+    </p>
+    <code>
+        wypisz()
+        <span class="fa fa-hand-o-right"></span>
+        TypeError: wypisz() takes exactly 1 arguments (0 given)
+    </code>
+    <p>
+        W komunikacie o błędzie zostaniemy poinformowani ile argumentów przyjmuje funkcja.
+    </p>
+    <p>
+        Możemy uniknąć takiej sytuacji, że ktoś nie poda argumentu, określając wartości domyślne dla parametrów, które zostaną pominięte. W naszym przypadku jeśli ktoś nie poda listy, możemy przyjąć pustą listę.
+    </p>
+    <code>
+        def wypisz(lista=[]):<br />
+        for element in lista:<br />
+            print(element,end=',')<br />
+        <br />
+        wypisz()<br />    
+    </code>
+    <p>
+        Teraz nie mamy błędu – pętla for nie zostanie wykonana, bo lista jest pusta, zatem na wyjściu nie pojawi się nic. Jeśli chcielibyśmy poinformować użytkownika o tym fakcie, należałoby sprawdzić czy argument jest pustą listą i wypisać stosowny komunikat:
+    </p>
+    <code>
+        def wypisz(lista=[]):<br />
+        if lista!=[]:<br />
+            for element in lista:<br />
+            print(element,end=',')<br />
+        else:<br />
+            print('Lista jest pusta!')<br />
+        <br />
+        wypisz()<br />
+        <span class="fa fa-hand-o-right"></span>
+        Lista jest pusta!
+    </code>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+            Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">
+        Napisz funkcję witaj, która przyjmuje imię osoby jako parametr i wyświetla komunikat np. ‘Witaj Tomek !’. Jeżeli imię nie zostanie podane, wypisywany jest komunikat ‘Nie podano imienia’. Sprawdź działanie funkcji podając imię Tomek.
+    </p>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Zdefiniuj funkcję z argumentem domyślnym witaj(imie=''). Instrukcją if sprawdź czy imie nie jest puste. Jeśli nie jest, wypisz komunikat łącząc napis ‘Witaj’, zmienną imie i znak ‘!’. Jeśli jest puste, po else wypisz komunikat ‘Nie podano imienia’.
+    </p>
+    <code class="podpowiedz_kod">
+        def witaj(imie=''):<br />
+        if imie!='':<br />
+            print('Witaj',imie,'!')<br />
+        else:<br />
+            print('Nie podano imienia')<br />
+        <br />
+        witaj('Tomek')<br />                
+    </code>
+</div>
+

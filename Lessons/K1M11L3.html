@@ -1,0 +1,110 @@
+<h3>Funkcje dla słowników</h3>
+<div data-kinetyczna="13" data-wiersz="13" data-hint="Dowiesz się jak sprawdzić czy w słowniku znajduje się określony klucz oraz jak pobrać wszystkie klucze ze słownika. Dzięki temu będziesz mógł np. sprawdzić czy dana książka zawiera określony numer telefonu.">
+    <p>
+        Poznałeś już jedną funkcję dla słownika – update(), która uaktualnia słownik o inny słownik podany jako parametr funkcji oraz operator del, który usuwa klucz ze słownika. W języku Python zdefiniowanych zostało jeszcze kilka użytecznych funkcji i operatorów. Bardzo pożytecznym operatorem jest operator in, który sprawdza czy podany klucz występuje w słowniku:
+    </p>
+    <code>
+        slownik = { 600123 : 'Ala', 508228 : 'Tomek', 604725 : 'Kasia' }<br />
+        print(508228 in slownik)            
+        <span class="fa fa-hand-o-right"></span>
+        True
+    </code>
+    <p>
+        Wykorzystując znany z poprzednich lekcji operator warunkowy <strong>if</strong> w połączeniu operatorem <strong>in</strong>, możesz wypisać komunikat w przypadku braku podanego klucza:
+    </p>
+    <code>
+        klucz_do_znalezienia = 608888<br />
+        slownik = { 600123 : 'Ala', 508228 : 'Tomek', 604725 : 'Kasia' }<br />
+        if klucz_do_znalezienia in slownik:<br />
+            print(slownik[klucz_do_znalezienia])<br />
+        else:<br />
+            print('Nie znaleziono klucza!'))<br />            
+        <span class="fa fa-hand-o-right"></span>
+        Nie znaleziono klucza!
+    </code>
+    <p>
+        <strong>
+            <span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info: 
+        </strong> 
+        W starej wersji języka Python (2.x) istniała funkcja <strong>has_key()</strong>, jednak w Python 3 została ona została operatorem <strong>in</strong>.
+    </p>
+    <p>
+        Aby zwrócić wszystkie dostępne klucze w słowniku w postaci listy możesz użyć funkcji <strong>keys()</strong>
+    </p>
+    <code>
+        slownik = { 600123 : 'Ala', 508228 : 'Tomek', 604725 : 'Kasia' }<br />
+        slownik.keys()            
+        <span class="fa fa-hand-o-right"></span>
+        [508228, 600123, 604725]
+    </code>
+    <p>
+        Analogicznie możesz wykorzystując funkcję values() możesz zwrócić wszystkie wartości ze słownika w postaci listy:
+    </p>
+    <code>
+        slownik = { 600123 : 'Ala', 508228 : 'Tomek', 604725 : 'Kasia' }<br />
+        slownik.values()
+        <span class="fa fa-hand-o-right"></span>
+        ['Tomek', 'Ala', 'Kasia']  
+    </code>
+    <p>
+        Możesz wykorzystać także funkcję <strong>items()</strong>, która zwróci listę, składającą się z krotek zawierających pary klucz : wartość:
+    </p>
+    <code>
+        slownik = [(508228, 'Tomek'), (600123, 'Ala'), (604725, 'Kasia')]<br />
+        slownik.items()
+        <span class="fa fa-hand-o-right"></span>
+        [(508228, 'Tomek'), (600123, 'Ala'), (604725, 'Kasia')]
+    </code>
+    <p>
+        Inna funkcja o nazwie clear() pozwoli na usunięcie wszystkich elementów ze słownika:
+    </p>
+    <code>
+        slownik = { 600123 : 'Ala', 508228 : 'Tomek', 604725 : 'Kasia' }<br />
+        slownik.clear()<br />
+        print(slownik)
+        <span class="fa fa-hand-o-right"></span>
+        {}    
+    </code>
+    <p>
+        <strong>
+            <span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info: 
+        </strong>
+        Jeżeli chcesz utworzyć pusty słownik, to przypisz do niego puste nawiasy klamrowe.
+    </p>
+    <p>
+        A jak sprawdzić ile par klucz : wartość znajduje się w słowniku? Podobnie jak dla listy, krotki czy łańcucha znakowego możesz wykorzystać funkcję <strong>len()</strong>
+    </p>
+    <code>
+        slownik = { 600123 : 'Ala', 508228 : 'Tomek', 604725 : 'Kasia' }<br />
+        print(len(slownik))
+        <span class="fa fa-hand-o-right"></span>
+        3
+    </code>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+            Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">
+        Utwórz książkę telefoniczną, pozwalającą na wyszukiwanie numerów do znajomych: Adam – 800232, Kamil – 333585, Seba – 222111. Napisz program, który pobierze nazwę abonenta od użytkownika (okienko), np. Tomek i jeśli jest, wypisze numer telefonu do niego. Przetestuj działanie programu podając imię ‘Adam’.
+    </p>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Utwórz słownik o nazwie telefony z parami osoba : numer telefonu. Następnie do zmiennej np. osoba przypisz wartość funkcji input(‘Podaj abonenta’). Po czy stosując operatory if oraz in sprawdź czy istnieje klucz pobrany do zmiennej osoba i jeśli tak, to go wypisz telefony[osoba].
+    </p>
+    <code class="podpowiedz_kod">
+        telefony = {'Adam':800232,'Kamil':333585,'Seba':222111}<br />
+        osoba=input('Podaj abonenta')<br />
+        if osoba in telefony.has_key(osoba):<br />
+            print(telefony[osoba])                 
+    </code>
+</div>
+

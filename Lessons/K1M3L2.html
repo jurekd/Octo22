@@ -1,0 +1,70 @@
+<h3>Dalsze działania na tekstach</h3>
+<div data-wiersz="10" data-kinetyczna="10" data-hint="Jeszcze trochę o dodawaniu tekstów i nauczysz się je także mnożyć. Na koniec zbudujesz węża.">
+    <p>
+        Operator plus dla łączenia tekstów może zostać pominięty. Jeżeli Python zobaczy dwa teksty obok siebie, zwróci w wyniku ich
+        złączenie:
+    </p>
+    <code>
+        "Python" "jest prosty"<br/>
+        <span class="fa fa-hand-o-right">  </span>
+        'Pythonjest prosty'
+    </code>
+    <p>
+        Nie umieściliśmy znaku odstępu (spacji) ani po słowie „Python” ani przed tekstem „jest prosty” i stąd w odpowiedzi dostaliśmy
+        sklejone wyrazy „Pythonjest”. Pamiętaj o dodawaniu znaku odstępu przy doklejaniu kolejnych składników.
+    </p>
+    <p>
+        W języku Python można także mnożyć teksty – przykład:
+    </p>
+    <code>
+        "Python"*3<br/>
+        <span class="fa fa-hand-o-right">  </span>
+        'PythonPythonPython'
+    </code>
+    <p>
+        <strong>
+            <span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info:
+        </strong> Mnożenie tekstów przez liczby ujemne daje w wyniku pusty tekst ('').<br/>
+        Mnożenie tekstów przez
+        liczby dziesiętne daje błąd. Podobnie jak mnożenie tekstu przez drugi tekst.
+    </p>
+    <p>
+        Jeżeli chcemy uzyskać tekst złożony z wielokrotnego powtórzenia cyfry bądź liczby, musimy ująć ją w cudzysłów lub apostrofy.
+    </p>
+    <code>
+        "5"*3<br/>
+        <span class="fa fa-hand-o-right">  </span>
+        '555'
+    </code>
+    <p>
+        Żeby zamienić tekst z powrotem na liczbę całkowitą, możesz wykorzystać znaną ci już funkcję<strong> int()</strong>.
+    </p>
+    <code>
+        int("5"*3)+1<br/>
+        <span class="fa fa-hand-o-right">  </span>
+        556
+    </code>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+                Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <div id="Task" class="collapse">
+        Zbuduj węża składającego z głowy (litera O lub cyfra 0) oraz 20 części (znaki #) i ogona (znak >):<br/><br/>
+         O####################>
+    </div>
+    <a class="helper"> <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Do litery O dodaj 20 razy znak # oraz dodaj znak większości. Pamiętaj o umieszczeniu liter oraz znaków w cudzysłowach lub
+        apostrofach.
+    </p>
+    <code class="podpowiedz_kod">
+        'O'+20*'#'+'>'
+    </code>
+</div>

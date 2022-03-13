@@ -1,0 +1,80 @@
+<h3>Definiowanie słowników</h3>
+<div data-kinetyczna="13" data-wiersz="13" data-hint="Dowiesz się jak łączyć ze sobą informacje w ciągi par i dzięki temu jak utworzyć książkę telefoniczną.">
+    <p>
+        Słowniki to listy par typu klucz-wartość, np. numer telefonu – abonent. Słowniki zapisujemy z wykorzystaniem nawiasów klamrowych {}, natomiast parę rozdzielamy dwukropkiem:
+    </p>
+    <code>
+        slownik = { 600123 : 'Ala', 508228 : 'Tomek', 604725 : 'Kasia' }<br />
+        print(slownik)            
+        <span class="fa fa-hand-o-right"></span>
+        {508228: 'Tomek', 600123: 'Ala', 604725: 'Kasia'}
+    </code>
+    <p>
+        Jak widzisz, słowniki porządkowane są nie według indeksów (pozycji elementów), ale według wartości klucza. Chodzi o to, żeby jak najszybciej można było odtworzyć wartość, na którą dany klucz wskazuje. Do słowników odwołujemy się tylko i wyłącznie poprzez podanie wartości klucza:
+    </p>
+    <code>
+        slownik = { 600123 : 'Ala', 508228 : 'Tomek', 604725 : 'Kasia' }<br />
+        print(slownik[600123])
+        <span class="fa fa-hand-o-right"></span>
+        Ala
+    </code>
+    <p>
+        Jeżeli podanego klucza nie ma w słowniku, zwrócony zostanie błąd:
+    </p>
+    <code>
+        print(slownik[444])<br />
+        <span class="fa fa-hand-o-right"></span>
+        KeyError: 444
+    </code>
+    <p>
+        Kluczami dla słowników mogą być także teksty:
+    </p>
+    <code>
+        ludnosc = {'Polska':38,'Niemcy':82,'Francja':'brak danych'}<br />
+        print(ludnosc['Francja']
+        <span class="fa fa-hand-o-right"></span>
+        brak danych
+    </code>
+    <p>
+        Wartości kluczy w słownikach powinny być niepowtarzalne, tak by dało się jednoznacznie odczytać wartości, na które wskazują. Jeśli jednak dojdzie do powtórzenia kluczy np. na etapie tworzenia słownika, powtarzający się klucz zawsze będzie wskazywał ostatnio dodaną wartość:
+    </p>
+    <code>
+        slownik2 = (1:'E',2:'A',1:'C')<br />
+        print(slownik2[1])
+        <span class="fa fa-hand-o-right"></span>
+        C
+    </code>
+    <p>
+        Przy zmianie wartości w słowniku dla powtarzających się kluczy nastąpi jego uporządkowanie poprzez usunięcie zdublowanych elementów:
+    </p>
+    <code>
+        slownik2 = {1:'E',2:'A',1:'C'}<br />
+        slownik2[1]='B'<br />
+        print(slownik2)
+        <span class="fa fa-hand-o-right"></span>
+        {1: 'B', 2: 'A'}      
+    </code>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+            Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">
+        Utwórz książkę telefoniczną, pozwalającą na wyszukiwanie numerów do znajomych: Adam – 800232, Kamil – 333585, Seba – 222111. Następnie wyszukaj i wypisz telefon do Kamila. 
+    </p>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Utwórz słownik o nazwie telefony z parami osoba : numer telefonu. Następnie posłuż się indeksem telefony['Kamil'].
+    </p>
+    <code class="podpowiedz_kod">
+        telefony = {'Adam':800232,'Kamil':333585,'Seba':222111}<br />
+        print(telefony['Adam'])                  
+    </code>
+</div>
+

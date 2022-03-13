@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Word search game</title>
+    <link rel="stylesheet" href="css/wordsearch.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        
+        .ws-words{
+            display: none;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+            <p class="ws-question"><b>Jak zaznaczysz poprawnie odkryje się zadanie do wykonania</b></p>
+            <p class="ws-question" data-ws-word="upper">1.Funkcja, która zamienia wszystkie litery na wielkie</p>
+            <p class="ws-question"data-ws-word="lower">2.Funkcja, która zamienia wszystkie litery na małe.</p>
+            <p class="ws-question"data-ws-word="replace">3.Funkcja, która zamienia podany ciąg znaków na inny..</p>
+        <section id="ws-area"></section>
+        <ul class="ws-words">
+
+        </ul>
+        <div>
+            
+
+        </div>
+    </div>
+    <script src="js/utility.min.js"></script>
+    <script src="js/wordsearch.js"></script>
+    <script type="text/javascript">
+
+        var Settings = {
+        'directions': ['W', 'N','WN'],
+        'gridSize': 8,
+        'words': ['upper', 'lower','replace'],
+        'wordsList' : [],
+        'debug': false
+        }
+        var taskContent ='Zbuduj węża z 20 znaków „#”, a następnie zamień deseń węża ze znaku „#” na „=”.';
+        WordSearchGameInit (Settings,taskContent);
+        var gameAreaEl = document.getElementById('ws-area');
+        var gameobj = gameAreaEl.wordSearch();
+        var words = gameobj.settings.wordsList,
+            wordsWrap = document.querySelector('.ws-words');
+        for (i in words) {
+            var liEl = document.createElement('li');
+            liEl.setAttribute('class', 'ws-word');
+            liEl.innerText = words[i];
+            wordsWrap.appendChild(liEl);
+        }
+        
+
+    </script>
+</body>
+
+</html>

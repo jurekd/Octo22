@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Word search game</title>
+    <link rel="stylesheet" href="css/wordsearch.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        
+        .wrap{
+            width: 100%;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <section id="ws-area"></section>
+        <ul class="ws-words">
+
+        </ul>
+    </div>
+    <script src="js/utility.min.js"></script>
+    <script src="js/wordsearch.js"></script>
+    <script type="text/javascript">
+         var Settings = {
+        'directions': ['EN', 'N','WN', 'EN'],
+        'gridSize': 8,
+        'words': ['datetime', 'strptime','sekunda','moduł'],
+        'wordsList' : [],
+        'debug': false
+        }
+        var taskContent =' Oblicz ile tygodni od rozpoczęcia roku szkolnego (2017-09-01) upłynie do następnych wakacji (przyjmując rozpoczęcie wakacji jako 2018-07-01).';
+        WordSearchGameInit (Settings,taskContent);
+        var gameAreaEl = document.getElementById('ws-area');
+        var gameobj = gameAreaEl.wordSearch();
+
+        // Put words into `.ws-words`
+        var words = gameobj.settings.wordsList,
+            wordsWrap = document.querySelector('.ws-words');
+        for (i in words) {
+            var liEl = document.createElement('li');
+            liEl.setAttribute('class', 'ws-word');
+            liEl.innerText = words[i];
+            wordsWrap.appendChild(liEl);
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,205 @@
+/* ----------------------- Login ----------------------- */
+/*-------------------------------------------------------*/
+
+div#header {
+    max-width: 950px;
+    width: 100%;
+    height: 100px;
+    border-radius: 0px 30px 0px 30px;
+    background-color: linear-gradient(#889098, #a0adb3);
+}
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color: #fff
+                                                                            }
+/* ----------------------- Theme ----------------------- */
+/*-------------------------------------------------------*/
+div#Project {
+    display: inline-block;
+    width: 100%;
+    margin-top: 28px;
+}
+
+div#ProjectDescription {
+    display: inline-block;
+    float: left;
+    padding: 20px;
+    font-family: Arial;
+    width: auto;
+}
+
+div#ProjectImage {
+    display: block;
+    position: relative;
+    float: left;
+    height: 300px;
+}
+
+img#ProjectImage {
+    max-height: 300px;
+    min-height: 300px;
+    z-index: 1;
+}
+div#ImageCover {
+    background-position: center;
+    background-size: cover;
+    height: 300px;
+    width: 450px;
+    display: inline-block;
+    z-index: 1;
+}
+
+a.ArrowLeft, a.ArrowRight {
+    position: absolute;
+    display: inline-block;
+    z-index: 2;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.5);
+    vertical-align: central;
+    text-decoration: none;
+    color: #000;
+    font-family: Arial;
+    font-weight: bold;
+    padding: 0px 5px 0px 5px;
+    line-height: 300px;
+    -webkit-transition: all 0.5s ease-in;
+    -moz-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;
+}
+
+a.ArrowLeft {
+    margin-right: -19px;
+}
+
+a.ArrowRight {
+    margin-left: -19px;
+}
+
+a.ArrowLeft:hover, a.ArrowRight:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    -webkit-transition: all 1s ease-in;
+    -moz-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;
+}
+
+a.ArrowTop, a.ArrowBottom {
+    position: absolute;
+    display: block;
+    padding: 5px 0px 5px 0px;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    width: 100%;
+    text-decoration: none;
+    font-family: Arial;
+    text-align: center;
+    -webkit-transition: all 0.5s ease-in;
+    -moz-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;
+}
+
+a.ArrowTop {
+    top: 0px;
+}
+
+a.ArrowBottom {
+    bottom: 0px;
+}
+
+a.ArrowTop:hover, a.ArrowBottom:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    -webkit-transition: all 0.5s ease-in;
+    -moz-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;
+}
+
+p#ProjectTitle {
+    font-family: Arial;
+    color: #000;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+#home_menu nav{
+    padding: 10px ;
+}
+#home_menu.bg_black{
+    background: #000; width:100%; min-height: 60px
+}
+#home_menu .btn_menu{
+    border: 1px solid #3a88e9; color:#3a88e9
+}
+@media (max-width:380px) {
+#home_menu.bg_black{
+         padding-bottom: 10px;
+    }
+    
+}
+@media (max-width:300px) {
+#home_menu.bg_black ul li{
+        float: none; margin:5px; width: 100%
+    }
+}
+
+/*home logowanie*/
+#logowanie {
+    padding: 5% 0;
+}
+.center-vertical{
+   display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: row;
+   flex-direction: row;
+   -webkit-align-items: center;
+   align-items: center;
+   -webkit-justify-content: center;
+   justify-content: center;
+}
+#logowanie .form-control {
+    
+     border: 1px solid #3a88e9;margin: 5px 0;
+}
+#logowanie button.btn-black{
+
+         border: 1px solid #3a88e9;   background: #3a88e9;;color:#fff;
+}
+#logowanie button.btn-black:hover{
+        border: 1px solid #3a88e9; color:#3a88e9; background: #fff;
+}
+#logowanie form{
+    width: 100%
+}
+#logowanie .seperator-5{
+    margin:5% 0
+}
+@media (max-width:768px) {
+/*    .center-vertical{
+   display: -webkit-block;
+   display: block;
+   */
+}
+
+.center-content {
+    margin: 20px 50px 20px 50px;
+    text-align: center;
+    /*width: 100%;*/
+}
+#cmsPanel {
+    width: 100%;
+    padding: 20px;
+    background-color: #889098;
+    margin-bottom: 20px;
+}
+#cmsPanel a{
+    color: #fff;
+    text-decoration: none;
+}
+.cmsOptions{
+    list-style: none;
+    cursor: pointer;
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Word remover (fill-in-the-blank game)</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src='/JavaScript/Libraries/jquery.min.js'></script>
+  <script src='/AplikacjeJavaScriptOffline/FillInBlank/js/index.js'></script>
+
+</head>
+
+<body>
+  <h3>Uzupełnij luki</h3>
+  <div id="sentence"></div>
+  <h3>Brakujące słowa</h3>
+  <div id="words"></div>
+  <div id="task" style="display:none;"><h3>Treść Zadania</h3>Napisz funkcję znaki(tekst), która sprawdza ile jest znaków w podanym tekście, pomijając spacje. Jeżeli użytkownik nie poda tekstu do sprawdzenia, zwracane jest 0. Przetestuj działanie funkcji dla argumentu „Ala ma kota”.</div>
+  <script src="js/index.js"></script>
+  <script type="text/javascript">
+    var text = '1. Funkcja może zwrócić wartość po słowie return <br>2. Jeśli będziemy chcieli przypisać do zmiennej wynik działania funkcji, a <br>funkcja zwróci „puste” return, zmienna przyjmie wartość None <br>3. W funkcji można określić wiele instrukcji return. Każda z nich kończy <br> działanie funkcji i zwraca podaną po return wartość.  ';
+    fillInTheBlankGameInit(text,[7,26,38]);
+  </script>
+</body>
+</html>

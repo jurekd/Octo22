@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Word search game</title>
+    <link rel="stylesheet" href="css/wordsearch.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        
+        .ws-words{
+            display: none;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+            <p class="ws-question"><b>Jak zaznaczysz poprawnie odkryje się zadanie do wykonania</b></p>
+            <p class="ws-question" data-ws-word="dwa">1.Wynik dzielenia całkowitego 5//2</p>
+            <p class="ws-question"data-ws-word="modulo">2.Daje resztę z dzielenia dwóch liczb</p>
+        <section id="ws-area"></section>
+        <ul class="ws-words">
+
+        </ul>
+        <div>
+            
+
+        </div>
+    </div>
+    <script src="js/utility.min.js"></script>
+    <script src="js/wordsearch.js"></script>
+    <script type="text/javascript">
+
+         var Settings = {
+        'directions': ['W', 'N'],
+        'gridSize': 6,
+        'words': ['dwa', 'modulo'],
+        'wordsList' : [],
+        'debug': false
+        }
+        var taskContent ='Rok przestępny wypada co 4 lata (choć z pewnymi wyjątkami raz na 100 lat). Wykorzystując operator reszty z dzielenia (modulo), sprawdź czy rok 2018 będzie rokiem przestępnym?';
+
+        WordSearchGameInit (Settings,taskContent);
+        var gameAreaEl = document.getElementById('ws-area');
+        var gameobj = gameAreaEl.wordSearch();
+        var words = gameobj.settings.wordsList,
+            wordsWrap = document.querySelector('.ws-words');
+        for (i in words) {
+            var liEl = document.createElement('li');
+            liEl.setAttribute('class', 'ws-word');
+            liEl.innerText = words[i];
+            wordsWrap.appendChild(liEl);
+        }
+        
+
+    </script>
+</body>
+
+</html>

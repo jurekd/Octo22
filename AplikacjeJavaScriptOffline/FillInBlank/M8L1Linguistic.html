@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Word remover (fill-in-the-blank game)</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src='/JavaScript/Libraries/jquery.min.js'></script>
+  <script src='/AplikacjeJavaScriptOffline/FillInBlank/js/index.js'></script>
+
+</head>
+
+<body>
+  <h3>Uzupełnij luki</h3>
+  <div id="sentence"></div>
+  <h3>Brakujące słowa</h3>
+  <div id="words"></div>
+  <div id="task" style="display:none;"><h3>Treść Zadania</h3>Utwórz listę, która zapamięta pory roku, poczynając od zimy. Sprawdź na jaką porę roku przypada miesiąc maj, dzieląc numer miesiąc przez 4 i odczytując wartość z tablicy.</div>
+  <script src="js/index.js"></script>
+  <script type="text/javascript">
+    var text = '1. Elementy listy umieszczane są w nawiasie kwadratowym <br>2. W innych językach programowania lista najczęściej mianem tablica <br>3. Pamiętaj, że element końcowy podajemy zawsze o jeden większy niż pozycja ostatniego elementu do pobrania. <br>4. Listy mogą składać się z liczb, tekstów, czy obiektów'
+    fillInTheBlankGameInit(text,[6,16,25,40]);
+  </script>
+</body>
+</html>

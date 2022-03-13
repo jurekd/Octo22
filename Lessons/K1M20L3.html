@@ -1,0 +1,99 @@
+<h3>Opis klas i obiektów</h3>
+<div data-kinetyczna="13" data-wiersz="13" data-hint="Nauczysz się wykorzystywać dodatkowe atrybuty i funkcje klas, dzięki czemu szybciej będziesz wiedział do czego można je wykorzystać.">
+    <p>
+        Podstawową ideą tworzenia klas jest ich powtórne wykorzystanie. Umożliwia to też płynniejsze pisanie kodu przez zespół programistów. Python oferuje zestaw atrybutów, który opisuje klasę:<br />
+        - __doc__ - opis klasy umieszczony zaraz pod słowem class<br />
+        - __name__ - nazwa klasy<br />
+        - __base__ - klasa bazowa (o tym za chwilę)<br />
+        - __dict__ - słownik zawierający atrybuty i funkcje zdefiniowane w klasie<br />            
+    </p>
+    <code>
+        class Osoba:<br />
+        'klasa opisująca podstawowe dane osoby'<br />
+            imie = "imie"<br />
+            nazwisko = "nazwisko"<br />
+            wiek = 0<br />
+        def __init__(self, imie, nazwisko, wiek):<br />
+            self.imie = imie<br />
+            self.nazwisko = nazwisko<br />
+            self.wiek = wiek<br />
+            def wypisz(self):<br />
+            print(self.imie,self.nazwisko,self.wiek)<br />
+        print(Osoba.__doc__)<br />
+        print(Osoba.__name__)<br />
+        print(Osoba.__base__)<br />
+        print(Osoba.__dict__)<br />            
+        <span class="fa fa-hand-o-right"></span>
+        klasa opisująca podstawowe dane osoby<br />
+        Osoba<br />
+        <class 'object'><br />
+        {'__module__': 'builtins', '__doc__': 'klasa opisująca podstawowe dane osoby', 'imie': 'imie', 'nazwisko': 'nazwisko', 'wiek': 0, '__init__': <function Osoba.__init__ at 0x7fb741f81620>, 'wypisz': <function Osoba.wypisz at 0x7fb741f816a8>, '__dict__': <attribute '__dict__' of 'Osoba' objects>, '__weakref__': <attribute '__weakref__' of 'Osoba' objects>}        
+    </code>
+    <p>
+        Alternatywą do użycia atrybutu __dict__  jest użycie funkcji vars(). W przypadku obiektu zwracany jest słownik ze wszystkimi danymi:
+    </p>
+    <code>
+        osoba1 = Osoba("Kamil","Bilski",15)<br />
+        print(vars(osoba1))<br />
+        <span class="fa fa-hand-o-right"></span>
+        {'imie': 'Kamil', 'nazwisko': 'Bilski', 'wiek': 15}
+    </code>
+    <p>
+        Z kolei funkcja dir() daje listę wszystkich składowych klasy lub obiektu
+    </p>
+    <code>
+        print(dir(osoba1))<br />
+        <span class="fa fa-hand-o-right"></span>
+        ['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'imie', 'nazwisko', 'wiek', 'wypisz']
+    </code>
+    <p>
+        Taką listę łatwo odfiltrować z funkcji i atrybutów wbudowanych, z których większość już poznałeś, tak by zostały tylko składowe zdefiniowane przez Ciebie:
+    </p>
+    <code>
+        skladowe = [s for s in dir(osoba1) if s[0]!='_']<br />
+        print skladowe<br />
+        <span class="fa fa-hand-o-right"></span>
+        ['imie', 'nazwisko', 'wiek', 'wypisz']       
+    </code>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+            Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">
+        Do klasy komórka z poprzednich lekcji dopisz opis ‘Klasa zawiera podstawowe dane o telefonie komórkowym użytkownika’. Do klasy dopisz funkcję skladowe(), która zwraca wszystkie składowe klasy w postaci listy. Wypisz te składowe:
+    </p>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Pod deklaracją klasy dopisz tekst opisu. Dopisz funkcję składowe(), która zwraca wszystkie zmienne i funkcje klasy, analogicznie jak przykładzie wyżej. Wykorzystując tę funkcję wypisz składowe klasy.
+    </p>
+    <code class="podpowiedz_kod">
+        import datetime<br />
+        class Komorka:<br />
+            ' Klasa zawiera podstawowe dane o telefonie komórkowym użytkownika'<br />
+            producent=""<br />
+            model=""<br />
+            rok_produkcji=0<br />
+            numer=0<br />
+            def __init__( self, producent, model, rok_produkcji):<br />
+            self.producent = producent<br />
+            self.model = model<br />
+            self.rok_produkcji = rok_produkcji<br />
+            def __str__(self):<br />
+            return self.producent+' '+self.model+' '+str(self.rok_produkcji)<br />
+            def wiek(self):<br />
+            rok = datetime.date.today().year<br /> 
+            return rok-self.rok_produkcji<br />
+            def skladowe():<br />
+            skladowe = [s for s in dir(Komorka) if s[0]!='_']<br />
+            return skladowe<br />
+        print(Komorka.skladowe())<br />                   
+    </code>
+</div>
+

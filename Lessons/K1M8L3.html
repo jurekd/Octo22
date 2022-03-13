@@ -1,0 +1,96 @@
+<h3>Usuwanie elementów</h3>
+<div data-kinetyczna="13" data-wiersz="13" data-hint="Dowiesz się jak usuwać niepotrzebne elementy na liście.">
+    <p>
+        Element możemy usunąć z listy na trzy sposoby. Po pierwsze wykorzystując operator <strong>del</strong> – przekazujemy po nim z jakiej listy i z jakiej pozycji ma być usunięty element:
+    </p>
+    <code>
+        lista1 = [1,2,5,7,8]<br />
+        del lista1[3]<br />
+        print(lista1)<br /> 
+        <span class="fa fa-hand-o-right"></span>
+        [1, 2, 5, 8]
+    </code>
+    <p>
+        Możesz także wykorzystać funkcję remove() – należy wówczas przekazać jaki element ma zostać usunięty (jego wartość):
+    </p>
+    <code>
+        lista1 = [1,2,5,7,8]<br />
+        lista1.remove(2)<br />
+        print(lista1)<br />       
+        <span class="fa fa-hand-o-right"></span>
+        [1, 5, 7, 8]
+    </code>
+    <p>
+        Jeżeli lista będzie zawierała kilka elementów, które pasują do elementu przekazanego do usunięcia, usunięty zostanie jedynie pierwszy z nich: 
+    </p>
+    <code>
+        lista2 = ['Bartek', 'Ania', 'Iza', 'Ania']<br />
+        lista2.remove('Ania')<br />
+        print(lista2)<br />
+        <span class="fa fa-hand-o-right"></span>
+        ['Bartek', 'Iza', 'Ania']
+    </code>     
+    <p>
+        <strong>
+            <span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info: 
+        </strong> 
+        Oczywiście funkcję remove() możesz wywoływać na liście wielokrotnie i tym sposobem usunąć wszystkie niepotrzebne elementy. Jak to zrobić szybciej – dowiesz się nieco poznając strukturę zbiorów. 
+    </p>
+    <p>
+        Ostatnim sposobem zmniejszenia listy jest wywołanie funkcji pop(). Funkcja ta pobiera i jednocześnie usuwa ostatni element z listy:
+    </p>
+    <code>
+        lista2 = ['Bartek', 'Ania', 'Iza', 'Ania']<br />
+        imie=lista2.pop()<br />
+        print(lista2)<br />
+        print(imie)<br />
+        <span class="fa fa-hand-o-right"></span>
+        ['Bartek', 'Ania', 'Iza']<br />
+        Ania
+    </code>
+    <p>
+        Pobranie ostatniego elementu możesz również uzyskać przez podanie wartości -1 w indeksie listy:  
+    </p>
+    <code>
+        lista2 = ['Bartek', 'Ania', 'Iza', 'Ania']<br />
+        imie=lista2[-1]<br />
+        print(imie)<br />
+        <span class="fa fa-hand-o-right"></span>
+        Ania
+    </code>
+    <p>
+        Natomiast, żeby usunąć ostatni element z listy, możesz przypisać do niej tę samą listę bez ostatniego elementu, tj. podając zakres od początku lisy do -1:
+    </p>
+    <code>
+        lista2 = ['Bartek', 'Ania', 'Iza', 'Ania']<br />
+        lista2 = lista2[:-1]<br />
+        print(lista2)<br />
+        <span class="fa fa-hand-o-right"></span>
+        ['Bartek', 'Ania', 'Iza']
+    </code>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+            Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">
+        Wypisz wszystkie dziewczyny z listy imion 'Ania', 'Basia', 'Tomek', 'Iza'.
+    </p>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Utwórz listę o nazwie imiona i przypisz do niej wartości 'Ania', 'Basia', 'Tomek', 'Iza'. Następnie usuń z listy imię 'Tomek', po czym wypisz zmienioną listę.
+    </p>
+    <code class="podpowiedz_kod">
+        imiona=['Ania','Basia','Tomek','Iza']<br />
+        imiona.remove('Tomek')<br />
+        print(imiona)   
+    </code>
+</div>
+

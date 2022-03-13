@@ -1,0 +1,19 @@
+{
+    "questions": [
+        {
+            "question": "Jaką Funkcją możesz liczbę całkowitą zamienić na rzeczywistą?",
+            "answer": "float",
+            "number": 1
+        },
+        {
+            "question": "Jaką funkcją w języku Python wykorzystujemy do zaokrąglania liczby dziesiętnej do liczby całkowitej lub też do zaokrąglania liczb do podanej liczby miejsc po przecinku?",
+            "answer": "round",
+            "number": 1
+        },
+        {
+            "question": "Jaka funkcja służy do przekształcania liczby rzeczywistej na liczbę całkowitą?",
+            "answer": "int",
+            "number": 0
+        }
+    ]
+}

@@ -1,0 +1,72 @@
+<h3>Wypisywanie wartości zmiennych</h3>
+<div data-kinetyczna="18" data-wiersz="18" data-hint="W tej lekcji dowiesz się jak wypisać wartości zmiennych. Dzięki temu usprawnisz nieco nasz prosty kalkulator.">
+
+    <p>
+        Dotychczas wyniki działań oraz wartości zmiennych wypisywaliśmy podając bezpośrednio treść działania lub nazwę zmiennej:
+    </p>
+
+    <code>
+imie<br/>
+<span class="fa fa-hand-o-right">  </span>
+'Kuba'<br/>
+</code>
+    <code>
+2+3<br/>
+<span class="fa fa-hand-o-right">  </span>
+5
+</code>
+    <p>
+        W języku Python oznacza to pracę w trybie interaktywnym – użytkownik wpisuje jakieś polecenie i od razu widzi jego rezultat.</p>
+    <p>
+    W przypadku bardziej złożonych programów do wypisywania wartości na ekranie będziemy wykorzystywali funkcję <strong>print()</strong>:
+    </p>
+    <code>
+    print(imię)<br/>
+<span class="fa fa-hand-o-right">  </span>
+Kuba
+</code>
+    <code>
+print(2+3)<br/>
+<span class="fa fa-hand-o-right">  </span>
+5
+</code>
+    <p>
+        Zauważ, że teksty wypisywane funkcją <strong>print()</strong> nie pojawiają się w apostrofach.
+    </p>
+    <p>
+        Funkcja <strong>print()</strong> umożliwia także formatowanie wyświetlenia. Wszystkie dane, które chcemy sformatować
+        umieszczamy w funkcji <strong>.format()</strong>, a w tekście do wypisania oznaczamy miejsca, gdzie należy je wstawić
+        – dla pierwszej danej {0}, dla drugiej danej {1}, dla trzeciej {2}, itd.</p>
+    <p> W poniższym przykładzie sformatujemy wynik działania 2+3, tak, żeby pojawiał się po tekście "2+3=". Mamy zatem dwie dane
+        - tekst "2+3" (oznaczona jako 0) oraz wynik działania 2+3 (oznaczona jako 1):
+    </p>
+    <code>
+    print('{0}={1}'.format("2+3",2+3))<br/>
+<span class="fa fa-hand-o-right">  </span>
+2+3=5
+</code>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+                Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">
+        Napisz prosty kalkulator, który liczy sumę dwóch liczb (np. 3 i 4). Wypisz wprowadzone liczby, znak działania oraz wynik
+        w postaci 3+4=7.
+    </p>
+    <a class="helper"> <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Pod zmienną liczba1 przypisz funkcję input("Podaj 1 liczbę"), pod zmienną liczba2 przypisz funkcję input("Podaj 2 liczbę").
+        Następnie wypisz wynik dodawania, wykorzystując funkcję:<br> print('{0}+{1}={2}'.format(liczba1,liczba2,int(liczba1)+int(liczba2))
+    </p>
+    <code class="podpowiedz_kod">
+liczba1=input("Podaj 1 liczbę")<br>
+liczba2=input("Podaj 2 liczbę")<br>
+print('{0}+{1}={2}'.format(liczba1,liczba2,int(liczba1)+int(liczba2)))
+</code>
+</div>

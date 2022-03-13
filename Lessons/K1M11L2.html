@@ -1,0 +1,86 @@
+<h3>Zmiana zawartości słowników</h3>
+<div data-kinetyczna="13" data-wiersz="13" data-hint="Dowiesz się jak zmodyfikować słownik, jeśli trzeba dopisać do niego np. nowy numer telefonu.">
+    <p>
+        Dodawanie elementów do słownika odbywa się identycznie jak w przypadku modyfikacji istniejącej pary w słowniku – wystarczy użyć nowego klucza:
+    </p>
+    <code>
+        slownik = { 600123 : 'Ala', 508228 : 'Tomek', 604725 : 'Kasia' }<br />
+        slownik[600123]='Alicja'<br />
+        slownik[878100]='Kamil'<br />
+        print(slownik)           
+        <span class="fa fa-hand-o-right"></span>
+        {508228: 'Tomek', 600123: 'Alicja', 604725: 'Kasia', 878100: 'Kamil'}
+    </code>
+    <p>
+        W powyższym przykładzie zmodyfikowaliśmy wartość dla klucza 600123 oraz dopisaliśmy nową parę z kluczem 878100.
+    </p>
+    <p>
+        Do usuwania elementów ze słownika stosujemy ten sam operator, co dla usuwania krotek, czyli <strong>del</strong>.
+    </p>
+    <code>
+        slownik = { 600123 : 'Ala', 508228 : 'Tomek', 604725 : 'Kasia' }<br />
+        del slownik[600123]<br />
+        print(slownik)            
+        <span class="fa fa-hand-o-right"></span>
+        Ala
+    </code>
+    <p>
+        Podobnie jak przy pobieraniu wartości na podstawie klucza, jeżeli usuwanego klucza nie ma w słowniku, zwrócony zostanie błąd:
+    </p>
+    <code>
+        del slownik[600124]<br />
+        <span class="fa fa-hand-o-right"></span>
+        KeyError: 600124
+    </code>
+    <p>
+        Jak rozszerzyć słownik o inny słownik, np. dołączyć kilka nowych pozycji do książki telefonicznej? Niestety nie jest takie proste jak w przypadku list czy krotek – nie można użyć operatora +:
+    </p>
+    <code>
+        x = {'a': 1, 'b': 2}<br />
+        y = {'b': 3, 'c': 4}<br />
+        x = x+y
+        <span class="fa fa-hand-o-right"></span>
+        TypeError: unsupported operand type(s) for Add: 'dict' and 'dict'
+    </code>
+    <p>
+        Błąd oznacza, że operatora dodawania nie można wykorzystywać dla słowników. 
+    </p>
+    <p>
+        Zamiast dodawania możesz użyć funkcji <strong>update()</strong>. Jest to funkcja, która uaktualni dany słownik o pozycje z innego słownika, zatem wywoływana jest na obiekcie słownika (czyli do jej użycia wykorzystujemy kropkę).
+    </p>
+    <code>
+        y = {'b': 3, 'c': 4}<br />
+        x.update(y)<br />
+        print(x))
+        <span class="fa fa-hand-o-right"></span>
+        {'a': 1, 'b': 3, 'c': 4}
+    </code>
+    <p>
+        Klucz ‘b’ istniał już w słowniku x, ale po uaktualnieniu przyjął nową wartość.
+    </p>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+            Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">
+        Utwórz książkę telefoniczną, pozwalającą na wyszukiwanie numerów do znajomych: Adam – 800232, Kamil – 333585, Seba – 222111. Następnie usuń z niej telefon do Adama, a dodaj nowy do Moniki – 404505. Wypisz zawartość książki po dokonanych zmianach.
+    </p>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Utwórz słownik o nazwie telefony z parami osoba : numer telefonu. Następnie wykorzystaj operator del do usunięcia klucza ‘Adam’, a później dopisz do słownika nowy klucz ‘Monika’ z wartością 404505 (możesz też użyć funkcji update).
+    </p>
+    <code class="podpowiedz_kod">
+        telefony = {'Adam':800232,'Kamil':333585,'Seba':222111}<br />
+        del telefony['Adam']<br />
+        telefony['Monika']=404505<br />
+        print(telefony)                  
+    </code>
+</div>
+

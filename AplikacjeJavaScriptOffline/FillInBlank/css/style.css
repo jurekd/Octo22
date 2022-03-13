@@ -1,0 +1,28 @@
+span.hiddenFillBlank{
+  border-bottom:1px solid #222;
+  color: rgba(0, 0, 0, 0);
+  padding:0 10px;
+  
+}
+
+span.target{
+  border-bottom:2px solid #222;
+  background:#ff0;
+  color:#ff0;
+  box-shadow:0 0 10px #ff0;
+}
+
+span.correct{
+  font-weight:bold;
+}
+span.word{
+  padding:10px;
+}
+span.word,
+span.target{
+  cursor:pointer
+}
+span.clicked{
+  background:#9f9;
+  box-shadow:0 0 10px #9f9;
+}

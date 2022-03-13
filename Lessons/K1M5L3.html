@@ -1,0 +1,60 @@
+<h3>Pobieranie wartości od użytkownika</h3>
+<div data-kinetyczna="17" data-wiersz="17" data-hint="W tej lekcji dowiesz się jak przypisywać do zmiennych podane przez ciebie wartości. Dzięki temu stworzysz prosty kalkulator.">
+
+    <p>
+        Wartości zmiennych można pobrać od użytkownika wykorzystując funkcję <strong>input()</strong>. Jako argument tej
+        funkcji możemy podać tekst, który zobaczy użytkownik. </p>
+    <p>Użytkownik musi następnie wprowadzić wartość, po czym nacisnąć klawisz <strong>Enter</strong>:
+    </p>
+
+
+    <code>
+imie = input('Podaj imię ')
+</code>
+    <img src="Theme/Images/lekcja/zmienne_1.PNG" alt="" /><br/><br/>
+    <code>
+'Cześć ' + imie<br/>
+<span class="fa fa-hand-o-right">  </span>
+'Cześć Kuba'
+</code>
+    <p>
+        W taki sam sposób możemy pobierać do zmiennych liczby – do zmiennej <strong>wiek</strong> pobierzemy od użytkownika
+        liczbę lat:
+    </p>
+    <code>
+   wiek = input('Ile masz lat? ')
+</code>
+    <img src="Theme/Images/lekcja/zmienne_2.PNG" alt="" /><br/><br/>
+    <code>
+imię + " ma " + wiek + " lat"<br/>
+<span class="fa fa-hand-o-right">  </span>
+'Kuba ma 17 lat'
+</code>
+
+
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+                Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <div id="Task" class="collapse">
+        Napisz prosty kalkulator, który liczy sumę dwóch liczb. Pobierz od użytkownika liczby 2 i 3, podstawiając je do zmiennych,
+        a następnie wypisz wynik ich dodawania. Pamiętaj, że od użytkownika pobierane są teksty i przed dodawaniem musisz
+        je zamienić na liczbę.
+    </div>
+    <a class="helper"> <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Pod zmienną liczba1 przypisz funkcję input("Podaj 1 liczbę"), pod zmienną liczba2 przypisz funkcję input("Podaj 2 liczbę").
+        Następnie wypisz wynik, wykonując działanie int(liczba1)+int(liczba2).
+    </p>
+    <code class="podpowiedz_kod">
+liczba1=input("Podaj 1 liczbę")<br>
+liczba2=input("Podaj 2 liczbę")<br>
+int(liczba1)+int(liczba2)
+</code>
+</div>

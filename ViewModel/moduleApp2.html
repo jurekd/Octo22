@@ -1,0 +1,427 @@
+<div id="backGround" style="background-image:url({{backgroundPath}}); background-size:100% 100%;"></div>
+<div id="PO" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" style="color:green"> Czy napewno chcesz zobaczyć podpowiedź </h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">NIE</button>
+                <button id="tak_chce" onclick="showIT();" type="button" class="btn btn-default" data-dismiss="modal">TAK</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="Zegar" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Zegar</h4>
+            </div>
+            <div class="modal-body">
+                <p class="minutnik_p"> Ta strona zajmie Ci : 7 min.</p>
+                <p class="wyzwanie"> Podejmujesz wyzwanie?</p>
+                <p class="minutnik_p pol-star">Gotowy do startu! </p>
+                <a class="btn btn-primary btn-block btn-black btn_kurs btn_start" onclick="workingTimer();" data-dismiss="modal">START</a>
+                <div class="clock" data-timeup="420">
+                    <span class="minutes">00</span>:<span class="seconds">00</span>
+                </div>
+                <button type="button" id="scoreboardBtn" style="display: none" class="btn btn-primary btn-block btn-black btn_sprawdz center-block"
+                    onclick="showPList();">
+                    Zobacz, który jesteś?
+                </button>
+            </div>
+            
+            <ol id="ScoreBoard" class="list-group text-center " style="display: none">
+                <li data-sortAs="0" id="UserPosition" class="list-group-item">{{userName}} {{userSurname}} <b><span class="minutes">00</span>:<span class="seconds">00</span></b> </li>
+                <li data-sortAs="304" class="list-group-item">Tomasz Nowak <b>05:04</b></li>
+                <li data-sortAs="368" class="list-group-item">Anna Nowakowka <b>06:08</b></li>
+                <li data-sortAs="432" class="list-group-item">Adam Kowalczyk <b>07:12</b></li>    
+            </ol>
+              
+            
+        </div>
+    </div>
+</div>
+
+<div id="AudioPlayer" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+            </div>
+            <div class="modal-body">
+              <video id="Audio" controls controlsList="nodownload">
+                 <source src="{{currentAudio}}" type="audio/mpeg">
+              </video>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="col-2">
+    <div id="Path">
+        <div class="margin-bottom">
+            <a id="patch-toggle" class="patch-toggle_active" href="#"><span id="main_icon"><i class="fa fa-bars ham-position" aria-hidden="true"></i></span></a>
+        </div>
+        <div id="lessonWay">
+            <ul style="padding-left: 0px;">
+                <li vm-repeat="task in tasksArray" class="intrapersonal_active leftSide {{task.status}}">
+                    <a id="task_hint" onclick="loadTask({{task.task_id}})">{{task.lp}}<span class="remove">.&nbsp;&nbsp;{{task.name}}</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="col-1">
+    <div id="Menu">
+        <div class="margin-bottom">
+            <a id="menu-toggle" href="#"><span id="main_icon"><i class="fa fa-cog ham-position" aria-hidden="true"></i></span></a>
+        </div>
+        <div id="userBox" class="margin-bottom">
+            <img id="userAvatar" src="Theme/Images/icon_people/{{userAvatar}}.png" alt="" style="width:60px;" />
+            <div id="userInformation" class="margin-bottom">
+                <ul style="padding-left: 0px;">
+                    <li>{{userName}} {{userSurname}}</li>
+                </ul>
+            </div>
+        </div>
+        <div id="userBox_small" class="margin-bottom remove">
+            <div id="inicjaly">AC</div>
+        </div>
+        <div id="Intelect">
+            <div id="mainIntelect">
+                <ul id="intelect_main_icon" class="intelect_main_icon">
+                    <li id="intelect_main_icon_li">
+                        <a id="intelect_Main" href="#">
+                            <center><img src="{{ikonaPath}}" alt="avatar" style="background-color: #4867AA;border-radius:60px"></center>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div id="otherIntelect">
+                <div>
+                    <ul class="intelect_icons">
+                        <li>
+                            <a id="intelect_wp" href="#">
+                                <center><img src="/Theme/Images/Intelect/wp/wp_ikona.png" alt="avatar" style="background-color: #4867AA;border-radius:60px"></center>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="intelect_muz" href="#">
+                                <center><img src="/Theme/Images/Intelect/muz/muz_ikona.png" alt="avatar" style="background-color: #4867AA;border-radius:60px"></center>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="intelect_przy" href="#">
+                                <center><img src="/Theme/Images/Intelect/przy/przy_ikona.png" alt="avatar" style="background-color: #4867AA;border-radius:60px"></center>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="intelect_icons">
+                        <li>
+                            <a id="intelect_matlog" href="#">
+                                <center><img src="/Theme/Images/Intelect/matlog/matlog_ikona.png" alt="avatar" style="background-color: #4867AA;border-radius:60px"></center>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="intelect_ruch" href="#">
+                                <center><img src="/Theme/Images/Intelect/ruch/ruch_ikona.png" alt="avatar" style="background-color: #4867AA;border-radius:60px"></center>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="intelect_jez" href="#">
+                                <center><img src="/Theme/Images/Intelect/jez/jez_ikona.png" alt="avatar" style="background-color: #4867AA;border-radius:60px"></center>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="intelect_icons">
+                        <li>
+                            <a id="intelect_intra" href="#">
+                                <center><img src="/Theme/Images/Intelect/intra/intra_ikona.png" alt="avatar" style="background-color: #4867AA;border-radius:60px"></center>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="intelect_inter" href="#">
+                                <center><img src="/Theme/Images/Intelect/inter/inter_ikona.png" alt="avatar" style="background-color: #4867AA;border-radius:60px"></center>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="userFunction">
+            <ul style="padding-left: 0px;">
+                <li><a href="#"><span class="">Mapa Postępu</span>&nbsp;<i class="fa fa-lg fa-map-o menu_icons" aria-hidden="true"></i></a></li>
+                <li><a href="#"><span>Twoja ścieżka</span>&nbsp;<i class="fa fa-lg fa-map-signs menu_icons" aria-hidden="true"></i></a></li>
+                <li><a href="#"><span>Pomoc</span>&nbsp;<i class="fa fa-lg fa-question menu_icons" aria-hidden="true"></i></a></li>
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#Zegar">Zegar</a>
+                    <div class="clock clock-AppPanel" data-timeup="420" style="font-size:34px;">
+                        <span class="minutes">00</span>:<span class="seconds">00</span>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#AudioPlayer">Odtwarzacz</a>
+
+                    <div class="controls">
+                      <a class="AudioPlayerStart" href="#"  onclick="play();"><i class="glyphicon glyphicon-play"></i></a>
+                      <a class="AudioPlayerStop" href="#"  onclick="pouse();"><i class="glyphicon glyphicon-pause"></i></a>
+                      <script type="text/javascript">
+
+                          function play()
+                          {
+                            audio = document.getElementById("Audio");
+                            audio.play();
+
+                            var AudioPlayerStartElements = document.getElementsByClassName('AudioPlayerStart');
+                            var AudioPlayerStopElements = document.getElementsByClassName('AudioPlayerStop');
+
+                            for (var i = 0; i < AudioPlayerStartElements.length; ++i)
+                            {
+                                var item = AudioPlayerStartElements[i];
+
+                                item.style.color = "#45a9ff";
+                            }
+
+                            for (var i = 0; i < AudioPlayerStopElements.length; ++i)
+                            {
+                                var item = AudioPlayerStopElements[i];
+                                item.style.color = "#337ab7";
+                            }
+
+                          }
+
+                          function pouse()
+                          {
+                            audio = document.getElementById("Audio");
+                            audio.pause();
+                            var AudioPlayerStartElements = document.getElementsByClassName('AudioPlayerStart');
+                            var AudioPlayerStopElements = document.getElementsByClassName('AudioPlayerStop');
+
+                            for (var i = 0; i < AudioPlayerStartElements.length; ++i)
+                            {
+                                var item = AudioPlayerStartElements[i];
+                                item.style.color = "#337ab7";
+                            }
+
+                            for (var i = 0; i < AudioPlayerStopElements.length; ++i)
+                            {
+                                var item = AudioPlayerStopElements[i];
+
+                                item.style.color = "#45a9ff";
+                            }
+                          }
+                      </script>
+
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+        <div style="position:absolute;bottom:4.5%;color:#fff!important;width:100%;height:40px;line-height:40px;background-color:#4867AA;">
+            <a href="https://www.facebook.com/groups/1832032537074429/" target="_blank" title="Kliknij, aby dołączyć do dyskusji">
+                <i style="color:#fff;line-height:40px;" class="fa fa-2x fa-facebook" aria-hidden="true"></i>
+            </a>
+        </div>
+        <div id="logout" title="Czy na pewno chcesz opuścić kurs?">
+            <a href="?page=login" onclick="VM.logout();"><span>Wyloguj</span>&nbsp;<i class="fa fa-power-off menu_icons" aria-hidden="true"></i></a>
+        </div>
+    </div>
+</div>
+
+<div id="col-3">
+    <div id="Lesson">
+        <h3 class="lesson_namber">Moduł {{currentLesson}}, lekcja <span id="currentPageSpan"></span></h3>
+        <h1><strong>{{taskDataname}}</strong></h1>
+        <div class="lesson_conntent">
+            {{taskDatacontent}}
+            <nav aria-label="..." class="center">
+                <ul class="pagination pagination-sm">
+                    <li class="page-item">
+                        <a class=" page-prev" onclick="prev();" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    <li vm-repeat="page in pages" class="page-item">
+                        <a class="page-link {{page.status}}" onclick="page_link({{page.index}});" task-id="page.task_id" data-page="page.index">{{page.id}}</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-next" onclick="next();" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+<div id="col-4">
+    <div id="page-console-and-application" class="fixed">
+        <div class="console">
+            <form style="position: relative">
+                <textarea spellcheck="false" class="code_input" id="yourcode" rows="10" placeholder=""></textarea><br />
+                <button id="button_runit" class="btn btn_code" type="button" onclick="runit()"><img src="Theme/Images/check-square.png" alt="" />SPRAWDŹ</button>
+            </form>
+            <div id="page-code">
+                
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+                <script src="JavaScript/Libraries/skulpt.min.js" type="text/javascript"></script>
+                <script src="JavaScript/Libraries/skulpt-stdlib.js" type="text/javascript"></script>
+                <script type="text/javascript">
+                    function outf(text) {
+                        var mypre = document.getElementById("output");
+                        mypre.innerHTML = mypre.innerHTML + text;
+                    }
+                    function builtinRead(x) {
+                        if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
+                            throw "File not found: '" + x + "'";
+                        return Sk.builtinFiles["files"][x];
+                    }
+                    function runit() {
+                        var prog = document.getElementById("yourcode").value;
+                        prog = prog.replace(/^\s*[\r\n]/gm, "");
+                        var lastLine = prog.substr(prog.lastIndexOf("\n") + 1);
+                        if (lastLine.replace(/^\s*/g, "") == "")
+                            lastLine = prog.substr(prog.substr(prog.substr(0, prog.lastIndexOf("\n") - 1).lastIndexOf("\n") + 1));
+                        if (lastLine.indexOf("print") == -1)
+                            prog = prog.substr(0, prog.lastIndexOf("\n") == -1 ? 0 : prog.lastIndexOf("\n") + 1) + "print(" + lastLine + ")";
+                        var mypre = document.getElementById("output");
+                        mypre.innerHTML = '';
+                        Sk.pre = "output";
+                        Sk.configure({
+                            output: outf, read: builtinRead, python3: true, execLimit: 1000, inputfun: function (str) {
+                                return window.prompt(str);
+                            }, inputfunTakesPrompt: true
+                        });
+                        var myPromise = Sk.misceval.asyncToPromise(function () {
+                            return Sk.importMainWithBody("<stdin>", false, prog, true);
+                        });
+
+                        myPromise.then(function (mod) {
+                            console.log($Locals.pages[$Locals.currentPage].correct_answer);
+                            var rawStr = $('#output').text().replace(/^\s+|\s+$/gm, '');
+                            console.log(rawStr);
+                            if ($Locals.pages[$Locals.currentPage].correct_answer == rawStr) {
+                                VM.logEvent(1, $Locals.currentTaskId, 'interpreter_started_with_success_with_correct', 'self');
+                                showDialog("task_completed_with_success");
+                                $($('.page-link')[$Locals.currentPage]).addClass('closed_page');
+                                var complete = true;
+                                $('.page-link').each(function () {
+                                    if (!$(this).hasClass('closed_page')) {
+                                        complete = false;
+                                    }
+                                });
+                                if (complete == true) {
+                                    $($('.leftSide')[$Locals.currentLesson]).addClass('closed');
+                                }
+                                $('#zadanie_sukces').modal('show');
+                            } else {
+                                $Locals.launchCount = $Locals.launchCount + 1;
+                                if($Locals.launchCount<=2){
+                                    showDialog("task_failed_"+$Locals.launchCount);
+                                }else{
+                                    showDialog("task_failed_more");
+                                }
+                                console.log($Locals.launchCount);
+                                if ($Locals.border == $Locals.launchCount) {
+                                    console.log($('#zadanie_podopowiedz'));
+                                    $("#PO").modal("show");
+                                    $("#Zegar").modal("show");
+                                    showDialog("hint_requested");
+                                }
+                                VM.logEvent(1, $Locals.currentTaskId, 'interpreter_started_with_success_but_notcorrect', 'self');
+                            }
+                        },
+                            function (err) {
+                                var errStr = err.toString();
+                                var errLine = errStr.substr(errStr.indexOf('line')).match(/\d+/);
+                                var errDesc = errStr.substr(0, errStr.indexOf('on line') - 1);;
+                                var errMsg = 'Błąd!';
+                                $Locals.launchCount = $Locals.launchCount + 1;
+                                if($Locals.launchCount<=2){
+                                    showDialog("task_failed_"+$Locals.launchCount);
+                                }else{
+                                    showDialog("task_failed_more");
+                                }
+                                console.log($Locals.launchCount);
+                                console.log($Locals.border);
+                                if ($Locals.border == $Locals.launchCount) {
+                                    console.log($('#zadanie_podopowiedz'));
+                                    $("#PO").modal("show");
+                                    showDialog("hint_requested");
+                                }
+                                if (errLine != null)
+                                    errMsg = 'Błąd w linii ' + parseInt(errLine, 10) + ':\n' + errDesc;
+                                outf(errMsg);
+                                VM.logEvent(1, $Locals.currentTaskId, 'interpreter_started_with_error', 'self');
+                                VM.logEvent(1, $Locals.currentTaskId, errStr, 'self');
+                            });
+                    }
+                </script>
+                <p><strong>Otrzymany wynik:</strong></p>
+                <pre id="output"></pre>
+            </div>
+        </div>
+        <div>
+            <div id="Avatars_and_dialogbox">
+                <div id="dialogbox">
+
+                </div>
+                <div id="Avatars">
+                    <img style="height:300px;" src="{{AvatarPath}}" alt="Tutaj powinien znajdować się awatar">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="zadanie_sukces" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" style="color:green"> Gratulacje! Udało Ci się rozwiazać zadanie! </h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Zamknij</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<div id="wybierz_avatar" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Wybierz swój awatar</h4>
+            </div>
+            <div class="modal-body">
+                <label class="vertical-center"><input onchange="setAvatar('icon1');" type="checkbox"> <img src="Theme/Images/icon_people/icon1.png" alt=""/></label>
+                <label class="vertical-center"><input onchange="setAvatar('icon2');" type="checkbox"> <img src="Theme/Images/icon_people/icon2.png" alt=""/></label>
+                <label class="vertical-center"><input onchange="setAvatar('icon3');" type="checkbox"> <img src="Theme/Images/icon_people/icon3.png" alt=""/></label>
+                <label class="vertical-center"><input onchange="setAvatar('icon4');" type="checkbox"> <img src="Theme/Images/icon_people/icon4.png" alt=""/></label>
+                <label class="vertical-center"><input onchange="setAvatar('icon5');" type="checkbox"> <img src="Theme/Images/icon_people/icon5.png" alt=""/></label>
+                <label class="vertical-center"><input onchange="setAvatar('icon6');" type="checkbox"> <img src="Theme/Images/icon_people/icon6.png" alt=""/></label>
+                <label class="vertical-center">
+    <input onchange="setAvatar('icon7');" type="checkbox"> <img src="Theme/Images/icon_people/icon7.png" alt=""/></label>
+                <label class="vertical-center"><input onchange="setAvatar('icon8');" type="checkbox"> <img src="Theme/Images/icon_people/icon8.png" alt=""/></label>
+                <label class="vertical-center"><input onchange="setAvatar('icon9');" type="checkbox"> <img src="Theme/Images/icon_people/icon9.png" alt=""/></label>
+                <label class="vertical-center"><input onchange="setAvatar('icon10');" type="checkbox"> <img src="Theme/Images/icon_people/icon10.png" alt=""/></label>
+            </div>
+
+        </div>
+    </div>
+</div>

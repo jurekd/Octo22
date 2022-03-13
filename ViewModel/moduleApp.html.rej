@@ -1,0 +1,37 @@
+diff a/ViewModel/moduleApp.html b/ViewModel/moduleApp.html	(rejected hunks)
+@@ -266,29 +266,17 @@
+ </div>
+ 
+ <!-- wybierz awatar -->
+-<div id="wybierz_avatar" class="modal fade" role="dialog">
++<div id="zadanie_sukces" class="modal fade" role="dialog">
+     <div class="modal-dialog">
+ 
+         <!-- Modal content-->
+         <div class="modal-content">
+             <div class="modal-header">
+-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+-                <h4 class="modal-title">Wybierz swój awatar</h4>
+-            </div>
+-            <div class="modal-body">
+-                <label class="vertical-center"><input onchange="setAvatar('icon1');" type="checkbox"> <img src="Theme/Images/icon_people/icon1.png" alt=""/></label>
+-                <label class="vertical-center"><input onchange="setAvatar('icon2');" type="checkbox"> <img src="Theme/Images/icon_people/icon2.png" alt=""/></label>
+-                <label class="vertical-center"><input onchange="setAvatar('icon3');" type="checkbox"> <img src="Theme/Images/icon_people/icon3.png" alt=""/></label>
+-                <label class="vertical-center"><input onchange="setAvatar('icon4');" type="checkbox"> <img src="Theme/Images/icon_people/icon4.png" alt=""/></label>
+-                <label class="vertical-center"><input onchange="setAvatar('icon5');" type="checkbox"> <img src="Theme/Images/icon_people/icon5.png" alt=""/></label>
+-                <label class="vertical-center"><input onchange="setAvatar('icon6');" type="checkbox"> <img src="Theme/Images/icon_people/icon6.png" alt=""/></label>
+-                <label class="vertical-center">
+-    <input onchange="setAvatar('icon7');" type="checkbox"> <img src="Theme/Images/icon_people/icon7.png" alt=""/></label>
+-                <label class="vertical-center"><input onchange="setAvatar('icon8');" type="checkbox"> <img src="Theme/Images/icon_people/icon8.png" alt=""/></label>
+-                <label class="vertical-center"><input onchange="setAvatar('icon9');" type="checkbox"> <img src="Theme/Images/icon_people/icon9.png" alt=""/></label>
+-                <label class="vertical-center"><input onchange="setAvatar('icon10');" type="checkbox"> <img src="Theme/Images/icon_people/icon10.png" alt=""/></label>
++                <h4 class="modal-title" style="color:green"> Gratulacje! Udało Ci się rozwiazać zadanie! </h4>
+             </div>
++           
+ 
+         </div>
+     </div>
+-</div>
+\ No newline at end of file
++</div>
++

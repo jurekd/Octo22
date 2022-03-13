@@ -1,0 +1,100 @@
+<h3>Zmiany w krotkach</h3>
+<div data-kinetyczna="13" data-wiersz="13" data-hint="Dowiesz się jak można dokonać zmian w krotce, mimo, że nie można je zmieniać wprost.">
+    <p>
+        Czasami zmiana wartości w krotce może być konieczna lub zaistnieje potrzeba wykonania na niej funkcji, które są dostępne tylko dla listy.
+    </p>
+    <p>
+        Krotkę możemy zamienić na listę wywołując na niej funkcję list:
+    </p>
+    <code>
+        krotka1 = ('pn','wt','sr','cz','pt','sb','nd')<br /> 
+        lista1 = list(krotka1)<br />
+        lista1[0]='pon'<br />
+        print(lista1)<br />            
+        <span class="fa fa-hand-o-right"></span>
+        ['pon', 'wt', 'sr', 'cz', 'pt', 'sb', 'nd']
+    </code>
+    <p>
+        Listę możemy z powrotem zamienić na krotkę i w ten sposób uzyskamy zmodyfikowaną krotkę:
+    </p>
+    <code>
+        krotka1 = tuple(lista1)<br />
+        print(krotka1)            
+        <span class="fa fa-hand-o-right"></span>
+        ('pon', 'wt', 'sr', 'cz', 'pt', 'sb', 'nd')<br />
+        krotka1 = ('pn','wt','sr','cz','pt','sb','nd')<br /> 
+        print(krotka1)
+        <span class="fa fa-hand-o-right"></span>
+        ('pn', 'wt', 'sr', 'cz', 'pt', 'sb', 'nd')
+    </code>
+    <p>
+        Możesz także tworzyć nową krotkę na bazie istniejących krotek lub licz
+    </p>
+    <code>
+        wyksztalcenie = ('podstawowe','srednie','wyzsze')<br />
+        wyksztalcenie = wyksztalcenie + ('zawodowe',)<br />
+        print(wyksztalcenie)<br />
+        <span class="fa fa-hand-o-right"></span>
+        ('podstawowe', 'srednie', 'wyzsze', 'zawodowe')       
+    </code>
+    <p>
+        Pamiętaj o umieszczeniu znaku przecinka w jednoelementowej krotce. Dodanie łańcucha znakowego (w nawiasie lub bez niego), spowoduje błąd:
+    </p>
+    <code>
+        TypeError: can only concatenate tuple (not "str") to tuple
+    </code>
+    <p>
+        oznaczający, że do krotek można dodawać tylko inne krotki (nie łańcuchy znakowe).
+    </p>
+    <p>
+        Jak usunąć coś z krotki? Musisz zamienić kotkę na listę, usunąć element z listy, a następnie z powrotem zamienić listę na krotkę.
+    </p>
+    <code>
+        krotka2 = ('element1','do usunięcia','element3')<br />
+        lista = list(krotka2)<br />
+        lista.remove('do usunięcia')<br />
+        krotka2 = tuple(lista)<br />
+        print(krotka2)<br />
+        <span class="fa fa-hand-o-right"></span>
+        ( 'element1', 'element3') 
+    </code>
+    <p>
+        Z łatwością możesz natomiast usunąć całą krotkę. Służy do tego operator <strong>del:</strong>
+    </p>
+    <code>
+        krotka3 = (1,2,3,4,5)<br /> 
+        del krotka3<br />
+        print(krotka3)<br />            
+    </code>
+    <p>
+        Ponieważ Python nie widzi krotki po jej usunięciu, zamiast wyniku zobaczymy komunikat:
+    </p>
+    <code>
+        NameError: name 'krotka3' is not defined
+    </code>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+            Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">
+        Zdefiniuj niezmienną krotkę zawierającą miesiące, w których są wakacje („lipiec”, „sierpień”). Wypisz krotkę, a następnie na jej podstawie utwórz krotkę wakacje_studenci, zawierającą dodatkowo miesiąc „wrzesień”. Wypisz zawartość nowo utworzonej krotki.
+    </p>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Utwórz krotkę wakacje, przypisując do niej 'lipiec' i 'sierpień' . Wypisz krotkę, następnie utwórz nową krotkę jako połączenie krotki wakacje i pojedynczej krotki  'wrzesień'.
+    </p>
+    <code class="podpowiedz_kod">
+        wakacje=('lipiec','sierpień')<br />
+        print(wakacje)<br />
+        wakacje_studenci=wakacje+('wrzesień',)<br />
+        print(wakacje_studenci)<br />                   
+    </code>
+</div>
+

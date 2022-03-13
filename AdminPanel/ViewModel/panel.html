@@ -1,0 +1,20 @@
+﻿<div id="cmsPanel">
+    <div id="cmsLogo">
+        <!--<img src="/Theme/Images/cmsLogo.svg">-->
+    </div>
+    <a href="?page=panel">Wróć do panelu</a>
+    <div vm-if="never" id="cmsBreadcrumps">
+        <ul class="breadcrumps">
+            <li></li>
+        </ul>
+    </div>
+    <div id="cmsPanelMenu">
+        <a style="float:right;" vm-if="logged" href="#" onclick="logout();">Logout</a>
+    </div>
+</div>
+<div>
+    <ul class="cmsOptions">
+        <li onclick="navigate('editTasks');">Edytuj taski</li>
+        <li onclick="navigate('addTasks');">Dodaj taski</li>
+    </ul>
+</div>

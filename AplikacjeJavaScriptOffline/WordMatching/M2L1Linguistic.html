@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<title>A jQuery Drag-and-Drop Number Cards Game</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script type="text/javascript">
+
+var correctCards = 0;
+$( init );
+
+function init() {
+
+  // Hide the success message
+  $('#successMessage').hide();
+  $('#task').hide();
+  $('#successMessage').css( {
+    left: '580px',
+    top: '250px',
+    width: 0,
+    height: 0
+  } );
+
+  // Reset the game
+  correctCards = 0;
+  $('#cardPile').html( '' );
+  $('#cardSlots').html( '' );
+
+  // Create the pile of shuffled cards
+  var numbers = [ 0, 1, 2, 3];
+  var definitions = [
+  {'value':'W programowaniu kolejność działania','index':1},
+  {'value':'Wykorzystuj jeżeli nie jesteś pewien kolejności operatorów','index':2},
+  {'value':'Prawidłowy zapis kolejności działań w programowaniu dla ułamku <span class="frac"><sup>1+2</sup><span>&frasl;</span><sub>3</sub></span>.dający wynik 1.0','index':3},
+  {'value':'Błędny zapis kolejności działań w programowaniu dla ułamku <span class="frac"><sup>1+2</sup><span>&frasl;</span><sub>3</sub></span> dający w efekcie wynik 1.66666','index':4}
+  ];
+
+  
+
+var words = [
+  {'value':'Priorytet Operatorów','index':1},
+  {'value':'nawiasy','index':2},
+  {'value':'(1+2)/3','index':3},
+  {'value':'1+2/3','index':4}];
+
+  numbers.sort( function() { return Math.random() - .5 } );
+
+  var number = 0;
+
+  for ( var i=0; i<=3; i++ ) {
+    number = numbers[i];
+    $('<div>' + definitions[number]['value'] + '</div>').data( 'number', definitions[number]['index'] ).attr( 'id', 'card'+[number] ).appendTo( '#cardPile' ).draggable( {
+      containment: '#content',
+      stack: '#cardPile div',
+      cursor: 'move',
+      revert: true
+    } );
+  }
+  numbers.sort( function() { return Math.random() - .5 } );
+  number = 0;
+  for ( var i=0; i<=3; i++ ) {
+    number = numbers[i];
+    $('<div>' + words[number]['value'] + '</div>').data( 'number', words[number]['index'] ).appendTo( '#cardSlots' ).droppable( {
+      accept: '#cardPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+  }
+
+}
+
+function handleCardDrop( event, ui ) {
+  var slotNumber = $(this).data( 'number' );
+  var cardNumber = ui.draggable.data( 'number' );
+
+  // If the card was dropped to the correct slot,
+  // change the card colour, position it directly
+  // on top of the slot, and prevent it being dragged
+  // again
+
+  if ( slotNumber == cardNumber ) {
+    ui.draggable.addClass( 'correct' );
+    ui.draggable.draggable( 'disable' );
+    $(this).droppable( 'disable' );
+    ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
+    ui.draggable.draggable( 'option', 'revert', false );
+    correctCards++;
+  } 
+  
+  // If all the cards have been placed correctly then display a message
+  // and reset the cards for another go
+
+  if ( correctCards == 4 ) {
+    //$('#cardSlots').fadeOut();
+    //$('#cardPile').slideToggle('slow');
+    
+    
+    // $('#successMessage').show();
+    // $('#successMessage').animate( {
+    //   left: '380px',
+    //   top: '200px',
+    //   width: '400px',
+    //   height: '100px',
+    //   opacity: 1
+    // } );
+   $('#task').fadeIn('slow');
+   // $('#content').fadeOut();
+    //$('#content').replaceWith('<img src="/Theme/Images/lekcja/liczby_7.PNG" class="img-responsive center-block" alt="">');
+    
+
+  }
+
+}
+
+</script>
+
+<style>
+ #cardSlots div, #cardPile div, #task div {
+ 
+  width: 286px;
+  height: 115px;
+  
+}
+
+#cardSlots, #cardPile, #task   {
+  width: 620px;
+  height: 260px;
+  padding: 20px;
+}
+
+span.frac {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+}
+span.frac > sup, span.frac > sub {
+  display: block;
+  font: inherit;
+  padding: 0 0.3em;
+}
+span.frac > sup {border-bottom: 0.08em solid;}
+span.frac > span {display: none;}
+</style>
+
+</head>
+<body>
+
+
+
+<div id="content">
+  <div id="task">
+    <h3>Wykorzystaj wzór</h3> 
+    <img src="pi.PNG" class="img-responsive center-block" alt=""> 
+  </div>
+  <br>
+  <div id="cardPile"></div>
+  <div id="cardSlots"> </div>
+  
+
+  <div id="successMessage">
+    <h2>Policz liczbę PI ze wzoru Ptolemeusza, który został określony w drugim wieku naszej ery:<br>
+        <img src="Theme/Images/lekcja/liczby_3.PNG"></h2>
+    <!-- <button onclick="init()">Play Again</button> -->
+  </div>
+
+
+</div>
+
+
+</body>
+</html>
+

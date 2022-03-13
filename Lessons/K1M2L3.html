@@ -1,0 +1,81 @@
+<h3>Funkcje matematyczne</h3>
+<div data-wiersz="7" data-kinetyczna="7"  data-hint="Nauczysz się wykorzystywać podstawowe funkcje języka Python działające na liczbach. Dzięki temu policzysz czas spadania przedmiotu na dno studni.">
+    <p>
+        Wiesz już jak wykonywać podstawowe działania matematyczne, potęgowanie, a nawet jak obliczyć resztę z dzielenia. W języku Python zostało dodatkowo zdefiniowane wiele użytecznych funkcji działających na liczbach.
+    </p>
+    <p>
+        Aby wykorzystać te funkcje, musisz najpierw wczytać moduł o nazwie
+        <a href="#" data-toggle="tooltip" data-placement="left" title="Math to biblioteka funkcji matematycznych takich jak np.pierwiastkowanie">Math</a>.
+        W języku Python moduły wczytujemy poleceniem
+        <strong title="wytłumczenie funkcji">
+            import
+        </strong>.
+    </p>
+    <p>
+        <strong>
+            <span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info:
+        </strong>
+        Moduły to zestawy różnych funkcji zgromadzone pod wspólną nazwą. Jak tworzyć własne moduły dowiesz się w późniejszych lekcjach.
+    </p>
+    <p>
+        Zaimportujemy moduł  <a href="#" data-toggle="tooltip" data-placement="top" title="Math to biblioteka funkcji matematycznych takich jak np.pierwiastkowanie">Math</a>
+        , a następnie policzymy pierwiastek kwadratowy liczby 2, korzystając z funkcji
+        <a href="#" data-toggle="tooltip" data-placement="top" title="Liczy pierwiastek z liczby."> math.sqrt()</a>:
+    </p>
+    <code>
+        import math<br>
+        math.sqrt(2)<br>
+        <span class="fa fa-hand-o-right">  </span>
+        1.4142135623730951
+    </code>
+    <p>
+        Jeżeli nie zaimportujesz modułu <strong>math</strong> przy próbie użycia funkcji z tego modułu wystąpi błąd:
+    </p>
+    <code>
+        math.sqrt(2)<br/>
+        <span class="fa fa-hand-o-right">  </span>
+        NameError: name 'math' is not defined
+    </code>
+    <p>
+        Otrzymamy informację o braku definicji nazwy <strong>math</strong>. Dosłownie: "BłądNazwy: nazwa 'math' nie jest zdefiniowana".
+    </p>
+    <p>
+        Moduł<strong> math</strong> dostarcza również kilku stałych matematycznych. Jedną z nich jest liczba π, którą przybliżaliśmy we wcześniejszych ćwiczeniach na różne sposoby.
+    </p>
+    <code>
+        import math<br/>
+        math.pi<br/>
+        <span class="fa fa-hand-o-right">  </span>
+        3.14159265359
+    </code>
+    <p><span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#content_Sprawdz_3" data-toggle="collapse">
+                Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <div id="content_Sprawdz_3"  class="collapse">
+        Policz ile sekund spadać będzie moneta wrzucona do studni o głębokości 100m.
+        Wykorzystaj wzór <br>
+        <div id="Task">
+          <img src="Theme/Images/lekcja/liczby_7.PNG" class="img-responsive center-block" alt=""/> gdzie
+          <strong>
+              g
+          </strong>
+          oznacza przyspieszenie ziemskie wynoszące 9.81 m/s.
+        </div>
+    </div>
+    <a class="helper"> <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Zaimportuj moduł math, a następnie policz pierwiastek kwadratowy z działania: 2 razy wysokość (tj. głębokość studni), podzielona przez 9.81 lub stwórz zmienną "g" o takiej wartości.
+    </p>
+    <code class="podpowiedz_kod">
+    import math<br/>
+    math.sqrt(2*100/9.81)
+
+    </code>
+</div>

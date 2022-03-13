@@ -1,0 +1,78 @@
+<h3>Łączenie działań i błędy</h3>
+<div data-wiersz="2" data-kinetyczna="2" data-hint="Nauczysz się liczyć bardziej złożone wyrażenia. Na koniec dowiesz się ile razy Ziemia okrąża słońce wokół Słońca.">
+    <p>
+        Działania na liczbach można łączyć. Spróbujmy teraz wykonać bardziej skomplikowane działanie na liczbach całkowitych - pomnożymy
+        liczbę 5 przez 8, a następnie odejmiemy liczbę 3:
+    </p>
+    <code>
+        5*8-3<br/>
+        <span class="fa fa-hand-o-right">
+
+        </span>
+        37
+    </code>
+    <p>
+        Możesz także łączyć działania na liczbach rzeczywistych i całkowitych - wynik takich działań zawsze będzie liczbą rzeczywistą:
+    </p>
+    <code>
+        1.23*4-0.92<br/>
+        <span class="fa fa-hand-o-right">
+
+        </span>
+        4.0
+    </code>
+    <p>
+        <strong>
+            <span class="fa fa-info-circle" aria-hidden="true">
+
+            </span>
+            Info:
+        </strong>
+        Liczbę rzeczywistą odróżnisz od liczby całkowitej po znaku kropki dziesiętnej i części dziesiętnej, np. <strong>4</strong> - liczba całkowita, <strong>4.0</strong> - liczba rzeczywista.
+    </p>
+    <p>
+        W przypadku próby dzielenia przez liczbę 0 wyświetlony zostanie błąd "ZeroDivisionError: integer division or modulo by zero". To prawidłowe zachowanie języka Python, bo nie możemy dzielić przez liczbę 0!
+    </p>
+    <code>
+        10.3/0<br/>
+        <span class="fa fa-hand-o-right">
+
+        </span>
+        ZeroDivisionError: integer division or modulo by zero
+    </code>
+    <p>
+        Komunikat możemy przetłumaczyć jako "BłądDzieleniaPrzezZero: dzielenie całkowite lub modulo przez zero". Co oznacza operator modulo dowiesz się w kolejnej lekcji.
+    </p>
+    <p>
+        <strong>
+            <span class="fa fa-info-circle" aria-hidden="true">
+
+            </span>
+            Info:
+        </strong> Wszystkie komunikaty o błędach w języku Python wyświetlane są w języku angielskim. Nie przejmuj się jednak – jest tylko kilka podstawowych komunikatów o błędach i szybko nauczysz się rozpoznawać ich znaczenie.
+    </p>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true">
+        </span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+                Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <div id="Task" class="collapse">
+        Policz ile razy Ziemia okrąży Słońce w ciągu godziny, przyjmując, że w ciągu sekundy Ziemia okrąża Słońce 30 razy.
+    </div>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true">
+
+        </span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Pomnóż liczbę sekund w ciągu minuty (60) razy liczbę minut w ciągu godziny (60) razy liczbę okrążeni Ziemi w ciągu sekundy (30).
+    </p>
+    <code class="podpowiedz_kod">
+    60*60*30
+    </code>
+</div>

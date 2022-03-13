@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Word remover (fill-in-the-blank game)</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src='/JavaScript/Libraries/jquery.min.js'></script>
+  <script src='/AplikacjeJavaScriptOffline/FillInBlank/js/index.js'></script>
+
+</head>
+
+<body>
+  <h3>Uzupełnij luki</h3>
+  <div id="sentence"></div>
+  <h3>Brakujące słowa</h3>
+  <div id="words"></div>
+  <div id="task" style="display:none;"><h3>Treść Zadania</h3>Silnia jest definiowana jako iloczyn liczb n! = 1*2*3*,…,n. Napisz program który wylicza silnię dla podanej liczby. Przetestuj program dla n=6.</div>
+  <script src="js/index.js"></script>
+  <script type="text/javascript">
+    var text = '1. Pętla for wykonywana jest tyle razy ile elementów znajduje się w <br>danym zbiorze, liście, krotce lub tekście. <br>2. W pętli powtarzane są tylko te instrukcje, które mają wcięcie <br>3. Pamiętaj, że zarówno dla for jak i dla if musisz zastosować wcięcia <br> dla następujących po nich instrukcji. ';
+    fillInTheBlankGameInit(text,[2,28,38]);
+  </script>
+</body>
+</html>

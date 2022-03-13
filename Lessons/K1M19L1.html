@@ -1,0 +1,109 @@
+<h3>Definiowanie wyrażeń regularnych</h3>
+<div data-kinetyczna="13" data-wiersz="13" data-hint="Dowiesz się co to są wyrażenia regularne i jak je można wykorzystać do sprawdzania wprowadzanych tekstów.">
+    <p>
+        Wyrażenia regularne służą do definiowania wzorców i sprawdzania czy jakiś tekst pasuje do tego wzorca. Dzięki temu możemy np. sprawdzić czy podany tekst jest kodem pocztowym. W języku Python mamy do tego celu dwie funkcje z modułu re: <strong>match()</strong> – sprawdza tekst od jego początku i <strong>search()</strong> – sprawdza tekst od dowolnego znaku w środku.            
+    </p>
+    <p>
+        Wykorzystajmy najpierw funkcję <strong>match()</strong> do sprawdzenia kodu pocztowego:
+    </p>
+    <code>
+        import re<br />
+        kod1 = '00-950'<br />
+        kod2 = '123-254'<br />
+        wzorzec = '[0-9]{2}-[0-9]{3}'<br />
+        if re.match(wzorzec,kod1):<br />
+            print('kod1 jest ok')<br />
+        else:<br />
+            print('kod1 jest błędny')<br />
+        if re.match(wzorzec,kod2):<br />
+            print('kod2 jest ok')<br />
+        else:<br />
+            print('kod2 jest błędny')<br />            
+        <span class="fa fa-hand-o-right"></span>
+        kod1 jest ok<br />
+        kod2 jest błędny     
+    </code>
+    <p>
+        Powyższy wzorzec ‘[0-9]{2}-[0-9]{3}’ oznacza, że dopuszczalne są 2 dowolne cyfry, kreska i 3 dowolne cyfry. Alternatywnie moglibyśmy go zapisać tak: ‘\d{2}-\d{3}’, gdzie \d oznacza dowolną cyfrę.
+    </p>
+    <p>
+        Wzorce mogą się odnosić także do liter w tekstach, przyjmijmy, że np. nazwisko musi zaczynać się dużą literą i mieć co najmniej 3 znaki:
+    </p>
+    <code>
+        import re<br />
+        nazwisko1 = 'ala'<br />
+        nazwisko2 = 'Nowak'<br />
+        wzorzec = '[A-Z][a-z]{2}'<br />
+        if re.match(wzorzec,nazwisko1):<br />
+            print('nazwisko1 jest ok')<br />
+        else:<br />
+            print('nazwisko1 jest błędne')<br />
+        if re.match(wzorzec,nazwisko2):<br />
+            print('nazwisko2 jest ok')<br />
+        else:<br />
+            print('nazwisko2 jest błędne')<br />            
+        <span class="fa fa-hand-o-right"></span>
+        nazwisko1 jest błędne<br />
+        nazwisko2 jest ok      
+    </code>
+    <p>
+        Wzorzec [A-Z] oznacza dowolną literę od A do Z, [a-z] litery od a do z, a w nawiasach klamrowych jest liczba znaków, która musi być zgodna.
+    </p>
+    <p>
+        Można tworzyć też bardziej skomplikowane wzorce, np. sprawdzający czy podany adres jest adresem e-mail:
+    </p>
+    <code>
+        import re<br />
+        email1= 'info@biuro.pl'<br />
+        email2= 'kontakt@adres*wp.pl'<br />
+        wzorzec = '^[a-z]+@([a-z].)+[a-z]{2,3}$'<br />
+        if re.match(wzorzec, email1):<br />
+            print('email1 jest ok')<br />
+        else:<br />
+            print('email1 jest błędny')<br />
+        if re.match(wzorzec, email2):<br />
+            print('email2 jest ok')<br />
+        else:<br />
+            print('email2 jest błędny')<br />
+        <span class="fa fa-hand-o-right"></span>
+        email1 jest ok<br />
+        email2 jest błędny                  
+    </code>
+    <p>
+        Powyższy wzorzec oznacza: [a-z]+ co najmniej jedna litera od a do z, małpa (@) co najmniej jedna kombinacja liter z kropą [a-z]. oraz na końcu 2 lub 3 litery od a do z. Znak ^ na początku oraz $ na końcu, oznaczają że tekst musi się zaczynać i kończyć zgodnie z wzorcem, a nie może być tylko jego częścią.
+    </p>
+    <p>
+        <strong>
+            <span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info: 
+        </strong> 
+        Nie przejmuj się tym, że niektóre wyrażenia wyglądają tak skomplikowanie. Wiele przykładów gotowych wzorców znajdziesz w Internecie.
+    </p>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+            Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">
+        Napisz program, który z podanej listy telefonów [‘+48200111’,’+500600’,’600123’, ‘+48144288’] wypisze tylko telefony, które mają numer kierunkowy z przodu np. +48200111. 
+    </p>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Zdefiniuj listę telefonów. W pętli for po wszystkich elementach listy sprawdź czy element jest zgodny z wzorcem '\+[0-9]{8}’ i jeśli jest wypisz numer telefonu.
+    </p>
+    <code class="podpowiedz_kod">
+        import re<br />
+        telefony = ['+48200111','+500600','600123', '+48144288']<br />
+        wzorzec = '\+[0-9]{8}'<br />
+        for telefon in telefony:<br />
+            if re.match(wzorzec,telefon):<br />
+            print(telefon)<br />                 
+    </code>
+</div>
+

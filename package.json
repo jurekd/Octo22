@@ -1,0 +1,42 @@
+{
+  "name": "octo_develop",
+  "version": "2.0.0",
+  "description": "",
+  "main": "/React/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack -d --watch",
+    "build": "webpack -d"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/achudy/octo_develop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/achudy/octo_develop/issues"
+  },
+  "homepage": "https://gitlab.com/achudy/octo_develop#README",
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  },
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-router": "^4.1.2",
+    "webpack": "^3.4.1",
+    "webpack-dev-server": "^2.6.1",
+    "react-router-dom": "^4.1.2"
+  },
+  "dependencies": {
+    "react-audio-player": "^0.6.2"
+  }
+}

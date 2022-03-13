@@ -1,0 +1,78 @@
+<h3>Definiowanie krotek</h3>
+<div data-kinetyczna="13" data-wiersz="13" data-hint="Dowiesz się jak definiować niezmienne listy za pomocą krotek.">
+    <p>
+        Czasami listy powinny pozostać niezmienne. Przykładowo lista miesięcy czy nazw dni tygodnia – pozostają one niezmienne. Listę której nie można zmieniać określa się w języku Python mianen krotka (w języku angielskim tuple). Definiowana jest z wykorzystaniem nawiasów okrągłych: 
+    </p>
+    <code>
+        krotka1 = ('pn','wt','sr','cz','pt','sb','nd')<br />
+        print(krotka1)<br />            
+        <span class="fa fa-hand-o-right"></span>
+        ('pn', 'wt', 'sr', 'cz', 'pt', 'sb', 'nd')
+    </code>
+    <p>
+        Jeżeli chcesz utworzyć krotkę jednoelementową w jej definicji musisz użyć przecinka:
+    </p>
+    <code>
+        jednoelementowa = (10,)<br /> 
+        print(jednoelementowa)<br />            
+        <span class="fa fa-hand-o-right"></span>
+        (10,)
+    </code>
+    <p>
+        Elementy krotki wypisywane są identycznie jak elementy listy, tj. poprzez podanie numeru elementu krotki (jak zawsze liczone od 0):
+    </p>
+    <code>
+        krotka1 = ('pn','wt','sr','cz','pt','sb','nd')<br /> 
+        print(krotka1[1])<br />
+        print(krotka1[6])<br />
+        <span class="fa fa-hand-o-right"></span>
+        wt<br />
+        nd               
+    </code>
+    <p>
+        Podobnie jak w przypadku list, z krotek możemy wybierać ciągi elementów:
+    </p>
+    <code>
+        krotka1 = ('pn','wt','sr','cz','pt','sb','nd')<br />
+        weekend = krotka1[5:8]<br />
+        print(weekend)<br />
+        <span class="fa fa-hand-o-right"></span>
+        ('sb', 'nd')
+    </code>
+    <p>
+        Zmiana wartości w krotce jest niemożliwa i spowoduje błąd:
+    </p>
+    <code>
+        krotka1 = ('pn','wt','sr','cz','pt','sb','nd')<br /> 
+        krotka1[0]='pon'<br />
+        <span class="fa fa-hand-o-right"></span>
+        Błąd w linii 2:<br />
+        SyntaxError: keyword can't be an expression        
+    </code>
+    <p>
+        Błąd “keyword can't be an expression” oznacza, że słowo kluczowe (którym jest krotka) nie może wyrażeniem.
+    </p>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+            Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">
+        Zdefiniuj niezmienną krotkę z nazwami planet, ułożonych w kolejności odległości od Słońca: Merkury, Wenus, Ziemia, Mars, Jowisz, Saturn, Uran, Neptun. Następnie wypisz wszystkie planety, które są dalej od Słońca niż Ziemia.
+    </p>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Utwórz krotkę planety, przypisując do niej ‘Merkury’, ‘Wenus’, ‘Ziemia’, ‘Mars’, ‘Jowisz’, ‘Saturn’, ‘Uran’, ‘Neptun’. Wykorzystując operator dwukropka wypisz krotkę podając jako element początkowy 3 (Mars), oraz końcowy pusty.
+    </p>
+    <code class="podpowiedz_kod">
+            planety =('Merkury', 'Wenus', 'Ziemia', 'Mars', 'Jowisz', 'Saturn', 'Uran', 'Neptun')<br />
+            print(planety[3:])
+    </code>
+</div>
+

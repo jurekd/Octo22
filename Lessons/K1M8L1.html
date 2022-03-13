@@ -1,0 +1,101 @@
+<h3>Definiowanie list</h3>
+<div data-kinetyczna="13" data-wiersz="13" data-hint="Nauczysz się określać listy. Umożliwi to przechowywanie większej ilości danych po tą samą nazwą.">
+    <p>
+        Listy są jednym z najważniejszych typów danych. Pozwalają na przechowywanie wielu danych (zwanych elementami listy) pod wspólną
+        nazwą w sposób ustrukturowany (zorganizowany).
+    </p>
+    <p>
+        Elementy listy umieszczane są w nawiasie kwadratowym <strong>[]</strong>. Aby zdefiniować listę wystarczy przypisać
+        jej kilka elementów:
+    </p>
+    <code>
+ lista1 = [1,2,5,7,8]
+ <br>
+ print(lista1)
+ <br>
+    <span class="fa fa-hand-o-right">  </span>
+[1, 2, 5, 7, 8]
+</code>
+    <p><strong><span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info: </strong> W innych językach programowania lista najczęściej mianem <strong>tablica</strong>.
+    </p>
+    <p>
+        Listy mogą składać się z liczb, tekstów, czy obiektów (o tym później). Możesz także tworzyć listy mieszane, zawierające np.
+        liczby i teksty:
+    </p>
+    <code>
+ lista2 = [1,5,'Ola','Tomek',3]
+ <br>
+ print(lista2)
+ <br>
+    <span class="fa fa-hand-o-right">  </span>
+[1, 5, 'Ola', 'Tomek', 3]
+</code>
+    <p>
+        Wykorzystując nawias kwadratowy możesz pobrać elementy z listy w celu ich wyświetlenia:
+    </p>
+    <code>
+ print(lista2[3]) <br>
+ <span class="fa fa-hand-o-right">  </span>
+ Tomek
+</code>
+    <p>
+        lub wykonania na nich jakiejś operacji:
+    </p>
+    <code>
+  print(lista2[0]+2) <br>
+ <span class="fa fa-hand-o-right">  </span>
+ 3
+</code>
+    <p><strong><span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info: </strong> Podobnie jak w przypadku znaków w tekście, Python zawsze oznacza pierwszy element na liście jako
+        0, drugi jako 1, trzeci jako 2, itd.
+    </p>
+    <p>
+        Podobnie jak w przypadku tekstów, z listy możesz pobierać więcej niż jeden element, podając po znaku ':' numer końcowego
+        elementu do pobrania:
+    </p>
+    <code>
+  nowalista = lista1[1:4] <br>
+  print(nowalista)<br>
+ <span class="fa fa-hand-o-right">  </span>
+ [2, 5, 7]
+</code>
+
+    <p><strong><span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info: </strong> Pamiętaj: element końcowy podajemy w języku Python zawsze o jeden większy niż pozycja ostatniego
+        elementu do pobrania!
+    </p>
+    <p>Podobnie jak dla pozycji tekstów, możesz również pominąć numer elementu końcowego(zwrócone zostaną wszystkie elementy
+        od podanej pozycji aż do końca listy):</p>
+    <code>
+  print(nowalista[1:])<br>
+ <span class="fa fa-hand-o-right">  </span>
+ [5, 7]
+</code>
+    <p>lub początkowego (zwrócone zostaną elementy wszystkie elementy od początku listy, mniejsze od podanej pozycji elementu):</p>
+    <code>
+  print(nowalista[:2])<br>
+ <span class="fa fa-hand-o-right">  </span>
+ [2, 5]
+</code>
+
+    <p><span class="fa fa-cogs" aria-hidden="true"></span><strong> <a id="test" href="#Task" data-toggle="collapse">
+                Sprawdź czy potrafisz
+            </a></strong></p>
+    <p id="Task" class="collapse">Utwórz listę, która zapamięta pory roku, poczynając od zimy. Sprawdź na jaką porę roku przypada miesiąc maj, dzieląc
+        numer miesiąc przez 4 i odczytując wartość z tablicy.</p>
+    </p>
+    <a class="helper"> <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Utwórz listę poryroku i wpisz do niej elementy 'zima', 'wiosna', 'lato', 'jesień'. Następnie wypisz element o numerze (5-1)/3
+        (5 oznacza miesiąc maj, pomniejszony o 1, a 3 liczbę miesięcy przypadającą na jedną porę roku).
+    </p>
+
+    <code class="podpowiedz_kod">
+poryroku=['zima','wiosna','lato','jesień']
+print(poryroku[(5-1)/3]
+</code>
+</div>

@@ -1,0 +1,108 @@
+<h3>Dziedziczenie z klasy bazowej</h3>
+<div data-kinetyczna="13" data-wiersz="13" data-hint="Nauczysz się jak wykorzystywać istniejące klasy do budowania o nowych o rozszerzonych funkcjach, dzięki czemu nie będziesz musiał każdej klasy tworzyć od nowa.">
+    <p>
+        Bardzo ważnym mechanizmem programowania obiektowego jest tzw. dziedziczenie, czyli utworzenie nowej klasy na bazie istniejącej i rozbudowanie jej o nowe dane i funkcje. Wykorzystajmy klasę Osoba do stworzenia klasy Uczen, która dodatkowo będzie zawierać zmienną klasa.
+    </p>
+    <code>
+        class Osoba:<br />
+        imie = "imie"<br />
+        nazwisko = "nazwisko"<br />
+        wiek = 0<br />
+        def __init__(self, imie, nazwisko, wiek):<br />
+            self.imie = imie<br />
+            self.nazwisko = nazwisko<br />
+            self.wiek = wiek<br />
+        def wypisz(self):<br />
+            print(self.imie,self.nazwisko,self.wiek)<br />
+        <br />
+        class Uczen(Osoba):<br />
+        klasa = "0"<br />
+        uczen1 = Uczen("Anna","Nowak",16)<br />
+        print(vars(uczen1))<br />          
+        <span class="fa fa-hand-o-right"></span>
+        {'imie': 'Anna', 'nazwisko': 'Nowak', 'wiek': 16, 'klasa': '0'}
+    </code>
+    <p>
+        <strong>
+            <span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info: 
+        </strong> 
+    Klasę, która została utworzona w oparciu o inną klasę określa się mianem klasa pochodna (lub podklasą od ang. subclass), a klasę, po której nastąpiło dziedziczenie, klasa bazowa (lub nadklasą ang. superclass).
+    </p>
+    <p>
+        Aby zmienić wartość zmiennej klasa w nowym obiekcie możemy wykorzystać kropkę lub funkcję setattr():
+    </p>
+    <code>
+        uczen1.klasa = "3a"<br />
+        print(vars(uczen1))<br />
+        <span class="fa fa-hand-o-right"></span>
+        {'imie': 'Anna', 'nazwisko': 'Nowak', 'wiek': 16, 'klasa': '3a'}
+    </code>
+    <p>
+        Najwygodniej jednak byłoby zmienić konstruktor, tak, żeby uwzględniał nowy atrybut. Możesz to zrobić pisząc nową funkcję __init__() w klasie Uczen:
+    </p>
+    <code>
+        class Uczen(Osoba):<br />
+        klasa = "0"<br />
+        def __init__(self, imie, nazwisko, wiek,klasa):<br />
+            self.imie = imie<br />
+            self.nazwisko = nazwisko<br />
+            self.wiek = wiek<br />
+            self.klasa = klasa<br />
+        uczen1 = Uczen("Anna","Nowak",16,"3a")<br />
+        print(vars(uczen1))<br />
+        <span class="fa fa-hand-o-right"></span>
+        {'imie': 'Anna', 'nazwisko': 'Nowak', 'wiek': 16, 'klasa': '3a'}
+    </code>
+    <p>
+        Jeszcze łatwiej jest wykorzystać konstruktor klasy bazowej. Do klasy bazowej odwołujemy się funkcją super() i przekazujemy do __init__() parametry, które ustawia konstruktor klasy bazowej.
+    </p>
+    <code>
+        klasa = "0"<br />
+        def __init__(self, imie, nazwisko, wiek, klasa):<br />
+            super().__init__(self.imie,self.nazwisko,self.wiek)<br />
+            self.klasa = klasa<br />
+        uczen1 = Uczen("Anna","Nowak",16,"3a")<br />
+        print(vars(uczen1))<br />
+        <span class="fa fa-hand-o-right"></span>
+        {'imie': 'Anna', 'nazwisko': 'Nowak', 'wiek': 16, 'klasa': '3a'}
+    </code>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+            Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">
+        Wykorzystaj klasę Komorka do utworzenia klasy WlascielKomorki. Oprócz pól, które znajdują się w klasie komórka nowa klasa ma pola wlasciciel = ”” oraz numer = 0. Wykorzystując konstruktor klasy bazowej napisz konstruktor dla nowej klasy, tak, by można było ustawić wszystkie argumenty. Za pomocą konstruktora utwórz przykładowy obiekt: Samsung S7 2016 Ala 606505404. Na końcu wypisz zawartość obiektu.
+    </p>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Na bazie najprostszej klasy Komorka z początku tego modułu utwórz nową klasę WlascicielKomorki(Komorka). Dopisz pola self.wlasciciel = ”” oraz self.numer = 0. Dopisz funkcję __init()__, która odwołuje się do funkcji klasy bazowej super().__init__() i przesyła do niej self.producent, model oraz rok_produckji. Na końcu utwórz obiekt WlascicileKomorki("Samsung","S7",2016,"Ala",606505404) i korzystając z funkcji vars() wypisz jego zawartość.
+    </p>
+    <code class="podpowiedz_kod">
+        class Komorka:<br />
+        producent=""<br />
+        model=""<br />
+        rok_produkcji=0<br />
+        def __init__( self, producent, model, rok_produkcji):<br />
+            self.producent = producent<br />
+            self.model = model<br />
+            self.rok_produkcji = rok_produkcji<br />
+        class WlascicielKomorki(Komorka):<br />
+        wlasciciel = ""<br />
+        numer = 0<br />
+        def __init__( self, producent, model, rok_produkcji, wlasciciel, numer):<br />
+            super().__init__(self.producent, self.model, self.rok_produkcji)<br />
+            self.wlasciciel = wlasciciel<br />
+            self.numer = numer<br />
+        wlasc1 = WlascicielKomorki("Samsung", "S7", 2016, "Ala",606505404)<br />
+        print(vars(wlasc1))<br />                 
+    </code>
+</div>
+

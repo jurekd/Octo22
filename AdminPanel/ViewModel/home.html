@@ -1,0 +1,29 @@
+﻿<div id="cmsPanel">
+    <div id="cmsLogo">
+        <!--<img src="/Theme/Images/cmsLogo.svg">-->
+    </div>
+    <div id="cmsBreadcrumps">
+        <ul class="breadcrumps">
+            <li></li>
+        </ul>
+    </div>
+    <div id="cmsPanelMenu">
+        <a style="float:right;" vm-if="logged" href="#" onclick="logout();">Logout</a>
+    </div>
+</div>
+<div id="logowanie" class="container" vm-if="loggedOut">
+    <div class="row">
+        <div class="center-vertical">
+            <div class="col-xs-6 col-sm-3">
+                <form class="form-signin">
+                    <label class="sr-only">Login</label>
+                    <input type="text" id="name" class="form-control" placeholder="Login">
+                    <label class="sr-only">Password</label>
+                    <input type="password" id="password" class="form-control" placeholder="Hasło">
+                    <button class="btn btn-lg btn-primary btn-block btn-black" type="button" onclick="loginUser();">Zaloguj</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<a href="?page=panel" vm-if="logged">Wróć do panelu</a>

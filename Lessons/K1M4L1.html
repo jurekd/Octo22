@@ -1,0 +1,79 @@
+<h3>Pozycje znaków</h3>
+<div data-kinetyczna="13" data-wiersz="13" data-hint="Nauczysz się określać pozycje znaków w tekstach. Umożliwi to ich precyzyjne badanie.">
+    <p>
+        Znaki w tekstach są ponumerowane, tzn. mają przypisaną pozycję w tablicy znaków. Aby znaleźć, na której pozycji znajduje
+        się podany znak stosujemy funkcję
+        <strong>
+            find()
+        </strong>.
+    </p>
+    <code>
+        "Python jest prosty".find("y")</br>
+        <span class="fa fa-hand-o-right">  </span>
+        1
+    </code>
+    <p>
+        <strong>
+            <span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info:
+        </strong>
+        Podobnie jak większość języków programowania, Python liczy zawsze pierwszą pozycję jako 0, drugą
+        jako 1, trzecią jako 2, itd.
+    </p>
+    <p>
+        Odpowiedź jest więc prawidłowa – pierwsze wystąpienie znaku „y” jest na pozycji drugiej, oznaczanej numerem 1. Poniżej przedstawione
+        są wszystkie pozycje znaków w tekście „Python jest prosty”.
+    </p><br/>
+    <img src="Theme/Images/lekcja/tekty_1.PNG" class="img-responsive" alt="" /><br>
+    <p>
+        <strong>
+            <span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info:
+        </strong>
+        Jeżeli Python nie znajdzie szukanej litery lub ciągu liter, zwróci liczbę
+        <strong>-1</strong>.
+    </p>
+    <p>A co jeśli chcemy znaleźć pozycję drugiego znaku „y”? <br/>
+        W funkcji
+        <strong>.find()</strong>
+        jako drugi i trzeci argument
+        możesz określić numer początkowego i końcowego znaku, który ma być przeszukiwany. Koniec podajemy zawsze o jeden
+        większy, czyli w naszym przypadku będzie to liczba 18.
+    </p>
+    <code>
+        'Python jest prosty'.find("y",10,18)<br/>
+        <span class="fa fa-hand-o-right">  </span>
+        17
+    </code>
+    <p>
+        <strong>
+            <span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info:
+        </strong>
+        Numer znaku końcowego możesz pominąć i wtedy tekst jest sprawdzany od podanej pozycji do jego
+        końca.
+    </p>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+                Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <div id="Task" class="collapse">
+        Policz na której pozycji znajduje się druga litera „a” w zdaniu „Ala ma kota.”.
+    </div>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Sprawdź pozycję znaku „a” w tekście za pomocą funkcji find(). Następnie za pomocą funkcji find sprawdź pozycję znaku „a”
+        w tekście, podając jako drugi argument zwróconą wcześniej liczbę, powiększoną o 1.
+    </p>
+    <code class="podpowiedz_kod">
+        "Ala ma kota".find("a")<br/>
+        "Ala ma kota".find("a",3)
+    </code>
+</div>

@@ -1,0 +1,122 @@
+<h3>Atrybuty obiektów</h3>
+<div data-kinetyczna="13" data-wiersz="13" data-hint="Nauczysz się jak dodawać i usuwać atrybuty z klasy. Dzięki temu jeszcze lepiej dostosujesz obiekty do swoich potrzeb.">
+    <p>
+        Obiekty tworzone są na podstawie wzorca klasy, ale w języku Python można później taki obiekt modyfikować, zmieniając jego składowe.  W przykładzie utworzymy obiekt, a później dodamy do niego atrybut miasto.
+    </p>
+    <code>
+        class Osoba:<br />
+        imie = "imie"<br />
+        nazwisko = "nazwisko"<br />
+        wiek = 0<br />
+        def __init__(self, imie, nazwisko, wiek):<br />
+            self.imie = imie<br />
+            self.nazwisko = nazwisko<br />
+            self.wiek = wiek<br />
+        def wypisz(self):<br />
+            print(self.imie,self.nazwisko,self.wiek)<br />
+        osoba1 = Osoba("Kamil","Bilski",15)<br />
+        osoba1.miasto = "Warszawa"<br />
+        print(osoba1.nazwisko,osoba1.miasto)<br />          
+        <span class="fa fa-hand-o-right"></span>
+        Bilski Warszawa
+    </code>
+    <p>
+        <strong>
+            <span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info: 
+        </strong> 
+    Podobny model obiektowości został zaimplementowany w języku JavaScript i nazywany jest prototypowaniem – na początku tworzony jest bowiem tylko prototyp obiektu.
+    </p>
+    <p>
+        Dopisanie składowej do obiektu nie oznacza, że odtąd wszystkie inne obiekty klasy będą go posiadały.
+    </p>
+    <code>
+        osoba2 = Osoba("Anna","Nowak",16)<br />
+        print(osoba2.miasto)<br />
+        <span class="fa fa-hand-o-right"></span>
+        AttributeError: 'Osoba' object has no attribute 'miasto'          
+    </code>
+    <p>
+        Jeżeli chcemy dopisać jakąś funkcję lub atrybut do wszystkich obiektów, musimy dodać je do klasy, nie obiektu:
+    </p>
+    <code>
+        Osoba.miasto="brak"<br />
+        osoba2 = Osoba("Anna","Nowak",16)<br />
+        print(osoba2.miasto)<br />
+        <span class="fa fa-hand-o-right"></span>
+        brak           
+    </code>
+    <p>
+        Python dostarcza kilka użytecznych funkcji do operowania na atrybutach. Pierwszą z nich jest hasattr(), która sprawdza czy w podanej klasie lub obiekcie występuje dany atrybut:
+    </p>
+    <code>
+        osoba3 = Osoba("Iza","Maj",15)<br />
+        print(hasattr(osoba3,'imie'))<br />
+        print(hasattr(osoba3,'kod'))<br />
+        <span class="fa fa-hand-o-right"></span>
+        True<br />
+        False
+    </code>
+    <p>
+        Możemy też usunąć określony atrybut z obiektu – służy do tego funkcja delattr(). 
+    </p>
+    <code>
+        osoba3 = Osoba("Iza","Maj",15)<br />
+        delattr(osoba3,'imie')<br />
+        print(osoba3.imie)<br />
+        <span class="fa fa-hand-o-right"></span>
+        AttributeError: Osoba instance has no attribute 'imie'           
+    </code>
+    <p>
+        Python dostarcza też funkcje do pobierania wartości atrybutów oraz ich ustawiania. Służą do tego odpowiednio funkcje getattr() i setattr():
+    </p>
+    <code>
+        osoba3 = Osoba("Iza","Maj",15)<br />
+        setattr(osoba3,'wiek',16)<br />
+        print(getattr(osoba3,'wiek'))<br />
+        print(osoba3.wiek)<br />
+        <span class="fa fa-hand-o-right"></span>
+        16<br />
+        16         
+    </code>
+    <p>
+        <strong>
+            <span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info: 
+        </strong> 
+        Funkcje getattr() oraz setattr() możesz stosować wymiennie z kropą.
+    </p>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+            Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">
+        Na bazie klasy Komorka utwórz obiekt Samsung S7 0 0. Następnie usuń z niego atrybut rok_produkcji, a dodaj za to atrybut kolor z wartością ‘biały’. Wypisz wszystkie atrybuty wykorzystując funkcję vars().
+    </p>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Na bazie najprostszej klasy Komorka z początku tego modułu utwórz obiekt np. o nazwie tel1 z wartościami Samsung S7 0 . Funkcją delattr() usuń z tego obiektu rok_produkcji. Dopisz tel1.kolor = "biały". Na końcu wypisz wynik funkcji vars(), której argumentem jest obiekt tel1.
+    </p>
+    <code class="podpowiedz_kod">
+        class Komorka:<br />
+        producent=""<br />
+        model=""<br />
+        rok_produkcji=0<br />
+        def __init__( self, producent, model, rok_produkcji):<br />
+            self.producent = producent<br />
+            self.model = model<br />
+            self.rok_produkcji = rok_produkcji<br />
+        tel1 = Komorka("Samsung", "S7", 0)<br />
+        delattr(tel1,'rok_produkcji')<br />
+        tel1.kolor = "biały"<br />
+        print(vars(tel1))<br />                 
+    </code>
+</div>
+

@@ -1,0 +1,72 @@
+<h3>Podstawowa składnia</h3>
+<div data-kinetyczna="22" data-wiersz="22" data-hint="Nauczysz się stosować instrukcje warunkowe. Dzięki temu sprawdzisz jak komputer powinien cię przywitać.">
+
+  <p>Podstawową instrukcją warunkową w języku Python jest instrukcja <strong>if</strong>. Instrukcja ta pozwala podjąć jakieś
+    działanie w zależności od tego czy sprawdzane wyrażenie jest prawdziwe czy nie. Działanie, które ma zostać wykonane zapisywane
+    jest po dwukropku:
+  </p>
+  <code>
+if 36%4==0: print("Liczba 36 dzieli się przez 4")<br>
+<span class="fa fa-hand-o-right">  </span>
+Liczba 36 dzieli się przez 4
+</code>
+
+  <p><strong><span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info: </strong>Dla poprawienia czytelności programu, działania wykonywane po dwukropku zapisywane są w nowej
+    linijce. Wyrażenie w nowej linijce, jeśli jest kontynuacją poprzedniego, musisz w języku Python zacząć od wcięcia (tj.
+    co najmniej jednej spacji)!
+  </p>
+  <code>
+if 36%4==0: <br>
+  print("Liczba 36 dzieli się przez 4")<br>
+<span class="fa fa-hand-o-right">  </span>
+Liczba 36 dzieli się przez 4
+</code>
+  <p>Zapis bez wcięcia spowoduje błąd składni (dosłownie: "BłądSkładni: złe wejście"):</p>
+  <code>
+if 36%4==0: <br>
+print("Liczba 36 dzieli się przez 4")<br>
+<span class="fa fa-hand-o-right">  </span>
+SyntaxError: bad input
+</code>
+
+  <p>Jeżeli warunek po <strong>if</strong> jest nieprawdziwy, żadne działanie nie zostanie wykonane.
+  </p>
+  <p>Instrukcje warunkowe mogą także zawierać działania, które zostaną wykonane, jeżeli warunek po <strong>if</strong> jest
+    nieprawdziwy. Zapisujemy je po słowie <strong>else</strong>:
+  </p>
+  <code>
+if 38%4==0: <br>
+  print("Liczba 38 dzieli się przez 4")<br>
+else: <br>
+  print("Liczba 38 nie dzieli się przez 4") <br>
+<span class="fa fa-hand-o-right">  </span>
+Liczba 38 nie dzieli się przez 4
+</code>
+  <p>
+    <p>
+      <span class="fa fa-cogs" aria-hidden="true"></span>
+      <strong>
+        <a id="test" href="#Task" data-toggle="collapse">
+              Sprawdź czy potrafisz
+          </a>
+      </strong>
+    </p>
+    <p id="Task" class="collapse">Do zmiennej godzina przypisz np. 12. Jeżeli godzina jest większa lub równa od 17, wypisz "Dobry wieczór!", w przeciwnym
+      wypadku wypisz "Dzień dobry!".</p>
+    <a class="helper"> <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+      Przypisz do zmiennej godzina liczbę 12.<br/> Instrukcją if sprawdź warunek godzina>=17. Jeżeli jest prawdziwy wypisz
+      "Dobry wieczór!",  w przeciwnym wypadku wypisz "Dzień dobry!".
+    </p>
+    <code class="podpowiedz_kod">
+godzina=17<br>
+if godzina>=17:
+ print("Dobry wieczór!")
+else:
+ print("Dzień dobry!")
+
+</code>
+</div>

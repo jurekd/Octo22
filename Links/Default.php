@@ -1,0 +1,15 @@
+<?php
+require_once('../Libraries/Init.php');
+require_once('../Libraries/DataController.php');
+require_once('../Libraries/Functions.php');
+require_once('../Classes/DataBaseObjects/init.php');
+require_once('../Classes/DateTime.php');
+require_once('../Classes/JSONify.php');
+require_once('../Classes/DatabaseCore.php');
+require_once('../Classes/Validation.php');
+require_once('../Classes/log.php');
+require_once('../Modules/Login/core.php');
+require_once('../Modules/WebSite/core.php');
+require_once('../Modules/LMS/core.php');
+require_once('../Modules/AdminPanel/core.php');
+?>

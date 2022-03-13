@@ -1,0 +1,94 @@
+<h3>Wyszukiwanie i zastępowanie za pomocą wyrażeń</h3>
+<div data-kinetyczna="13" data-wiersz="13" data-hint="Dowiesz się w jaki sposób można użyć wyrażeń regularnych do wyszukiwania ciągu znaków w tekście. W ten sposób będziesz mógł wyciągać informacje nieustrukturyzowane.">
+    <p>
+        Wyobraźmy sobie, że dostajemy maila, w którym w stopce znajduje się telefony. Chcemy je wydzielić z tekstu i zapisać do listy. Wiesz już, że do wyszukania ciągów znaków w tekście, które pasują do wzorca, można posłużyć się funkcja <strong>search()</strong>.
+    </p>
+    <code>
+        import re<br />
+        firma = 'Firma QuickSoft tel. 600202020'<br />
+        wzorzec = '[0-9]{9}'<br />
+        wynik = re.search(wzorzec,firma)<br />
+        print(wynik.group(0))<br />            
+        <span class="fa fa-hand-o-right"></span>
+        600202020
+    </code>
+    <p>
+        Jednak co jeśli w tekście będzie występowało więcej numerów telefonów, np. komórkowy i stacjonarny? Funkcja <strong>search</strong> znajdzie tylko pierwszy ciąg znaków, który pasuje do wzorca:
+    </p>
+    <code>
+        import re<br />
+        firma = 'Firma QuickSoft tel. +32 2585858, kom. 600202020'<br />
+        wzorzec = '[0-9- /+]{9,11}'<br />
+        wynik = re.search(wzorzec,firma)<br />
+        print(wynik.group(0))<br />            
+        <span class="fa fa-hand-o-right"></span>
+        +32 258585
+    </code>
+    <p>
+        Jeśli chcemy znaleźć wszystkie ciągi znaków pasujące do wzorca, musimy użyć funkcji <strong>findall()</strong>.
+    </p>
+    <code>
+        import re<br />
+        firma = 'Firma QuickSoft tel. +32 2585858, tel. kom. 600202020'<br />
+        wzorzec = '[0-9- \+]{9,12}'<br />
+        wynik = re.findall(wzorzec,firma)<br />
+        print(wynik)<br />
+        <span class="fa fa-hand-o-right"></span>
+        [' +32 2585858', ' 600202020']         
+    </code>
+    <p>
+        Funkcja <strong>findall()</strong> zwraca listę wszystkich pasujących do wzorca ciągów znaków. Zmieniliśmy nieco wzrorzec wyszukiwania, tak by pasował do spacji, znaku plus oraz oczywiście cyfr, przy czym całość mieściła zajmowała między 9 a 12 znaków.
+    </p>
+    <p>
+        Oprócz szukania wzorców Python oferuje też możliwość ich zastępowania. Służy do tego funkcja <strong>sub()</strong>. W przykładzie ukryjemy wszystkie numery telefonów, zamieniając je na znaki ‘-----‘:
+    </p>
+    <code>
+        import re<br />
+        firma = 'Firma QuickSoft tel. +32 2585858, kom. 600202020'<br />
+        wzorzec = '[0-9- /+]{9,12}'<br />
+        wzorzec2 = '---'<br />
+        wynik = re.sub(wzorzec,wzorzec2,firma)<br />
+        print(wynik)<br />
+        <span class="fa fa-hand-o-right"></span>
+        Firma QuickSoft tel.---, kom.---          
+    </code>
+    <p>
+        We wzorcu podstawiania możesz wykorzystać grupy. W poniższym przykładzie umieścimy numer kierunkowy w nawiasie:
+    </p>
+    <code>
+        import re<br />
+        firma = 'Firma QuickSoft tel. +32 2585858, kom. 600202020'<br />
+        wzorzec = '([/+0-9]{3})([ 0-9]{7,10})'<br />
+        wzorzec2 = r'(\1)\2'<br />
+        wynik = re.sub(wzorzec,wzorzec2,firma)<br />
+        print(wynik)<br />
+        <span class="fa fa-hand-o-right"></span>
+        Firma QuickSoft tel. (+32) 2585858, kom. 600202020
+    </code>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+            Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">
+        Napisz program, który ze spisu nazwisk wybiera w wypisuje wszystkie imiona i nazwiska, przyjmując, że imię i nazwisko zaczynają się z dużej litery, mają co najmniej 2 litery i są rozdzielone spacją. Spis wygląda następująco: ‘Kamil Bilski 23 pkt, Weronika Nowak 20 pkt, Jan Lis 32 pkt’.
+    </p>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Zdefiniuj spis zawierający imię, nazwiska i punkty. Następnie określ wzorzec '[A-Z][a-z]+ [A-Z][a-z]+'. Znajdź wszystkie jego wystąpienia w spisi 
+    </p>
+    <code class="podpowiedz_kod">
+        import re<br />
+        lista = 'Kamil Bilski 23 pkt, Weronika Nowak 20 pkt, Jan Lis 32 pkt'<br />
+        wzorzec = '[A-Z][a-z]+ [A-Z][a-z]+'<br />
+        wynik = re.findall(wzorzec,lista)<br />
+        print(wynik)<br />                 
+    </code>
+</div>
+

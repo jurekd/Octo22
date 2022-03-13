@@ -1,0 +1,71 @@
+<h3>Stosowanie nawiasów</h3>
+<div data-kinetyczna="6"  data-wiersz="6" data-hint="Nauczysz się wykorzystywać większą liczbę nawiasów do ustalania kolejności działań w języku Python. Dzięki temu będziesz mógł wyliczyć wartość liczby π, podobnie jak robili to Egipcjanie 2000 lat p.n.e.">
+    <p>
+        W przypadku bardziej złożonych działań użyj większej liczby nawiasów okrągłych, umieszczając jeden w środku drugiego. Nie stosujemy nawiasów kwadratowych <strong>[]</strong> czy klamrowych <strong>{}</strong>. Nawiasy tego typu mają w programowaniu inne funkcje, niż oznaczanie kolejności działań.
+    </p>
+    <p>
+        Aby wykonać działanie   <img src="Theme/Images/lekcja/liczby_4.PNG"  class="img-responsive" alt=""/> musisz je zapisać w następującej postaci:
+    </p>
+    <code>
+    ((1+2)*3)**2<br/>
+    <span class="fa fa-hand-o-right"></span>
+    81
+    </code>
+    <p>
+        Jeżeli użyjesz nawiasów klamrowych otrzymasz błąd:
+    </p>
+    <code>
+        [(1+2)*3]**2<br/>
+        <span class="fa fa-hand-o-right"></span>
+        TypeError: unsupported operand type(s) for Pow: 'list' and 'int'
+    </code>
+    <p>
+        <strong>
+            <span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info:
+        </strong>
+        Wartości umieszczone w nawiasach kwadratowych [] traktowane są jako lista (o listach dowiesz się w dalszych lekcjach). Błąd dosłownie oznacza "BłądTypu: 'lista' i 'liczba całkowita' nie są typami wspieranymi przez operator potęgowania".
+    </p>
+    <p>
+        Szczególną uwagę musisz zachować wpisując wyrażenia ułamkowe. Np. działanie
+        <img src="Theme/Images/lekcja/liczby_5.PNG" class="img-responsive" alt=""/>
+        zapiszesz następująco:
+    </p>
+    <code>
+        ((1+2)/3-2)*(5+3)<br/>
+        <span class="fa fa-hand-o-right"></span>
+        -16
+    </code>
+    <p>
+        Brak nawiasu w liczniku ułamka spowodowałby wykonanie wyrażenia równoważnego z <img src="Theme/Images/lekcja/liczby_5a.png"  class="img-responsive" alt=""/>
+    </p>
+    <code>
+        (1+2/3-2)*(5+3)<br/>
+        <span class="fa fa-hand-o-right"></span>
+        -2.66666666667
+    </code>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+                Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <div id="Task" class="collapse">
+        Policz liczbę PI ze wzoru Egipcjan. Wynik nie jest dokładny, ale taki liczono 2000 lat przed naszą erą.<br>
+        <div id="Task">
+          <img  id="content_Sprawdz_2" src="Theme/Images/lekcja/liczby_6.PNG" class="img-responsive center-block" alt=""/>
+        </div>
+        <br>
+    </div>
+    <a class="helper"> <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        W nawiasie podziel 16 przez 9 i podnieś do potęgi 2 operatorem **.
+    </p>
+    <code class="podpowiedz_kod">
+        (16/9)**2
+    </code>
+</div>

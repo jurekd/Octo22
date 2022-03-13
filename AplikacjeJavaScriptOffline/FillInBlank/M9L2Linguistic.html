@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Word remover (fill-in-the-blank game)</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src='/JavaScript/Libraries/jquery.min.js'></script>
+  <script src='/AplikacjeJavaScriptOffline/FillInBlank/js/index.js'></script>
+
+</head>
+
+<body>
+  <h3>Uzupełnij luki</h3>
+  <div id="sentence"></div>
+  <h3>Brakujące słowa</h3>
+  <div id="words"></div>
+  <div id="task" style="display:none;"><h3>Treść Zadania</h3> Wypisz w kolejności liczby ludności (podaną w milionach) w  następujących miastach Europy: Berlin – 3.5, Rzym – 2.9, Londyn – 8.3, Warszawa – 1.7, Paryż – 2.2. Następnie odwróć kolejność – od najmniejszego do największego miasta i ponownie wypisz wynik.</div>
+  <script src="js/index.js"></script>
+  <script type="text/javascript">
+    var text = '1. W programowaniu układanie elementów w zadanej kolejności nazywane jest sortowaniem  <br>2. Liczby domyślnie sortowane są od najmniejszej do największej, natomiast testy układane są w kolejności alfabetycznej <br>3. Funkcja sort() służy do sortowania elementów w liście.';
+    fillInTheBlankGameInit(text,[10,27,30]);
+  </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<h3>Zwrot wartości przez funkcjęt</h3>
+<div data-kinetyczna="13" data-wiersz="13" data-hint="W poprzedniej lekcji funkcje niczego nie zwracały - efekt ich działania było widać na ekranie. W tej lekcji nauczysz się zwracać wartość przez funkcję, dzięki czemu będziesz mógł przypisywać ją do zmiennych.">
+    <p>
+        Funkcja może zwrócić wartość po słowie <strong>return</strong>. Napiszmy prostą funkcję suma, która pobiera dwie liczby i zwraca ich sumę:
+    </p>
+    <code>
+        def suma(a, b):<br />
+        c = a + b<br />
+        return c<br />
+        <br />
+        wynik = suma(2,3)<br />
+        print(wynik)<br />          
+        <span class="fa fa-hand-o-right"></span>
+        5
+    </code>
+    <p>
+        W funkcji można określić wiele instrukcji return. Każda z nich kończy działanie funkcji i zwraca podaną po return wartość:
+    </p>
+    <code>
+        def bezwzgledna(liczba):<br />
+        if liczba>=0:<br />
+            return liczba<br />
+        else:<br />
+            return -liczba<br />
+        <br />
+        print(bezwzgledna(-3))<br />          
+        <span class="fa fa-hand-o-right"></span>
+        3
+    </code>
+    <p>
+        Funkcja może też kończyć swoje działanie słowem <strong>return</strong>, nie zwracając żadnej wartości:
+    </p>
+    <code>
+        def bezwzgledna(liczba):<br />
+        def dodatnia(liczba):<br />
+            if liczba>0:<br />
+            print("Liczba jest dodatnia")<br />
+            return<br />
+            print("Liczba jest ujemna")<br />
+            return<br />
+        <br />
+        dodatnia(10)<br />
+        <span class="fa fa-hand-o-right"></span>
+        Liczba jest dodatnia
+    </code>
+    <p>
+        Jeśli będziemy chcieli przypisać do zmiennej wynik działania funkcji, a funkcja zwróci „puste” return, zmienna przyjmie wartość None.
+    </p>
+    <code>
+        def odwrotnosc(liczba):<br />
+        if liczba == 0:<br />
+            return<br />
+        return 1/liczba<br />
+        <br />
+        wynik = odwrotnosc(0)<br />
+        print(wynik)<br />
+        <span class="fa fa-hand-o-right"></span>
+        None
+    </code>
+    <p>
+        <strong>
+            <span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info: 
+        </strong> 
+        Jeżeli funkcja nie zawiera ani jednej instrukcji return, jak w poprzedniej lekcji, również zwróci wartość None.
+    </p>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+            Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">
+        Napisz funkcję znaki(tekst), która sprawdza ile jest znaków w podanym tekście, pomijając spacje. Jeżeli użytkownik nie poda tekstu do sprawdzenia, zwracane jest 0. Przetestuj działanie funkcji dla argumentu „Ala ma kota”.
+    </p>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Zdefiniuj funkcję z argumentem domyślnym o nazwie znaki(tekst=''). Sprawdź czy tekst jest pusty. Jeśli jest, zwróć 0. Jeśli nie, to ustaw licznik znaków na 0, a następnie w pętli for zwiększaj licznik znaków, jeżeli różnią się od spacji. Zwróć wyliczoną wartość. 
+    </p>
+    <code class="podpowiedz_kod">
+        def znaki(tekst=''):<br />
+        if tekst == '':<br />
+            return 0<br />
+        licznik = 0<br />
+        for znak in tekst:<br />
+            if znak!=' ':<br />
+            licznik = licznik +1<br />
+        return licznik<br />
+        <br />
+        ile = znaki("Ala ma kota")<br />
+        print(ile)<br />               
+    </code>
+</div>
+

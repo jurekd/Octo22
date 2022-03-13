@@ -1,0 +1,93 @@
+<h3>Zagnieżdżone wyrażenia </h3>
+<div data-kinetyczna="13" data-wiersz="13" data-hint="Dowiesz się w jaki sposób tworzyć kombinacje dwóch list za pomocą wyrażeń listowych oraz jak tworzyć kilka elementów naraz w jednej liście.">
+    <p>
+        W pewnych sytuacjach będziemy potrzebowali stworzyć jedną listę z dwóch list. Wiesz już, że listy można połączyć operatorem + lub funkcją <strong>extend</strong>. Zamieniając listę na zbiór możesz też znaleźć część wspólną lub tylko te elementy listy, które nie powtarzają się w drugiej. Czasami potrzebne będą nieco bardziej zaawansowane połączenia np. jak z dwóch list stworzyć kombinację ich elementów.
+    </p>
+    <p>
+        Rozważmy przykład, w którym mamy dwie listy s1 = [‘a’,’b’,’c’] oraz s2 = [‘1’,’2’,’3’]. Stosując zagnieżdżone pętle for kombinacje obu list zapisalibyśmy tak:
+    </p>
+    <code>
+        s1 = ['a','b','c']<br />
+        s2 = ['1','2','3']<br />
+        for j in s1:<br />
+            for k in s2:<br />
+            print(j+ k, end = ',')<br />            
+        <span class="fa fa-hand-o-right"></span>
+        a1,a2,a3,b1,b2,b3,c1,c2,c3,
+    </code>
+    <p>
+        Podobne dwie pętle możesz użyć w wyrażeniu listowym:
+    </p>
+    <code>
+        s1 = ['a','b','c']<br />
+        s2 = ['1','2','3']<br />
+        lista = [j + k for j in s1 for k in s2]<br />
+        print(lista)<br />            
+        <span class="fa fa-hand-o-right"></span>
+        ['a1', 'a2', 'a3', 'b1', 'b2', 'b3', 'c1', 'c2', 'c3'] 
+    </code>
+    <p>
+        Zarówno jedna, jak i druga lista mogą być filtrowane wyrażeniem if. Przypuśćmy, że z naszej kombinacji chcemy wyłączyć element ‘a’ z pierwszej listy i element ‘3’ z drugiej listy:
+    </p>
+    <code>
+        s1 = ['a','b','c']<br />
+        s2 = ['1','2','3']<br />
+        lista2 = [j + k for j in s1 if j!='a' for k in s2 if k!='3']<br />
+        print(lista2)<br />
+        <span class="fa fa-hand-o-right"></span>
+        ['b1', 'b2', 'c1', 'c2']          
+    </code>
+    <p>
+        Możemy też zrezygnować tylko z elementu ‘a3’, łącząc warunki:
+    </p>
+    <code>
+        lista3 = [j + k for j in s1 if j!='a' and 'k!=3' for k in s2]<br />
+        print(lista3)<br />
+        <span class="fa fa-hand-o-right"></span>
+        ['b1', 'b2', 'b3', 'c1', 'c2', 'c3']        
+    </code>
+    <p>
+        Elementy list niekoniecznie musimy sklejać możemy z tworzyć dwuelementowe listy, zbiory czy krotki:
+    </p>
+    <code>
+        lista_krotek = [(j,k) for j in s1 for k in s2]<br />
+        print(lista_krotek)<br />
+        <span class="fa fa-hand-o-right"></span>
+        [('a', '1'), ('a', '2'), ('a', '3'), ('b', '1'), ('b', '2'), ('b', '3'), ('c', '1'), ('c', '2'), ('c', '3')]           
+    </code>
+    <p>
+        Czasami będziemy potrzebowali utworzyć więc niż jeden element na podstawie listy. Np. mając listę słów chcemy mieć listę zawierającą to słowo, jego pierwszą literę oraz jego długość. Podobnie jak wyżej możesz umieścić je np. w krotkach:
+    </p>
+    <code>
+        slowa = ['wyrażenia', 'listy', 'Python', 'programowanie']<br />
+        lista = [(s, s[0], len(s)) for s in slowa]<br />
+        print(lista)<br />
+        <span class="fa fa-hand-o-right"></span>
+        [('wyrażenia', 'w', 9), ('listy', 'l', 5), ('Python', 'P', 6), ('programowanie', 'p', 13)]         
+    </code>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+            Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">
+        Mając listę telefonów wraz z numerami kierunkowymi telefonów telefony = [‘+48600200’, ‘+39200121’, ‘+34200333’, ‘+48505606’) oraz słownik z kodami krajów kraje = {‘+48’:’Polska’, ‘+34’:’Hiszpania’, ‘+39’:’Włochy’}, stwórz listę łączącą krotki numer telefonu – kraj np. {(‘+48600200’, ‘Polska’), …}
+    </p>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Zdefiniuj listę telefonów. Zdefiniuj słownik z krajami. Za pomocą wyrażenia listowego stwórz krotki (x, x[0:3]) dla wszystkich telefonów w liście telefony. Wypisz zawartość utworzonej listy/
+    </p>
+    <code class="podpowiedz_kod">
+        telefony = ['+48600200', '+39200121', '+34200333', '+48505606'] <br />
+        kraje = {'+48':'Polska', '+34':'Hiszpania', '+39':'Włochy'}<br />
+        telefony_kraje = [(x,kraje[x[0:3]]) for x in telefony]<br />
+        print(telefony_kraje)<br />                 
+    </code>
+</div>
+

@@ -1,0 +1,105 @@
+<h3>Definiowanie wyrażeń lambda</h3>
+<div data-kinetyczna="13" data-wiersz="13" data-hint="Nauczysz się tworzyć proste funkcje za pomocą lambda wyrażeń. Nauczysz się także przekazywać funkcję jako argument innych funkcji.">
+    <p>
+        Wyrażenie lambda definiujemy słowem lambda, po którym umieszczamy parametry, a po dwukropku operacje, które mają być na tych parametrach wykonane:
+    </p>
+    <code>
+        lambda x: x * x (3)<br />
+        <span class="fa fa-hand-o-right"></span>
+        9
+    </code>
+    <p>
+        Takie proste funkcje możemy przypisywać do zmiennych i późnej wywoływać je podając nazwę zmiennej:
+    </p>
+    <code>
+        suma = lambda a, b: a + b<br />
+        print(suma(2,3)<br />            
+        <span class="fa fa-hand-o-right"></span>
+        5
+    </code>
+    <p>
+        Powyższy zapis jest niemal jednoznaczny z funkcją zapinaną jako:
+    </p>
+    <code>
+        def suma(a, b):<br />
+        return a+b<br />
+        <br />
+        print(suma(2,3)<br />
+        <span class="fa fa-hand-o-right"></span>
+        5   
+    </code>
+    <p>
+        Lambada wyrażenia są krótsze w zapisie, ale mają sporo ograniczeń: nie mogą definiować własnych zmiennych, nie mogą zwierać instrukcji <strong>return</strong>, nie mogą też zawierać więcej niż jednej instrukcji.
+    </p>
+    <p>
+        Jednak dzięki tym ograniczeniom mogą stać się częścią standardowych funkcji definiowanych słowem <strong>def</strong>:
+    </p>
+    <code>
+        def suma_kwadratow(lista):<br />
+        kwadrat = lambda x: x * x<br />
+        suma = 0<br />
+        for element in lista:<br />
+            suma = suma + kwadrat(element)<br />
+        return suma<br />
+        <br />
+        wynik = suma_kwadratow([1,2,3])<br />
+        print(wynik)<br />
+        <span class="fa fa-hand-o-right"></span>
+        14        
+    </code>
+    <p>
+        Lambda wyrażenia można też przekazywać jako parametry funkcji
+    </p>
+    <code>
+        def oblicz(funkcja, a, b):<br />
+        wynik = funkcja(a, b)<br />
+        print(wynik)<br />
+        <br />
+        dodaj = lambda a, b: a+b<br />
+        oblicz(dodaj, 2, 3)<br />
+        <span class="fa fa-hand-o-right"></span>
+        5<br />
+        pomnoz = lambda a, b: a/b<br />
+        oblicz(pomnoz, 2, 3)<br />
+        <span class="fa fa-hand-o-right"></span> 
+        6       
+    </code>
+    <p>
+        Funkcja może też zwracać lambda wyrażenie:
+    </p>
+    <code>
+        def funkcja(x):<br />
+        return lambda y : x * y<br />
+        <br />
+        print(funkcja(2)(3))<br />
+        <span class="fa fa-hand-o-right"></span>
+        6       
+    </code>
+    <p>
+        W powyższym przykładzie funkcja wywoływana jest z argumentem 2 i zwracane jest wyrażenie lambda y : 2 * y, do którego z kolei przekazana zostaje wartość 3, zatem ostateczny wynik wynosi 6. Staraj się jednak unikać tak złożonych konstrukcji, o ile to nie jest z jakiegoś powodu uzasadnione.
+    </p>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+            Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">
+        Stosując wyrażenie lambda napisz funkcję suma_kwadratow, która oblicza sumę kwadratów trzech podanych liczb. Przetestuj funkcję dla wartości 1,2,3.
+    </p>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Do zmiennej suma_kwadratow przypisz lambda wyrażenie, które pobiera parametry a, b, c, a po dwukropku wpisz wyrażenie a*a + b*b + c*c. Następnie wywołaj suma_kwadratow podając jako argumenty liczby 1, 2, 3
+    </p>
+    <code class="podpowiedz_kod">
+        suma_kwadratow = lambda a, b, c: a*a + b*b + c*c<br />
+        wynik = suma_kwadratow(1, 2, 3)<br />
+        print(wynik)<br />                
+    </code>
+</div>
+

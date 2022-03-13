@@ -1,0 +1,91 @@
+<h3>Przerywanie i zagnieżdżanie pętli for</h3>
+<div data-kinetyczna="13" data-wiersz="13" data-hint="Nauczysz się jak przerwać wykonywanie pętli oraz do czego można wykorzystać pętle w pętli. Dzięki temu sprawdzisz czy dana liczba jest liczbą pierwszą oraz narysujesz kwadrat.">
+    <p>
+        Pętla <strong>for</strong> wykonywana jest od pierwszego do ostatniego elementu jakiegoś zbioru. Możesz ją jednak przerwać instrukcją <strong>break</strong>.
+    </p>
+    <code>
+        for x in range(1,7)<br />
+        if x==5:<br />
+            break<br />
+        print(x)          
+        <span class="fa fa-hand-o-right"></span>
+        1<br />
+        2<br />
+        3<br />
+        4
+    </code>
+    <p>
+        Możesz też pominąć wykonanie instrukcji w pętli i przejść do kolejnego elementu w zbiorze. Służy to tego instrukcja <strong>continue</strong>:
+    </p>
+    <code>
+        for x in range(1,7)<br />
+        if x==5:<br />
+            continue<br />
+        print(x)          
+        <span class="fa fa-hand-o-right"></span>
+        1<br />
+        2<br />
+        3<br />
+        4<br />
+        6      
+    </code>
+    <p>
+        Instrukcja <strong>for</strong>, podobnie jak instrukcja <strong>if</strong> może zawierać blok <strong>else</strong>. Blok ten wykonywany jest po wyczerpaniu wszystkich elementów w pętli. Poniższy przykład prezentuje program sprawdzający czy liczba 111 jest liczbą pierwszą.
+    </p>
+    <code>
+        liczba = 111<br />
+        for dzielnik in range(2,liczba//2):<br />
+            if liczba%dzielnki == 0:<br />
+            print('Liczba nie jest pierwsza')<br />
+            break<br />
+        else:<br />
+            print('Liczba pierwsza')            
+    </code>
+    <p>
+        Pętle można zagnieżdżać jedna w drugiej. Przykładowo chcemy narysować prostokąt o bokach 3 i 5.
+    </p>
+    <code>
+        for bok1 in range(1,4):<br />
+        for bok2 in range(1,6):<br />
+            print('*',end='')<br />
+        print()<br />
+        <span class="fa fa-hand-o-right"></span>
+        *****<br />
+        *****<br />
+        *****          
+    </code>
+    <p>
+        <strong>
+            <span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info: 
+        </strong> 
+    Przekazanie argumentu end='' do instrukcji <strong>print</strong> powoduje, że zamiast przejścia do nowej linii, kolejne wartości będą wypisywane w tym samych wierszu. Przekazanie jakiegoś znaku po end, np. end = ',' spowoduje rozdzielenie wartości tym znakiem (tutaj: przecinkami).
+    </p>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+            Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <p id="Task" class="collapse">
+        Wypisz wszystkie liczby pierwsze w zakresie od 2 do 99. Liczby rozdziel przecinkami.
+    </p>
+    <a class="helper">
+        <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Wykorzystaj dwie pętle for – jedną dla liczba z zakresu od 2 do 100, drugą od 2 do danej liczby dzielonej całkowicie przez 2. Druga pętla zawiera kod analogiczny do przykładu zawartego w tej lekcji, z tym, że informacja o tym, że liczba nie jest pierwsza nie jest wypisywana, a w przypadku jej znalezienia, wypisywana jest właśnie ta liczba.
+    </p>
+    <code class="podpowiedz_kod">
+        for liczba in range(2,30):<br />
+        for dzielnik in range(2,liczba//2):<br />
+            if liczba%dzielnik == 0:<br />
+            break<br />
+        else:<br />
+            print(liczba,end=','))                 
+    </code>
+</div>
+

@@ -1,0 +1,69 @@
+<h3>Zaokrąglanie liczb</h3>
+<div data-kinetyczna="8" data-wiersz="8" data-hint="Nauczysz się zaokrąglać liczby w języku Python oraz przekształcać różne typy liczb. Dzięki temu będziesz mógł wyznaczyć liczbę PI z dokładnością do zadanej liczby miejsc po przecinku.">
+    <p>
+        W języku Python do zaokrąglania liczb możemy wykorzystać funkcję <strong>round()</strong>, która zaokrągla liczbę dziesiętną do liczby całkowitej. Funkcja ta nie wymaga importu modułu math!
+    </p>
+    <code
+        >round(2.35)<br/>
+        <span class="fa fa-hand-o-right"></span>
+        2.0
+    </code>
+    <p>
+        Funkcja <strong>round()</strong> umożliwia także zaokrąglanie liczb do podanej liczby miejsc po przecinku. Liczbę miejsc należy przekazać jako drugi argument funkcji:
+    </p>
+    <code>
+        round(2.35,1)<br/>
+        <span class="fa fa-hand-o-right"></span>
+        2.4
+    </code>
+    <p>
+        Możesz także zamienić liczbę dziesiętną na liczbę całkowitą. Taka operacja może być wymagana jeżeli np. funkcja przyjmuję jako argumenty tylko liczby całkowite. </p><p>Do przekształcania liczby rzeczywistej (float) na liczbę całkowitą (int) służy funkcja <strong>int()</strong>:
+    </p>
+    <code>
+        int(2.35)<br/>
+        <span class="fa fa-hand-o-right">  </span>
+        2
+    </code>
+    <p>
+        Zwróć uwagę, że Python tym razem wypisze <strong>2</strong> (liczba całkowita), a nie <strong>2.0</strong> (liczba rzeczywista).
+    </p>
+    <p>
+        <strong>
+            <span class="fa fa-info-circle" aria-hidden="true"></span>
+            Info:
+        </strong>
+        W języku Python dla uproszczenia określono tylko dwa typy liczb: całkowity (z ang. integer), zapisywany w skrócie jako
+        <strong>int</strong>
+        oraz rzeczywisty, inaczej zmiennoprzecinkowy (z ang. floating point), zapisywany jako
+        <strong>float</strong>.
+    </p>
+    <p>
+        Liczbę całkowitą możesz zamienić na rzeczywistą funkcją <strong>float()</strong>:
+    </p>
+    <code>
+        float(2)</br>
+        <span class="fa fa-hand-o-right"></span>
+        2.0
+    </code>
+    <p>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <strong>
+            <a id="test" href="#Task" data-toggle="collapse">
+                Sprawdź czy potrafisz
+            </a>
+        </strong>
+    </p>
+    <div id="Task" class="collapse">
+        Zaokrąglij liczbę PI z biblioteki math do 3 miejsc po przecinku.
+    </div>
+    <a class="helper"> <span class="fa fa-medkit" aria-hidden="true"></span>
+        Jak to zrobić?
+    </a>
+    <p class="helper_code">
+        Zaimportuj moduł math, a wykorzystaj funkcję round z parametrami math.pi oraz 3.
+    </p>
+    <code class="podpowiedz_kod">
+        import math<br/>
+        round(math.pi,3)
+    </code>
+</div>
